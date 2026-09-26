@@ -1,0 +1,197 @@
+No.0 Patch
+int main () {
+
+  double a, b, c, d;
+  double min;
+
+  printf("Please enter 4 numbers separated by spaces > ");
+    scanf("%lf%lf%lf%lf", &a, &b, &c, &d);
+
+  min = a;
+
+  if (b < min) {
+    min = b;
+  }
+
+  if (c < min) {
+    min = c;
+  }
+
+  if (d < min) {
+    min = d;
+  }
+
+  printf("%.0lf is the smallest\n", min);
+
+  return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.1 Patch
+int main () {
+
+  double a, b, c, d;
+  double smallest;
+
+  printf("Please enter 4 numbers separated by spaces > ");
+    scanf("%lf%lf%lf%lf", &a, &b, &c, &d);
+
+  smallest = a;
+
+  if (b < smallest) {
+    smallest = b;
+  }
+  if (c < smallest) {
+    smallest = c;
+  }
+  if (d < smallest) {
+    smallest = d;
+  }
+
+  printf("%.0lf is the smallest\n", smallest);
+
+  return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+int main () {
+
+  double a, b, c, d;
+  double min;
+
+  printf("Please enter 4 numbers separated by spaces > ");
+    scanf("%lf%lf%lf%lf", &a, &b, &c, &d);
+
+  min = a;
+
+  if (b < min) {
+    min = b;
+  }
+
+  if (c < min) {
+    min = c;
+  }
+
+  if (d < min) {
+    min = d;
+  }
+
+  printf("%.0lf is the smallest\n", min);
+
+  return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+int main () {
+
+  double a, b, c, d;
+  double smallest;
+
+  printf("Please enter 4 numbers separated by spaces > ");
+    scanf("%lf%lf%lf%lf", &a, &b, &c, &d);
+
+  smallest = a;
+
+  if (b < smallest) {
+    smallest = b;
+  }
+  if (c < smallest) {
+    smallest = c;
+  }
+  if (d < smallest) {
+    smallest = d;
+  }
+
+  printf("%.0lf is the smallest\n", smallest);
+
+  return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+int main () {
+
+  double a, b, c, d;
+  double min;
+
+  printf("Please enter 4 numbers separated by spaces > ");
+    scanf("%lf%lf%lf%lf", &a, &b, &c, &d);
+
+  min = a;
+
+  if (b < min) {
+    min = b;
+  }
+
+  if (c < min) {
+    min = c;
+  }
+
+  if (d < min) {
+    min = d;
+  }
+
+  printf("%.0lf is the smallest\n", min);
+
+  return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+int main () {
+
+  double a, b, c, d;
+  double smallest;
+
+  printf("Please enter 4 numbers separated by spaces > ");
+    scanf("%lf%lf%lf%lf", &a, &b, &c, &d);
+
+  smallest = a;
+
+  if (b < smallest) {
+    smallest = b;
+  }
+  if (c < smallest) {
+    smallest = c;
+  }
+  if (d < smallest) {
+    smallest = d;
+  }
+
+  printf("%.0lf is the smallest\n", smallest);
+
+  return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+int main () {
+
+  double a, b, c, d;
+  double min;
+
+  printf("Please enter 4 numbers separated by spaces > ");
+    scanf("%lf%lf%lf%lf", &a, &b, &c, &d);
+
+  min = a;
+
+  if (b < min) {
+    min = b;
+  }
+
+  if (c < min) {
+    min = c;
+  }
+
+  if (d < min) {
+    min = d;
+  }
+
+  printf("%.0lf is the smallest\n", min);
+
+  return 0;
+}
+
+/* Provide a fix for the buggy function */

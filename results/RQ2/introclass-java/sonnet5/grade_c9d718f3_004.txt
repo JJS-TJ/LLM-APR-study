@@ -1,0 +1,28 @@
+No.0 Patch
+public void exec () throws Exception {
+    FloatObj a = new FloatObj (), b = new FloatObj (), c =
+        new FloatObj (), d = new FloatObj (), g = new FloatObj ();
+    output +=
+        (String.format
+         ("Enter thresholds for A, B, C, D\nin that order, decreasing percentages > "));
+    a.value = scanner.nextFloat ();
+    b.value = scanner.nextFloat ();
+    c.value = scanner.nextFloat ();
+    d.value = scanner.nextFloat ();
+    output +=
+        (String.format ("Thank you. Now enter student score (percent) >"));
+    g.value = scanner.nextFloat ();
+    if (g.value >= a.value) {
+        output += (String.format ("Student has an A grade\n"));
+    } else if (g.value >= b.value && g.value < a.value) {
+        output += (String.format ("Student has an B grade\n"));
+    } else if (g.value >= c.value && g.value < b.value) {
+        output += (String.format ("Student has an C grade\n"));
+    } else if (g.value >= d.value && g.value < c.value) {
+        output += (String.format ("Student has an D grade\n"));
+    } else if (g.value < d.value) {
+        output += (String.format ("Student has failed the course\n"));
+    }
+}
+
+/* Provide a fix for the buggy function */

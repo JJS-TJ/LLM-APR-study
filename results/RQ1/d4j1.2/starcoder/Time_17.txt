@@ -1,0 +1,5 @@
+No.2 Patch
+public long adjustOffset(long instant, boolean earlierOrLater) {
+    long local = convertUTCToLocal(instant);
+    return convertLocalToUTC(local, false, earlierOrLater? local + 3 * DateTimeConstants.MILLIS_PER_HOUR : local - 3 * DateTimeConstants.MILLIS_PER_HOUR);
+}

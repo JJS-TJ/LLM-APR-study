@@ -1,0 +1,18 @@
+No.2 Patch
+template <typename T = Ast> parser &enable_ast() {
+    for (auto &x : *grammar_) {
+        auto &rule = x.second;
+        if (!rule.action) { add_ast_action<T>(rule); }
+    }
+    return *this;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+template <typename T = Ast> parser &enable_ast() {
+    for (auto &x : *grammar_) {
+      auto &rule = x.second;
+      if (!rule.action) { add_ast_action<T>(rule); }
+    }
+    return *this;
+  }

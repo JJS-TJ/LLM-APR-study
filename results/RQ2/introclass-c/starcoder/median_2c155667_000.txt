@@ -1,0 +1,31 @@
+No.5 Patch
+#include <stdio.h>
+int main(void) {
+  int i1, i2, i3;
+  printf("Please enter 3 numbers separated by spaces > ");
+  scanf("%d%d%d", &i1, &i2, &i3);
+  if (i1 > i2) {
+    if (i1 > i3) {
+      if (i2 < i3) {
+        printf("%d is the median\n", i3);
+      } else {
+        printf("%d is the median\n", i2);
+      }
+    } else {
+      printf("%d is the median\n", i1);
+    }
+  } else {
+    if (i2 > i3) {
+      if (i1 < i3) {
+        printf("%d is the median\n", i3);
+      } else {
+        printf("%d is the median\n", i1);
+      }
+    } else {
+      printf("%d is the median\n", i2);
+    }
+  }
+  return (0);
+}
+
+/* Provide a fix for the buggy function */

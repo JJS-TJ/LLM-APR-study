@@ -1,0 +1,30 @@
+No.0 Patch
+#include <stdio.h>
+#include <string.h>
+
+#define sizeA 100
+
+int main() {
+
+  char string[sizeA];
+  int i, length;
+  int count = 0;
+
+  printf("Please enter a string > ");
+  fgets(string, sizeA, stdin);
+
+  length = strlen(string);
+
+  for (i = 0; i < length; i++) {
+    if (string[i] == 'a' || string[i] == 'e' || string[i] == 'i' ||
+        string[i] == 'o' || string[i] == 'u' || string[i] == 'y') {
+      count++;
+    }
+  }
+
+  printf("The number of syllables is %d.\n", count);
+
+  return 0;
+}
+
+/* Provide a fix for the buggy function */

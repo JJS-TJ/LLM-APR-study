@@ -1,0 +1,32 @@
+No.6 Patch
+#include <stdio.h>
+	#include <string.h>
+	
+	int main() {
+	
+	int a, b, c, d;
+	
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &a, &b, &c, &d);
+	
+	int smallest = 0;
+	
+	int numbers[4] = {a, b, c, d};
+	
+	int counter = 0;
+	int max_index = 0;
+	
+	for (counter = 0; counter < 4; counter++) {
+		if (numbers[counter] < numbers[max_index]) {
+			max_index = counter;
+		}
+	}
+	
+	smallest = numbers[max_index];
+	
+	printf("%d is the smallest", smallest);
+	
+	return 0;
+	}
+
+/* Provide a fix for the buggy function */

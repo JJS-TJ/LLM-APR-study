@@ -1,0 +1,245 @@
+No.1 Patch
+int main(void)
+{
+	int first, second, third, fourth;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d %d %d %d", &first, &second, &third, &fourth);
+	
+	if (first < second)
+	{
+		if (first < third)
+		{
+			if (first < fourth)
+				printf("%d is the smallest \n ", first);
+			else
+				printf("%d is the smallest \n ", fourth);
+		}
+		else
+		{
+			if (third < fourth)
+				printf("%d is the smallest \n ", third);
+			else
+				printf("%d is the smallest \n ", fourth);
+		}
+	}
+	else
+	{
+		if (second < third)
+		{
+			if (second < fourth)
+				printf("%d is the smallest \n ", second);
+			else
+				printf("%d is the smallest \n ", fourth);
+		}
+		else
+		{
+			if (third < fourth)
+				printf("%d is the smallest \n ", third);
+			else
+				printf("%d is the smallest \n ", fourth);
+		}
+	}
+	
+	return 0;
+}
+				
+
+/* Program that reads 10 integers and prints out all of the numbers that are even and odd */
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+int main(void)
+{
+	int first, second, third, fourth;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d %d %d %d", &first, &second, &third, &fourth);
+	
+	if (first < second)
+	{
+		if (first < third)
+		{
+			if (first < fourth)
+				printf("%d is the smallest \n ", first);
+			else
+				printf("%d is the smallest \n ", fourth);
+		}
+		else
+		{
+			if (third < fourth)
+				printf("%d is the smallest \n ", third);
+			else
+				printf("%d is the smallest \n ", fourth);
+		}
+	}
+	else
+	{
+		if (second < third)
+		{
+			if (second < fourth)
+				printf("%d is the smallest \n ", second);
+			else
+				printf("%d is the smallest \n ", fourth);
+		}
+		else
+		{
+			if (third < fourth)
+				printf("%d is the smallest \n ", third);
+			else
+				printf("%d is the smallest \n ", fourth);
+		}
+	}
+	
+	return 0;
+}
+				
+
+/* Program that reads 10 integers and prints out all of the numbers that are even and odd */
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+int main(void)
+{
+	int first, second, third, fourth;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d %d %d %d", &first, &second, &third, &fourth);
+	
+	if (first < second)
+	{
+		if (first < third)
+		{
+			if (first < fourth)
+				printf("%d is the smallest \n ", first);
+			else
+				printf("%d is the smallest \n ", fourth);
+		}
+		else
+		{
+			if (third < fourth)
+				printf("%d is the smallest \n ", third);
+			else
+				printf("%d is the smallest \n ", fourth);
+		}
+	}
+	else
+	{
+		if (second < third)
+		{
+			if (second < fourth)
+				printf("%d is the smallest \n ", second);
+			else
+				printf("%d is the smallest \n ", fourth);
+		}
+		else
+		{
+			if (third < fourth)
+				printf("%d is the smallest \n ", third);
+			else
+				printf("%d is the smallest \n ", fourth);
+		}
+	}
+	
+	return 0;
+}
+				
+
+/* Program that reads 10 integers and prints out all of the numbers that are even and odd */
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+int main(void)
+{
+	int first, second, third, fourth;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d %d %d %d", &first, &second, &third, &fourth);
+	
+	if (first < second)
+	{
+		if (first < third)
+		{
+			if (first < fourth)
+				printf("%d is the smallest \n ", first);
+			else
+				printf("%d is the smallest \n ", fourth);
+		}
+		else
+		{
+			if (third < fourth)
+				printf("%d is the smallest \n ", third);
+			else
+				printf("%d is the smallest \n ", fourth);
+		}
+	}
+	else
+	{
+		if (second < third)
+		{
+			if (second < fourth)
+				printf("%d is the smallest \n ", second);
+			else
+				printf("%d is the smallest \n ", fourth);
+		}
+		else
+		{
+			if (third < fourth)
+				printf("%d is the smallest \n ", third);
+			else
+				printf("%d is the smallest \n ", fourth);
+		}
+	}
+	
+	return 0;
+}
+				
+
+/* Program that reads 10 integers and prints out all of the numbers that are even and odd */
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+int main(void)
+{
+	int first, second, third, fourth;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d %d %d %d", &first, &second, &third, &fourth);
+	
+	if (first < second)
+	{
+		if (first < third)
+		{
+			if (first < fourth)
+				printf("%d is the smallest \n ", first);
+			else
+				printf("%d is the smallest \n ", fourth);
+		}
+		else
+		{
+			if (third < fourth)
+				printf("%d is the smallest \n ", third);
+			else
+				printf("%d is the smallest \n ", fourth);
+		}
+	}
+	else
+	{
+		if (second < third)
+		{
+			if (second < fourth)
+				printf("%d is the smallest \n ", second);
+			else
+				printf("%d is the smallest \n ", fourth);
+		}
+		else
+		{
+			if (third < fourth)
+				printf("%d is the smallest \n ", third);
+			else
+				printf("%d is the smallest \n ", fourth);
+		}
+	}
+	
+	return 0;
+}
+				
+
+/* Program that reads 10 integers and prints out all of the numbers that are even and odd */
+
+/* Provide a fix for the buggy function */

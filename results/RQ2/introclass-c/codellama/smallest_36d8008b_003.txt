@@ -1,0 +1,174 @@
+No.0 Patch
+int main() {
+  int a, b, c, d, e;
+  printf ("Please enter 4 numbers separated by spaces > ");
+  scanf ("%d %d %d %d",&a,&b,&c,&d);
+  e=a;
+  if (b<a && b<c && b<d)
+    e=b;
+  if (c<a && c<b && c<d)
+    e=c;
+  if (d<a && d<b && d<c)
+    e=d;
+  printf("%d is the smallest\n", e);
+  return 0;
+}
+
+
+
+
+/* Exercise 16-2. Add a new version of the find_max function to the library,
+ * but this time it should be declared as a function that returns an int,
+ * not a void function. Find_max should find the maximum of the first n
+ * numbers, where n is a second parameter. */
+
+/* Provide a fix for the buggy function */
+No.1 Patch
+int main() {
+  int a, b, c, d, e;
+  printf ("Please enter 4 numbers separated by spaces > ");
+  scanf ("%d %d %d %d",&a,&b,&c,&d);
+  e = a;
+  if (b<e)
+    e=b;
+  if (c<e)
+    e=c;
+  if (d<e)
+    e=d;
+  printf("%d is the smallest\n", e);
+  return 0;
+}
+
+/* 4. Write a C program that prompts the user to enter 4 integers and displays 
+the smallest of them.
+*/
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+int main() {
+  int a, b, c, d, e;
+  printf ("Please enter 4 numbers separated by spaces > ");
+  scanf ("%d %d %d %d",&a,&b,&c,&d);
+  e = a < b ? (a < c ? (a < d ? a : d) : (c < d ? c : d)) : (b < c ? (b < d ? b : d) : (c < d ? c : d));
+  printf("%d is the smallest\n", e);
+  return 0;
+}
+
+/*
+  Author: Mohit Khedkar.
+  */
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+int main() {
+  int a, b, c, d, e;
+  printf ("Please enter 4 numbers separated by spaces > ");
+  scanf ("%d %d %d %d",&a,&b,&c,&d);
+  if (a<b)
+    e=a;
+  else
+    e=b;
+  if (c<e)
+    e=c;
+  if (d<e)
+    e=d;
+  printf("%d is the smallest\n", e);
+  return 0;
+}
+
+
+
+/*
+2.6
+Suppose that the function below is buggy. Write a fix
+for the bug.
+*/
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+int main() {
+  int a, b, c, d, e;
+  printf ("Please enter 4 numbers separated by spaces > ");
+  scanf ("%d %d %d %d",&a,&b,&c,&d);
+  e=a;
+  if (b<a && b<c && b<d)
+    e=b;
+  if (c<a && c<b && c<d)
+    e=c;
+  if (d<a && d<b && d<c)
+    e=d;
+  printf("%d is the smallest\n", e);
+  return 0;
+}
+
+
+
+
+/* Exercise 16-2. Add a new version of the find_max function to the library,
+ * but this time it should be declared as a function that returns an int,
+ * not a void function. Find_max should find the maximum of the first n
+ * numbers, where n is a second parameter. */
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+int main() {
+  int a, b, c, d, e;
+  printf ("Please enter 4 numbers separated by spaces > ");
+  scanf ("%d %d %d %d",&a,&b,&c,&d);
+  e = a;
+  if (b<e)
+    e=b;
+  if (c<e)
+    e=c;
+  if (d<e)
+    e=d;
+  printf("%d is the smallest\n", e);
+  return 0;
+}
+
+/* 4. Write a C program that prompts the user to enter 4 integers and displays 
+the smallest of them.
+*/
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+int main() {
+  int a, b, c, d, e;
+  printf ("Please enter 4 numbers separated by spaces > ");
+  scanf ("%d %d %d %d",&a,&b,&c,&d);
+  e = a < b ? (a < c ? (a < d ? a : d) : (c < d ? c : d)) : (b < c ? (b < d ? b : d) : (c < d ? c : d));
+  printf("%d is the smallest\n", e);
+  return 0;
+}
+
+/*
+  Author: Mohit Khedkar.
+  */
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+int main() {
+  int a, b, c, d, e;
+  printf ("Please enter 4 numbers separated by spaces > ");
+  scanf ("%d %d %d %d",&a,&b,&c,&d);
+  if (a<b)
+    e=a;
+  else
+    e=b;
+  if (c<e)
+    e=c;
+  if (d<e)
+    e=d;
+  printf("%d is the smallest\n", e);
+  return 0;
+}
+
+
+
+/*
+2.6
+Suppose that the function below is buggy. Write a fix
+for the bug.
+*/
+
+/* Provide a fix for the buggy function */

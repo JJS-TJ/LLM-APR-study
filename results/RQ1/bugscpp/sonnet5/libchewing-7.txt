@@ -1,0 +1,39 @@
+The bug is in the inner loop: `bSymbolArrBrkpt` should be indexed by `i` (the position in the symbol buffer), not `ch_count` (the count of Chinese characters seen so far). These two arrays track breakpoints in different coordinate spaces, so reusing `ch_count` for both corrupts the symbol breakpoint tracking.
+
+```c
+/* Fixed Function */
+int CallPhrasing(ChewingData *pgdata, int all_phrasing)
+{
+    /* set "bSymbolArrBrkpt" && "bArrBrkpt" */
+    int i, ch_count = 0;
+
+    memcpy(pgdata->bArrBrkpt, pgdata->bUserArrBrkpt, (MAX_PHONE_SEQ_LEN + 1) * sizeof(int));
+    memset(pgdata->bSymbolArrBrkpt, 0, (MAX_PHONE_SEQ_LEN + 1) * sizeof(int));
+
+    for (i = 0; i < pgdata->chiSymbolBufLen; i++) {
+        if (ChewingIsChiAt(i, pgdata))
+            ch_count++;
+        else {
+            pgdata->bArrBrkpt[ch_count] = 1;
+            pgdata->bSymbolArrBrkpt[i] = 1;
+        }
+    }
+
+    /* kill select interval */
+    for (i = 0; i < pgdata->nPhoneSeq; i++) {
+        if (pgdata->bArrBrkpt[i]) {
+            ChewingKillSelectIntervalAcross(i, pgdata);
+        }
+    }
+
+    ShowChewingData(pgdata);
+
+    /* then phrasing */
+    Phrasing(pgdata, all_phrasing);
+
+    /* and then make prefer interval */
+    MakePreferInterval(pgdata);
+
+    return 0;
+}
+```

@@ -1,0 +1,27 @@
+No.3 Patch
+public static int gcd(int u, int v) {
+    if (u == 0) {
+        return Math.abs(v);
+    }
+    if (v == 0) {
+        return Math.abs(u);
+    }
+    while (v != 0) {
+        int r = u % v;
+        u = v;
+        v = r;
+    }
+    return Math.abs(u);
+}
+No.9 Patch
+public static int gcd(int u, int v) {
+    if (u == 0 || v == 0) {
+        return Math.abs(u) + Math.abs(v);
+    }
+    while (v != 0) {
+        int t = v;
+        v = u % v;
+        u = t;
+    }
+    return Math.abs(u);
+}

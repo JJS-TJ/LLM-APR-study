@@ -1,0 +1,52 @@
+No.5 Patch
+public static Class<?>[] toClass(Object[] array) {
+    return toClass(array, null);
+}
+
+public static Class<?>[] toClass(Object[] array, Class<?> defaultType) {
+    if (array == null) {
+        return null;
+    } else if (array.length == 0) {
+        return ArrayUtils.EMPTY_CLASS_ARRAY;
+    }
+    Class<?>[] classes = new Class<?>[array.length];
+    for (int i = 0; i < array.length; i++) {
+        if (array[i]!= null) {
+            classes[i] = array[i].getClass();
+        } else {
+            classes[i] = defaultType;
+        }
+    }
+    return classes;
+}
+No.6 Patch
+public static Class<?>[] toClass(Object[] array) {
+    if (array == null) {
+        return null;
+    } else if (array.length == 0) {
+        return ArrayUtils.EMPTY_CLASS_ARRAY;
+    }
+    Class<?>[] classes = new Class[array.length];
+    for (int i = 0; i < array.length; i++) {
+        Object obj = array[i];
+        if (obj == null) {
+            classes[i] = null;
+        } else {
+            classes[i] = obj.getClass();
+        }
+    }
+    return classes;
+}
+No.9 Patch
+public static Class<?>[] toClass(Object[] array) {
+    if (array == null) {
+        return null;
+    } else if (array.length == 0) {
+        return ArrayUtils.EMPTY_CLASS_ARRAY;
+    }
+    Class<?>[] classes = new Class[array.length];
+    for (int i = 0; i < array.length; i++) {
+        classes[i] = array[i] == null? null : array[i].getClass();
+    }
+    return classes;
+}

@@ -1,0 +1,4 @@
+No.0 Patch
+public double getNumericalMean() {
+    return (double) getSampleSize() * getNumberOfSuccesses() / (double) getPopulationSize();
+}

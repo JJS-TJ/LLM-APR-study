@@ -1,0 +1,130 @@
+No.1 Patch
+int
+main(void)
+{
+
+	int A, B, C;
+	printf("Pleaes enter 3 numbers separated by spaces > ");
+	scanf("%d%d%d", &A, &B, &C);
+
+	if ( A >= B && A <= C)
+		printf("%d is the median\n", A);
+	else if ( A >= C && A <= B)
+		printf("%d is the median\n", A);
+	else if ( B >= C && B <= A)
+		printf("%d is the median\n", B);
+	else if ( B >= A && B <= C)
+		printf("%d is the median\n", B);
+	else if ( C >= A && C <= B)
+		printf("%d is the median\n", C);
+	else if ( C >= B && C <= A)
+		printf("%d is the median\n", C);
+
+return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+int
+main(void)
+{
+
+	int A, B, C;
+	printf("Pleaes enter 3 numbers separated by spaces > ");
+	scanf("%d%d%d", &A, &B, &C);
+
+	if ( A >= B && A <= C)
+		printf("%d is the median\n", A);
+	else if ( A >= C && A <= B)
+		printf("%d is the median\n", A);
+	else if ( B >= C && B <= A)
+		printf("%d is the median\n", B);
+	else if ( B >= A && B <= C)
+		printf("%d is the median\n", B);
+	else if ( C >= A && C <= B)
+		printf("%d is the median\n", C);
+	else if ( C >= B && C <= A)
+		printf("%d is the median\n", C);
+
+return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+int
+main(void)
+{
+
+	int A, B, C;
+	printf("Pleaes enter 3 numbers separated by spaces > ");
+	scanf("%d%d%d", &A, &B, &C);
+
+	if ( A >= B && A <= C)
+		printf("%d is the median\n", A);
+	else if ( A >= C && A <= B)
+		printf("%d is the median\n", A);
+	else if ( B >= C && B <= A)
+		printf("%d is the median\n", B);
+	else if ( B >= A && B <= C)
+		printf("%d is the median\n", B);
+	else if ( C >= A && C <= B)
+		printf("%d is the median\n", C);
+	else if ( C >= B && C <= A)
+		printf("%d is the median\n", C);
+
+return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+int
+main(void)
+{
+
+	int A, B, C;
+	printf("Pleaes enter 3 numbers separated by spaces > ");
+	scanf("%d%d%d", &A, &B, &C);
+
+	if ( A >= B && A <= C)
+		printf("%d is the median\n", A);
+	else if ( A >= C && A <= B)
+		printf("%d is the median\n", A);
+	else if ( B >= C && B <= A)
+		printf("%d is the median\n", B);
+	else if ( B >= A && B <= C)
+		printf("%d is the median\n", B);
+	else if ( C >= A && C <= B)
+		printf("%d is the median\n", C);
+	else if ( C >= B && C <= A)
+		printf("%d is the median\n", C);
+
+return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+int
+main(void)
+{
+
+	int A, B, C;
+	printf("Pleaes enter 3 numbers separated by spaces > ");
+	scanf("%d%d%d", &A, &B, &C);
+
+	if ( A >= B && A <= C)
+		printf("%d is the median\n", A);
+	else if ( A >= C && A <= B)
+		printf("%d is the median\n", A);
+	else if ( B >= C && B <= A)
+		printf("%d is the median\n", B);
+	else if ( B >= A && B <= C)
+		printf("%d is the median\n", B);
+	else if ( C >= A && C <= B)
+		printf("%d is the median\n", C);
+	else if ( C >= B && C <= A)
+		printf("%d is the median\n", C);
+
+return(0);
+}
+
+/* Provide a fix for the buggy function */

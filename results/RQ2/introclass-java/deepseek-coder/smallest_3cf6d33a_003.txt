@@ -1,0 +1,111 @@
+No.1 Patch
+public void exec () throws Exception {
+    DoubleObj a = new DoubleObj (), b = new DoubleObj (), c =
+        new DoubleObj (), d = new DoubleObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a.value = scanner.nextDouble ();
+    b.value = scanner.nextDouble ();
+    c.value = scanner.nextDouble ();
+    d.value = scanner.nextDouble ();
+    double smallest = a.value;
+    if (b.value < smallest) smallest = b.value;
+    if (c.value < smallest) smallest = c.value;
+    if (d.value < smallest) smallest = d.value;
+    output += (String.format ("%.0f is the smallest\n", smallest));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+public void exec () throws Exception {
+    DoubleObj a = new DoubleObj (), b = new DoubleObj (), c =
+        new DoubleObj (), d = new DoubleObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a.value = scanner.nextDouble ();
+    b.value = scanner.nextDouble ();
+    c.value = scanner.nextDouble ();
+    d.value = scanner.nextDouble ();
+    double min = Math.min(a.value, Math.min(b.value, Math.min(c.value, d.value)));
+    output += (String.format ("%.0f is the smallest\n", min));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+public void exec () throws Exception {
+    DoubleObj a = new DoubleObj (), b = new DoubleObj (), c =
+        new DoubleObj (), d = new DoubleObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a.value = scanner.nextDouble ();
+    b.value = scanner.nextDouble ();
+    c.value = scanner.nextDouble ();
+    d.value = scanner.nextDouble ();
+    double smallest = a.value;
+    if (b.value < smallest) smallest = b.value;
+    if (c.value < smallest) smallest = c.value;
+    if (d.value < smallest) smallest = d.value;
+    output += (String.format ("%.0f is the smallest\n", smallest));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+public void exec () throws Exception {
+    DoubleObj a = new DoubleObj (), b = new DoubleObj (), c =
+        new DoubleObj (), d = new DoubleObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a.value = scanner.nextDouble ();
+    b.value = scanner.nextDouble ();
+    c.value = scanner.nextDouble ();
+    d.value = scanner.nextDouble ();
+    double min = Math.min(a.value, Math.min(b.value, Math.min(c.value, d.value)));
+    output += (String.format ("%.0f is the smallest\n", min));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+public void exec () throws Exception {
+    DoubleObj a = new DoubleObj (), b = new DoubleObj (), c =
+        new DoubleObj (), d = new DoubleObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a.value = scanner.nextDouble ();
+    b.value = scanner.nextDouble ();
+    c.value = scanner.nextDouble ();
+    d.value = scanner.nextDouble ();
+    double smallest = a.value;
+    if (b.value < smallest) smallest = b.value;
+    if (c.value < smallest) smallest = c.value;
+    if (d.value < smallest) smallest = d.value;
+    output += (String.format ("%.0f is the smallest\n", smallest));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+public void exec () throws Exception {
+    DoubleObj a = new DoubleObj (), b = new DoubleObj (), c =
+        new DoubleObj (), d = new DoubleObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a.value = scanner.nextDouble ();
+    b.value = scanner.nextDouble ();
+    c.value = scanner.nextDouble ();
+    d.value = scanner.nextDouble ();
+    double min = Math.min(a.value, Math.min(b.value, Math.min(c.value, d.value)));
+    output += (String.format ("%.0f is the smallest\n", min));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */

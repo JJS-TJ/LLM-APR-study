@@ -1,0 +1,56 @@
+No.0 Patch
+inline void DetectLeftRecursion::visit(Reference& ope) {
+    if (ope.name_ == name_) {
+        error_s = ope.s_;
+        done_ = true;
+    } else if (!refs_.count(ope.name_)) {
+        refs_.insert(ope.name_);
+        if (ope.rule_) {
+            ope.rule_->accept(*this);
+        }
+    }
+}
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+inline void DetectLeftRecursion::visit(Reference& ope) {
+    if (ope.name_ == name_) {
+        error_s = ope.s_;
+    } else if (!refs_.count(ope.name_)) {
+        refs_.insert(ope.name_);
+        if (ope.rule_) {
+            ope.rule_->accept(*this);
+        }
+    }
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+inline void DetectLeftRecursion::visit(Reference& ope) {
+    if (ope.name_ == name_) {
+        error_s = ope.s_;
+    } else if (!refs_.count(ope.name_)) {
+        refs_.insert(ope.name_);
+        if (ope.rule_) {
+            ope.rule_->accept(*this);
+        }
+    } else {
+        done_ = true;
+    }
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+inline void DetectLeftRecursion::visit(Reference& ope) {
+    if (ope.name_ == name_) {
+        error_s = ope.s_;
+    } else if (!refs_.count(ope.name_)) {
+        refs_.insert(ope.name_);
+        if (ope.rule_) {
+            ope.rule_->accept(*this);
+        }
+    }
+    done_ = false;
+}
+
+/* Provide a fix for the buggy function */

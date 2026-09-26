@@ -1,0 +1,10 @@
+No.0 Patch
+public Week(Date time, TimeZone zone) {
+    // defer argument checking...
+    this(time, zone != null ? zone : RegularTimePeriod.DEFAULT_TIME_ZONE, Locale.getDefault());
+}
+No.9 Patch
+public Week(Date time, TimeZone zone) {
+    // defer argument checking...
+    this(time, zone, Locale.getDefault());
+}

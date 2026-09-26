@@ -1,0 +1,184 @@
+No.2 Patch
+public void exec () throws Exception {
+    IntObj A = new IntObj (), B = new IntObj (), C = new IntObj (), D =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    A.value = scanner.nextInt ();
+    B.value = scanner.nextInt ();
+    C.value = scanner.nextInt ();
+    D.value = scanner.nextInt ();
+    // If else if ( A.value < B.value && A.value < C.value && A.value <
+    // D.value) {... } else if ( B.value < A.value && B.value < C.value &&
+    // B.value < D.value) {... } else if ( C.value < A.value &&
+    // C.value < B.value && C.value < D.value) {... } else {... }
+    if (A.value < B.value) {
+        if (A.value < C.value) {
+            if (A.value < D.value) {
+                output += (String.format ("%d is the smallest\n", A.value));
+                if (true)
+                    return;;
+            } else {
+                output += (String.format ("%d is the smallest\n", D.value));
+                if (true)
+                    return;;
+            }
+        } else {
+            if (C.value < D.value) {
+                output += (String.format ("%d is the smallest\n", C.value));
+                if (true)
+                    return;;
+            } else {
+                output += (String.format ("%d is the smallest\n", D.value));
+                if (true)
+                    return;;
+            }
+        }
+    } else {
+        if (B.value < C.value) {
+            if (B.value < D.value) {
+                output += (String.format ("%d is the smallest\n", B.value));
+                if (true)
+                    return;;
+            } else {
+                output += (String.format ("%d is the smallest\n", D.value));
+                if (true)
+                    return;;
+            }
+        } else {
+            if (C.value < D.value) {
+                output += (String.format ("%d is the smallest\n", C.value));
+                if (true)
+                    return;;
+            } else {
+                output += (String.format ("%d is the smallest\n", D.value));
+                if (true)
+                    return;;
+            }
+        }
+    }
+}
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+public void exec () throws Exception {
+    IntObj A = new IntObj (), B = new IntObj (), C = new IntObj (), D =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    A.value = scanner.nextInt ();
+    B.value = scanner.nextInt ();
+    C.value = scanner.nextInt ();
+    D.value = scanner.nextInt ();
+    if (A.value <= B.value && A.value <= C.value && A.value <= D.value) {
+        output += (String.format ("%d is the smallest\n", A.value));
+        if (true)
+            return;;
+    } else if (B.value <= A.value && B.value <= C.value && B.value <= D.value) {
+        output += (String.format ("%d is the smallest\n", B.value));
+        if (true)
+            return;;
+    } else if (C.value <= A.value && C.value <= B.value && C.value <= D.value) {
+        output += (String.format ("%d is the smallest\n", C.value));
+        if (true)
+            return;;
+    } else if (D.value <= A.value && D.value <= B.value && D.value <= C.value) {
+        output += (String.format ("%d is the smallest\n", D.value));
+        if (true)
+            return;;
+    }
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+public void exec () throws Exception {
+    IntObj A = new IntObj (), B = new IntObj (), C = new IntObj (), D =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    A.value = scanner.nextInt ();
+    B.value = scanner.nextInt ();
+    C.value = scanner.nextInt ();
+    D.value = scanner.nextInt ();
+    // If else if ( A.value < B.value && A.value < C.value && A.value <
+    // D.value) {... } else if ( B.value < A.value && B.value < C.value &&
+    // B.value < D.value) {... } else if ( C.value < A.value &&
+    // C.value < B.value && C.value < D.value) {... } else {... }
+    if (A.value < B.value) {
+        if (A.value < C.value) {
+            if (A.value < D.value) {
+                output += (String.format ("%d is the smallest\n", A.value));
+                if (true)
+                    return;;
+            } else {
+                output += (String.format ("%d is the smallest\n", D.value));
+                if (true)
+                    return;;
+            }
+        } else {
+            if (C.value < D.value) {
+                output += (String.format ("%d is the smallest\n", C.value));
+                if (true)
+                    return;;
+            } else {
+                output += (String.format ("%d is the smallest\n", D.value));
+                if (true)
+                    return;;
+            }
+        }
+    } else {
+        if (B.value < C.value) {
+            if (B.value < D.value) {
+                output += (String.format ("%d is the smallest\n", B.value));
+                if (true)
+                    return;;
+            } else {
+                output += (String.format ("%d is the smallest\n", D.value));
+                if (true)
+                    return;;
+            }
+        } else {
+            if (C.value < D.value) {
+                output += (String.format ("%d is the smallest\n", C.value));
+                if (true)
+                    return;;
+            } else {
+                output += (String.format ("%d is the smallest\n", D.value));
+                if (true)
+                    return;;
+            }
+        }
+    }
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+public void exec () throws Exception {
+    IntObj A = new IntObj (), B = new IntObj (), C = new IntObj (), D =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    A.value = scanner.nextInt ();
+    B.value = scanner.nextInt ();
+    C.value = scanner.nextInt ();
+    D.value = scanner.nextInt ();
+    if (A.value <= B.value && A.value <= C.value && A.value <= D.value) {
+        output += (String.format ("%d is the smallest\n", A.value));
+        if (true)
+            return;;
+    } else if (B.value <= A.value && B.value <= C.value && B.value <= D.value) {
+        output += (String.format ("%d is the smallest\n", B.value));
+        if (true)
+            return;;
+    } else if (C.value <= A.value && C.value <= B.value && C.value <= D.value) {
+        output += (String.format ("%d is the smallest\n", C.value));
+        if (true)
+            return;;
+    } else if (D.value <= A.value && D.value <= B.value && D.value <= C.value) {
+        output += (String.format ("%d is the smallest\n", D.value));
+        if (true)
+            return;;
+    }
+}
+
+/* Provide a fix for the buggy function */

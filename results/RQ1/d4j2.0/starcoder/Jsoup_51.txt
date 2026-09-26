@@ -1,0 +1,11 @@
+No.0 Patch
+boolean matchesLetter() {
+    return!isEmpty() && Character.isLetter(input[pos]);
+}
+No.8 Patch
+boolean matchesLetter() {
+    if (isEmpty())
+        return false;
+    char c = input[pos];
+    return Character.isLetter(c);
+}

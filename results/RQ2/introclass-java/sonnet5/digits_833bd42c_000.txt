@@ -1,0 +1,23 @@
+No.0 Patch
+// Fixed function
+public void exec () throws Exception {
+    IntObj num_input = new IntObj (), num_input2 = new IntObj (), digit =
+        new IntObj ();
+    output += (String.format ("Enter an integer > "));
+    num_input.value = scanner.nextInt ();
+    num_input2.value = num_input.value;
+    if (num_input2.value == 0) {
+        output += (String.format ("\n%d\n", 0));
+    }
+    while (num_input2.value != 0) {
+        digit.value = Math.abs (num_input2.value % 10);
+        num_input2.value = (num_input2.value / 10);
+        if ((num_input2.value == 0) && (num_input.value < 0)) {
+            digit.value = digit.value * (-1);
+        }
+        output += (String.format ("\n%d\n", digit.value));
+    }
+    output += (String.format ("That's all, have a nice day!\n"));
+}
+
+/* Provide a fix for the buggy function */

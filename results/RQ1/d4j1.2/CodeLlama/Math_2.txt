@@ -1,0 +1,16 @@
+No.1 Patch
+public double getNumericalMean() {
+    return (double) getSampleSize() * getNumberOfSuccesses() / (double) getPopulationSize();
+}
+No.6 Patch
+public double getNumericalMean() {
+    return ((double) getSampleSize() * (double) getNumberOfSuccesses()) / (double) getPopulationSize();
+}
+No.7 Patch
+public double getNumericalMean() {
+    return (double) getSampleSize() * getNumberOfSuccesses() / getPopulationSize();
+}
+No.8 Patch
+public double getNumericalMean() {
+    return ((double) getSampleSize() * getNumberOfSuccesses()) / (double) getPopulationSize();
+}

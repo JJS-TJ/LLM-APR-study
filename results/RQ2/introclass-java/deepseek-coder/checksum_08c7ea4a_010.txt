@@ -1,0 +1,57 @@
+No.1 Patch
+public void exec () throws Exception {
+    String input;
+    int checksum_summation = 0;
+    char checksumchar;
+    output +=
+        (String.format
+         ("Enter an abitrarily long string, ending with carriage return > "));
+    input = scanner.nextLine ();
+    for (char c: input.toCharArray ()) {
+        checksum_summation += (int) c;
+    }
+    checksum_summation %= 64;
+    checksum_summation += 32;
+    checksumchar = (char) checksum_summation;
+    output += (String.format ("Check sum is %c\n", checksumchar));
+}
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+public void exec () throws Exception {
+    String input;
+    int checksum_summation = 0;
+    char checksumchar;
+    output +=
+        (String.format
+         ("Enter an abitrarily long string, ending with carriage return > "));
+    input = scanner.nextLine ();
+    for (char c: input.toCharArray ()) {
+        checksum_summation += (int) c;
+    }
+    checksum_summation %= 64;
+    checksum_summation += 32;
+    checksumchar = (char) checksum_summation;
+    output += (String.format ("Check sum is %c\n", checksumchar));
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+public void exec () throws Exception {
+    String input;
+    int checksum_summation = 0;
+    char checksumchar;
+    output +=
+        (String.format
+         ("Enter an abitrarily long string, ending with carriage return > "));
+    input = scanner.nextLine ();
+    for (char c: input.toCharArray ()) {
+        checksum_summation += (int) c;
+    }
+    checksum_summation %= 64;
+    checksum_summation += 32;
+    checksumchar = (char) checksum_summation;
+    output += (String.format ("Check sum is %c\n", checksumchar));
+}
+
+/* Provide a fix for the buggy function */

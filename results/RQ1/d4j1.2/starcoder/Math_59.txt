@@ -1,0 +1,22 @@
+No.0 Patch
+public static float max(final float a, final float b) {
+    return (Float.isNaN(a + b)? Float.NaN : (a > b? a : b));
+}
+No.1 Patch
+public static float max(final float a, final float b) {
+    return Math.max(a, b);
+}
+No.7 Patch
+public static float max(final float a, final float b) {
+    return (a > b)? a : (Float.isNaN(a + b)? Float.NaN : b);
+}
+No.8 Patch
+public static float max(final float a, final float b) {
+    if (Float.isNaN(a + b)) {
+        return Float.NaN;
+    } else if (a < b) {
+        return b;
+    } else {
+        return a;
+    }
+}

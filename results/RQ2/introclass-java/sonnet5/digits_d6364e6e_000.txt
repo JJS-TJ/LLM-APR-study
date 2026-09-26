@@ -1,0 +1,27 @@
+No.0 Patch
+public void exec () throws Exception {
+    IntObj input = new IntObj (), display = new IntObj ();
+    output += (String.format ("Enter an integer > "));
+    input.value = scanner.nextInt ();
+    output += (String.format ("\n"));
+    if (input.value < 0) {
+        input.value = input.value * (-1);
+        while ((input.value / 10) >= 1) {
+            display.value = input.value % 10;
+            output += (String.format ("%d\n", display.value));
+            input.value = input.value / 10;
+        }
+        output += (String.format ("-%d\n", input.value % 10));
+        output += (String.format ("That's all, have a nice day!\n"));
+        return;
+    }
+    while ((input.value / 10) >= 1) {
+        display.value = input.value % 10;
+        output += (String.format ("%d\n", display.value));
+        input.value = input.value / 10;
+    }
+    output += (String.format ("%d\n", input.value % 10));
+    output += (String.format ("That's all, have a nice day!\n"));
+}
+
+/* Provide a fix for the buggy function */

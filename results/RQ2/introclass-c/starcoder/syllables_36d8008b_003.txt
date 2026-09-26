@@ -1,0 +1,30 @@
+No.1 Patch
+int main() {
+  int syllableCount = 0;
+  char letter;
+  printf("Please enter a sentence: ");
+  while((letter = getchar())!= '\n') {
+    if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u' || letter == 'y') {
+      syllableCount++;
+    }
+  }
+  printf("The number of syllables is %d.\n", syllableCount);
+  return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+int main() {
+  int syllableCount = 0;
+  char letter;
+  printf("Please enter a sentence: ");
+  while((letter = getchar())!= '\n') {
+    if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u' || letter == 'y') {
+      syllableCount++;
+    }
+  }
+  printf("The number of syllables is %d.\n", syllableCount);
+  return 0;
+}
+
+/* Provide a fix for the buggy function */

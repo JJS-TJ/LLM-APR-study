@@ -1,0 +1,97 @@
+No.0 Patch
+int main()
+{
+	int one, two, three, four;
+	int min;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &one, &two, &three, &four);
+
+	min = one;
+	if (two < min)
+		min = two;
+	if (three < min)
+		min = three;
+	if (four < min)
+		min = four;
+	printf("%d is the smallest\n", min);
+	return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+int main()
+{
+	int number1, number2, number3, number4, smallest;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &number1, &number2, &number3, &number4);
+	smallest = number1;
+	if(number2 < smallest)
+		smallest = number2;
+	if(number3 < smallest)
+		smallest = number3;
+	if(number4 < smallest)
+		smallest = number4;
+	printf("%d is the smallest\n", smallest);
+	return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+int main()
+{
+
+	int one, two, three, four;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &one, &two, &three, &four);
+	int x;
+	x = one;
+	if (two < x)
+		x = two;
+	if (three < x)
+		x = three;
+	if (four < x)
+		x = four;
+	printf("%d is the smallest\n", x);
+	return(0);
+}
+
+/* What about the case of three variables? */
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+int main()
+{
+
+	int one, two, three, four;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &one, &two, &three, &four);
+	int smallest = (one<two)? one : two;
+	smallest = (smallest < three)? smallest : three;
+	smallest = (smallest < four)? smallest : four;
+	printf("%d is the smallest\n", smallest);
+	return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+int main()
+{
+	int one, two, three, four;
+	int min;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &one, &two, &three, &four);
+
+	min = one;
+	if (two < min)
+		min = two;
+	if (three < min)
+		min = three;
+	if (four < min)
+		min = four;
+	printf("%d is the smallest\n", min);
+	return(0);
+}
+
+/* Provide a fix for the buggy function */

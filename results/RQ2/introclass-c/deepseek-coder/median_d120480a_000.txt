@@ -1,0 +1,290 @@
+No.0 Patch
+/* In the buggy function, the temp variable is not necessary and the else if statement is not correct.
+   It should be re-written as: */
+
+int main(void) {
+  int a, b, c, median;
+  median = 0;
+  printf("Please enter 3 numbers separated by spaces > ");
+  scanf ("%d%d%d", &a, &b, &c);
+
+  if (a>b) {
+    b = a^b;
+    a = a^b;
+    b = a^b;
+  }
+  if (a>c)
+    median = a;
+  else if (b>c)
+    median = c;
+  else 
+    median = b;
+
+  printf("%d is the median\n", median);
+
+  return(0);
+
+}
+
+/* Provide a fix for the buggy function */
+No.1 Patch
+/* In the buggy function, the temp variable is not necessary and the else if statement is not correct.
+   It should be re-written as: */
+
+int main(void) {
+  int a, b, c, median;
+  median = 0;
+  printf("Please enter 3 numbers separated by spaces > ");
+  scanf ("%d%d%d", &a, &b, &c);
+
+  if (a>b) {
+    b = a^b;
+    a = a^b;
+    b = a^b;
+  }
+  if (a>c)
+    median = a;
+  else if (b>c)
+    median = c;
+  else 
+    median = b;
+
+  printf("%d is the median\n", median);
+
+  return(0);
+
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+/* In the buggy function, the temp variable is not necessary and the else if statement is not correct.
+   It should be re-written as: */
+
+int main(void) {
+  int a, b, c, median;
+  median = 0;
+  printf("Please enter 3 numbers separated by spaces > ");
+  scanf ("%d%d%d", &a, &b, &c);
+
+  if (a>b) {
+    b = a^b;
+    a = a^b;
+    b = a^b;
+  }
+  if (a>c)
+    median = a;
+  else if (b>c)
+    median = c;
+  else 
+    median = b;
+
+  printf("%d is the median\n", median);
+
+  return(0);
+
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+/* In the buggy function, the temp variable is not necessary and the else if statement is not correct.
+   It should be re-written as: */
+
+int main(void) {
+  int a, b, c, median;
+  median = 0;
+  printf("Please enter 3 numbers separated by spaces > ");
+  scanf ("%d%d%d", &a, &b, &c);
+
+  if (a>b) {
+    b = a^b;
+    a = a^b;
+    b = a^b;
+  }
+  if (a>c)
+    median = a;
+  else if (b>c)
+    median = c;
+  else 
+    median = b;
+
+  printf("%d is the median\n", median);
+
+  return(0);
+
+}
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+/* In the buggy function, the temp variable is not necessary and the else if statement is not correct.
+   It should be re-written as: */
+
+int main(void) {
+  int a, b, c, median;
+  median = 0;
+  printf("Please enter 3 numbers separated by spaces > ");
+  scanf ("%d%d%d", &a, &b, &c);
+
+  if (a>b) {
+    b = a^b;
+    a = a^b;
+    b = a^b;
+  }
+  if (a>c)
+    median = a;
+  else if (b>c)
+    median = c;
+  else 
+    median = b;
+
+  printf("%d is the median\n", median);
+
+  return(0);
+
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+/* In the buggy function, the temp variable is not necessary and the else if statement is not correct.
+   It should be re-written as: */
+
+int main(void) {
+  int a, b, c, median;
+  median = 0;
+  printf("Please enter 3 numbers separated by spaces > ");
+  scanf ("%d%d%d", &a, &b, &c);
+
+  if (a>b) {
+    b = a^b;
+    a = a^b;
+    b = a^b;
+  }
+  if (a>c)
+    median = a;
+  else if (b>c)
+    median = c;
+  else 
+    median = b;
+
+  printf("%d is the median\n", median);
+
+  return(0);
+
+}
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+/* In the buggy function, the temp variable is not necessary and the else if statement is not correct.
+   It should be re-written as: */
+
+int main(void) {
+  int a, b, c, median;
+  median = 0;
+  printf("Please enter 3 numbers separated by spaces > ");
+  scanf ("%d%d%d", &a, &b, &c);
+
+  if (a>b) {
+    b = a^b;
+    a = a^b;
+    b = a^b;
+  }
+  if (a>c)
+    median = a;
+  else if (b>c)
+    median = c;
+  else 
+    median = b;
+
+  printf("%d is the median\n", median);
+
+  return(0);
+
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+/* In the buggy function, the temp variable is not necessary and the else if statement is not correct.
+   It should be re-written as: */
+
+int main(void) {
+  int a, b, c, median;
+  median = 0;
+  printf("Please enter 3 numbers separated by spaces > ");
+  scanf ("%d%d%d", &a, &b, &c);
+
+  if (a>b) {
+    b = a^b;
+    a = a^b;
+    b = a^b;
+  }
+  if (a>c)
+    median = a;
+  else if (b>c)
+    median = c;
+  else 
+    median = b;
+
+  printf("%d is the median\n", median);
+
+  return(0);
+
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+/* In the buggy function, the temp variable is not necessary and the else if statement is not correct.
+   It should be re-written as: */
+
+int main(void) {
+  int a, b, c, median;
+  median = 0;
+  printf("Please enter 3 numbers separated by spaces > ");
+  scanf ("%d%d%d", &a, &b, &c);
+
+  if (a>b) {
+    b = a^b;
+    a = a^b;
+    b = a^b;
+  }
+  if (a>c)
+    median = a;
+  else if (b>c)
+    median = c;
+  else 
+    median = b;
+
+  printf("%d is the median\n", median);
+
+  return(0);
+
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+/* In the buggy function, the temp variable is not necessary and the else if statement is not correct.
+   It should be re-written as: */
+
+int main(void) {
+  int a, b, c, median;
+  median = 0;
+  printf("Please enter 3 numbers separated by spaces > ");
+  scanf ("%d%d%d", &a, &b, &c);
+
+  if (a>b) {
+    b = a^b;
+    a = a^b;
+    b = a^b;
+  }
+  if (a>c)
+    median = a;
+  else if (b>c)
+    median = c;
+  else 
+    median = b;
+
+  printf("%d is the median\n", median);
+
+  return(0);
+
+}
+
+/* Provide a fix for the buggy function */

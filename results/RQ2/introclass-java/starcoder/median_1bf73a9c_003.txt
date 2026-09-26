@@ -1,0 +1,68 @@
+No.4 Patch
+public void exec () throws Exception {
+    IntObj first = new IntObj (), second = new IntObj (), third =
+        new IntObj (), median = new IntObj ();
+    output +=
+        (String.format ("Please enter 3 numbers separated by spaces > "));
+    first.value = scanner.nextInt ();
+    second.value = scanner.nextInt ();
+    third.value = scanner.nextInt ();
+    if (first.value < second.value && first.value < third.value) {
+        if (second.value < third.value) {
+            median.value = second.value;
+        } else {
+            median.value = third.value;
+        }
+    } else if (second.value < first.value && second.value < third.value) {
+        if (first.value < third.value) {
+            median.value = first.value;
+        } else {
+            median.value = third.value;
+        }
+    } else {
+        if (first.value < second.value) {
+            median.value = first.value;
+        } else {
+            median.value = second.value;
+        }
+    }
+    output += (String.format ("%d is the median\n", median.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+public void exec () throws Exception {
+    IntObj first = new IntObj (), second = new IntObj (), third =
+        new IntObj (), median = new IntObj ();
+    output +=
+        (String.format ("Please enter 3 numbers separated by spaces > "));
+    first.value = scanner.nextInt ();
+    second.value = scanner.nextInt ();
+    third.value = scanner.nextInt ();
+    if (first.value < second.value && first.value < third.value) {
+        if (second.value < third.value) {
+            median.value = second.value;
+        } else {
+            median.value = third.value;
+        }
+    } else if (second.value < first.value && second.value < third.value) {
+        if (first.value < third.value) {
+            median.value = first.value;
+        } else {
+            median.value = third.value;
+        }
+    } else {
+        if (first.value < second.value) {
+            median.value = first.value;
+        } else {
+            median.value = second.value;
+        }
+    }
+    output += (String.format ("%d is the median\n", median.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */

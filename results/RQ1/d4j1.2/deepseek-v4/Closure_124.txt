@@ -1,0 +1,15 @@
+No.0 Patch
+private boolean isSafeReplacement(Node node, Node replacement) {
+    if (node.isName()) {
+      return true;
+    }
+    Preconditions.checkArgument(node.isGetProp());
+    Node current = node;
+    while (current.isGetProp()) {
+      current = current.getFirstChild();
+    }
+    if (current.isName() && isNameAssignedTo(current.getString(), replacement)) {
+      return false;
+    }
+    return true;
+}

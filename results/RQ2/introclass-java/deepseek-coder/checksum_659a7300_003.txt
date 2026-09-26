@@ -1,0 +1,190 @@
+No.0 Patch
+public void exec () throws Exception {
+    char[] string;
+    IntObj count = new IntObj (), i = new IntObj ();
+    output +=
+        (String.format
+         ("Enter an abitrarily long string, ending with carriage return > "));
+    string = scanner.nextLine ().toCharArray ();
+    count.value = 0;
+    for (i.value = 0; i.value != string.length; ++i.value) {
+        count.value += (int) string[i.value];
+    }
+    count.value = count.value % 64 + ' ';
+    output += (String.format ("Check sum is %c\n", count.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.1 Patch
+public void exec () throws Exception {
+    char[] string;
+    IntObj count = new IntObj (), i = new IntObj ();
+    output +=
+        (String.format
+         ("Enter an abitrarily long string, ending with carriage return > "));
+    string = scanner.nextLine ().toCharArray ();
+    count.value = 0;
+    for (i.value = 0; i.value != string.length; ++i.value) {
+        count.value += (int) string[i.value];
+    }
+    count.value = count.value % 64 + ' ';
+    output += (String.format ("Check sum is %c\n", count.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+public void exec () throws Exception {
+    char[] string;
+    IntObj count = new IntObj (), i = new IntObj ();
+    output +=
+        (String.format
+         ("Enter an abitrarily long string, ending with carriage return > "));
+    string = scanner.nextLine ().toCharArray ();
+    count.value = 0;
+    for (i.value = 0; i.value != string.length; ++i.value) {
+        count.value += (int) string[i.value];
+    }
+    count.value = count.value % 64 + ' ';
+    output += (String.format ("Check sum is %c\n", count.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+public void exec () throws Exception {
+    char[] string;
+    IntObj count = new IntObj (), i = new IntObj ();
+    output +=
+        (String.format
+         ("Enter an abitrarily long string, ending with carriage return > "));
+    string = scanner.nextLine ().toCharArray ();
+    count.value = 0;
+    for (i.value = 0; i.value != string.length; ++i.value) {
+        count.value += (int) string[i.value];
+    }
+    count.value = count.value % 64 + ' ';
+    output += (String.format ("Check sum is %c\n", count.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+public void exec () throws Exception {
+    char[] string;
+    IntObj count = new IntObj (), i = new IntObj ();
+    output +=
+        (String.format
+         ("Enter an abitrarily long string, ending with carriage return > "));
+    string = scanner.nextLine ().toCharArray ();
+    count.value = 0;
+    for (i.value = 0; i.value != string.length; ++i.value) {
+        count.value += (int) string[i.value];
+    }
+    count.value = count.value % 64 + ' ';
+    output += (String.format ("Check sum is %c\n", count.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+public void exec () throws Exception {
+    char[] string;
+    IntObj count = new IntObj (), i = new IntObj ();
+    output +=
+        (String.format
+         ("Enter an abitrarily long string, ending with carriage return > "));
+    string = scanner.nextLine ().toCharArray ();
+    count.value = 0;
+    for (i.value = 0; i.value != string.length; ++i.value) {
+        count.value += (int) string[i.value];
+    }
+    count.value = count.value % 64 + ' ';
+    output += (String.format ("Check sum is %c\n", count.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+public void exec () throws Exception {
+    char[] string;
+    IntObj count = new IntObj (), i = new IntObj ();
+    output +=
+        (String.format
+         ("Enter an abitrarily long string, ending with carriage return > "));
+    string = scanner.nextLine ().toCharArray ();
+    count.value = 0;
+    for (i.value = 0; i.value != string.length; ++i.value) {
+        count.value += (int) string[i.value];
+    }
+    count.value = count.value % 64 + ' ';
+    output += (String.format ("Check sum is %c\n", count.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+public void exec () throws Exception {
+    char[] string;
+    IntObj count = new IntObj (), i = new IntObj ();
+    output +=
+        (String.format
+         ("Enter an abitrarily long string, ending with carriage return > "));
+    string = scanner.nextLine ().toCharArray ();
+    count.value = 0;
+    for (i.value = 0; i.value != string.length; ++i.value) {
+        count.value += (int) string[i.value];
+    }
+    count.value = count.value % 64 + ' ';
+    output += (String.format ("Check sum is %c\n", count.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+public void exec () throws Exception {
+    char[] string;
+    IntObj count = new IntObj (), i = new IntObj ();
+    output +=
+        (String.format
+         ("Enter an abitrarily long string, ending with carriage return > "));
+    string = scanner.nextLine ().toCharArray ();
+    count.value = 0;
+    for (i.value = 0; i.value != string.length; ++i.value) {
+        count.value += (int) string[i.value];
+    }
+    count.value = count.value % 64 + ' ';
+    output += (String.format ("Check sum is %c\n", count.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+public void exec () throws Exception {
+    char[] string;
+    IntObj count = new IntObj (), i = new IntObj ();
+    output +=
+        (String.format
+         ("Enter an abitrarily long string, ending with carriage return > "));
+    string = scanner.nextLine ().toCharArray ();
+    count.value = 0;
+    for (i.value = 0; i.value != string.length; ++i.value) {
+        count.value += (int) string[i.value];
+    }
+    count.value = count.value % 64 + ' ';
+    output += (String.format ("Check sum is %c\n", count.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */

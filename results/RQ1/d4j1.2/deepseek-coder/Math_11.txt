@@ -1,0 +1,62 @@
+No.0 Patch
+public double density(final double[] vals) throws DimensionMismatchException {
+    final int dim = getDimension();
+    if (vals.length != dim) {
+        throw new DimensionMismatchException(vals.length, dim);
+    }
+
+    double determinant = covarianceMatrixDeterminant;
+    if (determinant == 0) {
+        // handle the case where the determinant is zero (which would cause a divide by zero error)
+        // you can return 0, or throw an exception, or handle it in some other way
+        return 0;
+    }
+
+    return FastMath.pow(2 * FastMath.PI, -dim / 2.0) *
+        FastMath.pow(determinant, -0.5) *
+        getExponentTerm(vals);
+}
+No.1 Patch
+public double density(final double[] vals) throws DimensionMismatchException {
+    final int dim = getDimension();
+    if (vals.length != dim) {
+        throw new DimensionMismatchException(vals.length, dim);
+    }
+
+    return (FastMath.pow(2 * FastMath.PI, -dim / 2.0) * // ensure double division
+        FastMath.pow(covarianceMatrixDeterminant, -0.5) *
+        getExponentTerm(vals));
+}
+No.3 Patch
+public double density(final double[] vals) throws DimensionMismatchException {
+    final int dim = getDimension();
+    if (vals.length != dim) {
+        throw new DimensionMismatchException(vals.length, dim);
+    }
+
+    return FastMath.pow(2 * FastMath.PI, -0.5 * dim) *
+        FastMath.pow(covarianceMatrixDeterminant, -0.5) *
+        getExponentTerm(vals);
+}
+No.5 Patch
+public double density(final double[] vals) throws DimensionMismatchException {
+    final int dim = getDimension();
+    if (vals.length != dim) {
+        throw new DimensionMismatchException(vals.length, dim);
+    }
+
+    return Math.pow(2 * Math.PI, -dim / 2.0) *
+        Math.pow(covarianceMatrixDeterminant, -0.5) *
+        getExponentTerm(vals);
+}
+No.9 Patch
+public double density(final double[] vals) throws DimensionMismatchException {
+    final int dim = getDimension();
+    if (vals.length != dim) {
+        throw new DimensionMismatchException(vals.length, dim);
+    }
+
+    return FastMath.pow(2 * FastMath.PI, -dim / 2.0) *
+        FastMath.pow(covarianceMatrixDeterminant, -0.5) *
+        getExponentTerm(vals);
+}

@@ -1,0 +1,25 @@
+No.0 Patch
+public List<String> getMatchingOptions(String opt)
+{
+    if (opt == null) {
+        return new ArrayList<String>();
+    }
+    opt = Util.stripLeadingHyphens(opt);
+    
+    if (longOpts.containsKey(opt)) {
+        List<String> perfectMatch = new ArrayList<String>();
+        perfectMatch.add(opt);
+        return perfectMatch;
+    }
+    
+    List<String> matchingOpts = new ArrayList<String>();
+    for (String longOpt : longOpts.keySet())
+    {
+        if (longOpt.startsWith(opt))
+        {
+            matchingOpts.add(longOpt);
+        }
+    }
+    
+    return matchingOpts;
+}

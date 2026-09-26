@@ -1,0 +1,27 @@
+No.0 Patch
+#include <stdio.h>
+
+int main() {
+
+    int a, b, c, d;
+
+    printf("Please enter 4 numbers separated by spaces > ");
+    scanf("%d%d%d%d", &a, &b, &c, &d);
+
+    int smallest;
+
+    smallest = a;
+
+    if (b < smallest)
+        smallest = b;
+    if (c < smallest)
+        smallest = c;
+    if (d < smallest)
+        smallest = d;
+
+    printf("%d is the smallest\n", smallest);
+    return 0;
+
+}
+
+/* Provide a fix for the buggy function */

@@ -1,0 +1,121 @@
+No.2 Patch
+int
+main()
+{
+	int a,b,c,d,i;
+	int array[4];
+
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d %d %d %d", &array[0], &array[1], &array[2], &array[3]);
+
+for(i=0;i<4;i++)
+{
+	if(array[i] < array[0])
+		array[0] = array[i];
+
+	if(array[i] > array[i])
+		array[i] = array[i];
+}
+
+printf("%d is the smallest\n", array[0]);
+
+return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+int
+main()
+{
+	int a,b,c,d,smallest,temp;
+
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d %d %d %d", &a, &b, &c, &d);
+
+smallest = a;
+if(b < smallest)
+	smallest = b;
+if(c < smallest)
+	smallest = c;
+if(d < smallest)
+	smallest = d;
+
+printf("%d is the smallest\n", smallest);
+
+return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+int
+main()
+{
+	int a,b,c,d,smallest;
+
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d %d %d %d", &a, &b, &c, &d);
+
+if(a < b)
+	smallest = a;
+else
+	smallest = b;
+
+if(c < smallest)
+	smallest = c;
+if(d < smallest)
+	smallest = d;
+
+printf("%d is the smallest\n", smallest);
+
+return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+int
+main()
+{
+	int a,b,c,d,smallest;
+
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d %d %d %d", &a, &b, &c, &d);
+
+smallest = a;
+
+if(b < smallest)
+	smallest = b;
+if(c < smallest)
+	smallest = c;
+if(d < smallest)
+	smallest = d;
+
+printf("%d is the smallest\n", smallest);
+
+return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+int
+main()
+{
+	int a,b,c,d;
+	int smallest;
+
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d %d %d %d", &a, &b, &c, &d);
+
+smallest = a;
+if(b < smallest)
+	smallest = b;
+if(c < smallest)
+	smallest = c;
+if(d < smallest)
+	smallest = d;
+
+printf("%d is the smallest\n", smallest);
+
+return(0);
+}
+
+/* Provide a fix for the buggy function */

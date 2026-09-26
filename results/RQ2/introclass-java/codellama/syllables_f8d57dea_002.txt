@@ -1,0 +1,320 @@
+No.0 Patch
+public void exec () throws Exception {
+    char[] instring = new char[20];
+    IntObj numVowels = new IntObj (0);
+    IntObj i = new IntObj ();
+    output += (String.format ("Please enter a string > "));
+    instring = (scanner.nextLine () + "\n").toCharArray ();
+    for (i.value = 0; i.value < instring.length; i.value++) {
+        if (instring[i.value] == 'a' || instring[i.value] == 'e'
+                || instring[i.value] == 'i' || instring[i.value] == 'o'
+                || instring[i.value] == 'u' || instring[i.value] == 'y') {
+            numVowels.value += 1;
+        }
+    }
+    output +=
+        (String.format ("The number of syllables is %d.\n", numVowels.value));
+    if (true)
+        return;;
+}
+
+
+
+// CWE-127: Buffer Under-read
+// https://cwe.mitre.org/data/definitions/127.html
+
+// Test Case 1: Buffer Over-read
+//
+// The following code reads input from the user, and then reads the last 
+// character from the buffer (instring). However, there is a bug that 
+// reads the entire buffer instead of the last character.
+
+/* Provide a fix for the buggy function */
+No.1 Patch
+public void exec () throws Exception {
+    char[] instring = new char[20];
+    IntObj numVowels = new IntObj (0);
+    IntObj i = new IntObj ();
+    output += (String.format ("Please enter a string > "));
+    instring = (scanner.nextLine () + "\n").toCharArray ();
+    for (i.value = 0; i.value < instring.length; i.value++) {
+        if (instring[i.value] == 'a' || instring[i.value] == 'e'
+                || instring[i.value] == 'i' || instring[i.value] == 'o'
+                || instring[i.value] == 'u' || instring[i.value] == 'y') {
+            numVowels.value += 1;
+        }
+    }
+    output +=
+        (String.format ("The number of syllables is %d.\n", numVowels.value));
+    if (true)
+        return;;
+}
+
+
+
+// CWE-127: Buffer Under-read
+// https://cwe.mitre.org/data/definitions/127.html
+
+// Test Case 1: Buffer Over-read
+//
+// The following code reads input from the user, and then reads the last 
+// character from the buffer (instring). However, there is a bug that 
+// reads the entire buffer instead of the last character.
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+public void exec () throws Exception {
+    char[] instring = new char[20];
+    IntObj numVowels = new IntObj (0);
+    IntObj i = new IntObj ();
+    output += (String.format ("Please enter a string > "));
+    instring = (scanner.nextLine () + "\n").toCharArray ();
+    for (i.value = 0; i.value < instring.length; i.value++) {
+        if (instring[i.value] == 'a' || instring[i.value] == 'e'
+                || instring[i.value] == 'i' || instring[i.value] == 'o'
+                || instring[i.value] == 'u' || instring[i.value] == 'y') {
+            numVowels.value += 1;
+        }
+    }
+    output +=
+        (String.format ("The number of syllables is %d.\n", numVowels.value));
+    if (true)
+        return;;
+}
+
+
+
+// CWE-127: Buffer Under-read
+// https://cwe.mitre.org/data/definitions/127.html
+
+// Test Case 1: Buffer Over-read
+//
+// The following code reads input from the user, and then reads the last 
+// character from the buffer (instring). However, there is a bug that 
+// reads the entire buffer instead of the last character.
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+public void exec () throws Exception {
+    char[] instring = new char[20];
+    IntObj numVowels = new IntObj (0);
+    IntObj i = new IntObj ();
+    output += (String.format ("Please enter a string > "));
+    instring = (scanner.nextLine () + "\n").toCharArray ();
+    for (i.value = 0; i.value < instring.length; i.value++) {
+        if (instring[i.value] == 'a' || instring[i.value] == 'e'
+                || instring[i.value] == 'i' || instring[i.value] == 'o'
+                || instring[i.value] == 'u' || instring[i.value] == 'y') {
+            numVowels.value += 1;
+        }
+    }
+    output +=
+        (String.format ("The number of syllables is %d.\n", numVowels.value));
+    if (true)
+        return;;
+}
+
+
+
+// CWE-127: Buffer Under-read
+// https://cwe.mitre.org/data/definitions/127.html
+
+// Test Case 1: Buffer Over-read
+//
+// The following code reads input from the user, and then reads the last 
+// character from the buffer (instring). However, there is a bug that 
+// reads the entire buffer instead of the last character.
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+public void exec () throws Exception {
+    char[] instring = new char[20];
+    IntObj numVowels = new IntObj (0);
+    IntObj i = new IntObj ();
+    output += (String.format ("Please enter a string > "));
+    instring = (scanner.nextLine () + "\n").toCharArray ();
+    for (i.value = 0; i.value < instring.length; i.value++) {
+        if (instring[i.value] == 'a' || instring[i.value] == 'e'
+                || instring[i.value] == 'i' || instring[i.value] == 'o'
+                || instring[i.value] == 'u' || instring[i.value] == 'y') {
+            numVowels.value += 1;
+        }
+    }
+    output +=
+        (String.format ("The number of syllables is %d.\n", numVowels.value));
+    if (true)
+        return;;
+}
+
+
+
+// CWE-127: Buffer Under-read
+// https://cwe.mitre.org/data/definitions/127.html
+
+// Test Case 1: Buffer Over-read
+//
+// The following code reads input from the user, and then reads the last 
+// character from the buffer (instring). However, there is a bug that 
+// reads the entire buffer instead of the last character.
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+public void exec () throws Exception {
+    char[] instring = new char[20];
+    IntObj numVowels = new IntObj (0);
+    IntObj i = new IntObj ();
+    output += (String.format ("Please enter a string > "));
+    instring = (scanner.nextLine () + "\n").toCharArray ();
+    for (i.value = 0; i.value < instring.length; i.value++) {
+        if (instring[i.value] == 'a' || instring[i.value] == 'e'
+                || instring[i.value] == 'i' || instring[i.value] == 'o'
+                || instring[i.value] == 'u' || instring[i.value] == 'y') {
+            numVowels.value += 1;
+        }
+    }
+    output +=
+        (String.format ("The number of syllables is %d.\n", numVowels.value));
+    if (true)
+        return;;
+}
+
+
+
+// CWE-127: Buffer Under-read
+// https://cwe.mitre.org/data/definitions/127.html
+
+// Test Case 1: Buffer Over-read
+//
+// The following code reads input from the user, and then reads the last 
+// character from the buffer (instring). However, there is a bug that 
+// reads the entire buffer instead of the last character.
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+public void exec () throws Exception {
+    char[] instring = new char[20];
+    IntObj numVowels = new IntObj (0);
+    IntObj i = new IntObj ();
+    output += (String.format ("Please enter a string > "));
+    instring = (scanner.nextLine () + "\n").toCharArray ();
+    for (i.value = 0; i.value < instring.length; i.value++) {
+        if (instring[i.value] == 'a' || instring[i.value] == 'e'
+                || instring[i.value] == 'i' || instring[i.value] == 'o'
+                || instring[i.value] == 'u' || instring[i.value] == 'y') {
+            numVowels.value += 1;
+        }
+    }
+    output +=
+        (String.format ("The number of syllables is %d.\n", numVowels.value));
+    if (true)
+        return;;
+}
+
+
+
+// CWE-127: Buffer Under-read
+// https://cwe.mitre.org/data/definitions/127.html
+
+// Test Case 1: Buffer Over-read
+//
+// The following code reads input from the user, and then reads the last 
+// character from the buffer (instring). However, there is a bug that 
+// reads the entire buffer instead of the last character.
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+public void exec () throws Exception {
+    char[] instring = new char[20];
+    IntObj numVowels = new IntObj (0);
+    IntObj i = new IntObj ();
+    output += (String.format ("Please enter a string > "));
+    instring = (scanner.nextLine () + "\n").toCharArray ();
+    for (i.value = 0; i.value < instring.length; i.value++) {
+        if (instring[i.value] == 'a' || instring[i.value] == 'e'
+                || instring[i.value] == 'i' || instring[i.value] == 'o'
+                || instring[i.value] == 'u' || instring[i.value] == 'y') {
+            numVowels.value += 1;
+        }
+    }
+    output +=
+        (String.format ("The number of syllables is %d.\n", numVowels.value));
+    if (true)
+        return;;
+}
+
+
+
+// CWE-127: Buffer Under-read
+// https://cwe.mitre.org/data/definitions/127.html
+
+// Test Case 1: Buffer Over-read
+//
+// The following code reads input from the user, and then reads the last 
+// character from the buffer (instring). However, there is a bug that 
+// reads the entire buffer instead of the last character.
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+public void exec () throws Exception {
+    char[] instring = new char[20];
+    IntObj numVowels = new IntObj (0);
+    IntObj i = new IntObj ();
+    output += (String.format ("Please enter a string > "));
+    instring = (scanner.nextLine () + "\n").toCharArray ();
+    for (i.value = 0; i.value < instring.length; i.value++) {
+        if (instring[i.value] == 'a' || instring[i.value] == 'e'
+                || instring[i.value] == 'i' || instring[i.value] == 'o'
+                || instring[i.value] == 'u' || instring[i.value] == 'y') {
+            numVowels.value += 1;
+        }
+    }
+    output +=
+        (String.format ("The number of syllables is %d.\n", numVowels.value));
+    if (true)
+        return;;
+}
+
+
+
+// CWE-127: Buffer Under-read
+// https://cwe.mitre.org/data/definitions/127.html
+
+// Test Case 1: Buffer Over-read
+//
+// The following code reads input from the user, and then reads the last 
+// character from the buffer (instring). However, there is a bug that 
+// reads the entire buffer instead of the last character.
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+public void exec () throws Exception {
+    char[] instring = new char[20];
+    IntObj numVowels = new IntObj (0);
+    IntObj i = new IntObj ();
+    output += (String.format ("Please enter a string > "));
+    instring = (scanner.nextLine () + "\n").toCharArray ();
+    for (i.value = 0; i.value < instring.length; i.value++) {
+        if (instring[i.value] == 'a' || instring[i.value] == 'e'
+                || instring[i.value] == 'i' || instring[i.value] == 'o'
+                || instring[i.value] == 'u' || instring[i.value] == 'y') {
+            numVowels.value += 1;
+        }
+    }
+    output +=
+        (String.format ("The number of syllables is %d.\n", numVowels.value));
+    if (true)
+        return;;
+}
+
+
+
+// CWE-127: Buffer Under-read
+// https://cwe.mitre.org/data/definitions/127.html
+
+// Test Case 1: Buffer Over-read
+//
+// The following code reads input from the user, and then reads the last 
+// character from the buffer (instring). However, there is a bug that 
+// reads the entire buffer instead of the last character.
+
+/* Provide a fix for the buggy function */

@@ -1,0 +1,15 @@
+No.0 Patch
+static boolean preserveWhitespace(Node node) {
+        // looks only at this element and five levels up, to prevent recursion & needless stack searches
+        if (node instanceof Element) {
+            Element el = (Element) node;
+            int depth = 0;
+            do {
+                if (el.tag.preserveWhitespace())
+                    return true;
+                el = el.parent();
+                depth++;
+            } while (depth < 6 && el != null);
+        }
+        return false;
+    }

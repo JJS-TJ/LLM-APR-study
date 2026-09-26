@@ -1,0 +1,92 @@
+No.1 Patch
+int main () {
+
+  char string[sizeA];
+  int i;
+  int count = 0;
+
+  printf("Please enter a string > ");
+  fgets(string,sizeA-1,stdin);
+  
+  for (i = 0; i < strlen(string); i++){
+	if (string[i] == 'a' || string[i] == 'e' || string[i] == 'o' || string[i] == 'u' || string[i] == 'i' || string[i] == 'y')
+	{
+	count++;
+	}
+    }
+
+  printf("The number of syllables is %d.\n", count);
+
+  return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+int main () {
+
+  char string[sizeA];
+  int i;
+  int count = 0;
+
+   printf("Please enter a string > ");
+   fgets(string,sizeA-1,stdin);
+  
+  for (i = 0; i < strlen(string); i++){
+	if (string[i] == 'a' || string[i] == 'e' || string[i] == 'i' || string[i] == 'o' || string[i] == 'u' || string[i] == 'y' || string[i] == 'A' || string[i] == 'E' || string[i] == 'I' || string[i] == 'O' || string[i] == 'U' || string[i] == 'Y')
+	{
+	count++;
+	}
+    }
+
+  printf("The number of syllables is %d.\n", count);
+
+  return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+int main () {
+
+  char string[sizeA];
+  int i;
+  int count = 0;
+
+   printf("Please enter a string > ");
+   fgets(string,sizeA-1,stdin);
+  
+  for (i = 0; i < strlen(string); i++){
+	if (string[i] == 'a' || string[i] == 'e' || string[i] == 'o' || string[i] == 'u' || string[i] == 'i' || string[i] == 'y' )
+	{
+	count++;
+	}
+    }
+
+  printf("The number of syllables is %d.\n", count);
+
+  return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+int main () {
+
+  char string[sizeA];
+  int i;
+  int count = 0;
+
+  printf("Please enter a string > ");
+  fgets(string,sizeA-1,stdin);
+  
+  for (i = 0; i < strlen(string); i++){
+	if (string[i] == 'a' || string[i] == 'e' || string[i] == 'o' || string[i] == 'u' || string[i] == 'i' || string[i] == 'y')
+	{
+	count++;
+	}
+    }
+
+  printf("The number of syllables is %d.\n", count);
+
+  return 0;
+}
+
+/* Provide a fix for the buggy function */

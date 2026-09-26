@@ -1,0 +1,140 @@
+No.1 Patch
+int
+main(void){
+	float a, b, c, d;
+	
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%f %f %f %f", &a, &b, &c, &d);
+
+	if(a < b)
+		if(a < c)
+			if(a < d)
+				printf("%.0f is the smallest\n", a);
+			else printf("%.0f is the smallest\n", d);
+		else
+			if(c < d)
+				printf("%.0f is the smallest\n", c);
+			else printf("%.0f is the smallest\n", d);
+	else
+		if(b < c)
+			if(b < d)
+				printf("%.0f is the smallest\n", b);
+			else printf("%.0f is the smallest\n", d);
+		else
+			if(c < d)
+				printf("%.0f is the smallest\n", c);
+			else printf("%.0f is the smallest\n", d);
+
+	return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+int
+main(void){
+	float a, b, c, d;
+	
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%f %f %f %f", &a, &b, &c, &d);
+
+	if((a < b) && (a < c) && (a < d))
+		printf("%.0f is the smallest\n", a);
+	else if ((b < c) && (b < d))
+		printf("%.0f is the smallest\n", b);
+	else if ((c < d))
+		printf("%.0f is the smallest\n", c);
+	else printf("%.0f is the smallest\n", d);
+
+	return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+int
+main(void){
+	float a, b, c, d;
+	
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%f %f %f %f", &a, &b, &c, &d);
+
+	float smallest = a;
+	if(b < smallest)
+		smallest = b;
+	if(c < smallest)
+		smallest = c;
+	if(d < smallest)
+		smallest = d;
+	
+	printf("%.0f is the smallest\n", smallest);
+	return(0);
+}
+
+/* Explanation: 
+	This program is supposed to find the smallest number from 4 given numbers
+	The solution is to use a if-else if-else ladder, but to save some time,
+	this can be solved by using a single if statement */
+
+/* C Program to find the smallest number from 4 given numbers */
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+int
+main(void){
+	float a, b, c, d;
+	
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%f %f %f %f", &a, &b, &c, &d);
+
+	printf("%.0f is the smallest\n", (a < b)? (a < c)? (a < d)? a : d : (c < d)? c : d : (b < c)? (b < d)? b : d : (c < d)? c : d);
+
+	return(0);
+}
+
+/*
+ * <NAME>
+ * 2018-05-15
+ *
+ * 8.1.c
+ * Fixed Function
+ *
+ * A program that takes the four numbers from the user and prints the 
+ * smallest of them out.
+ *
+ * Fixed Buggy Function
+ *
+ * A program that takes the four numbers from the user and prints the 
+ * smallest of them out.
+ */
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+int
+main(void){
+	float a, b, c, d;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%f %f %f %f", &a, &b, &c, &d);
+
+	if(a < b) {
+		if(a < c) {
+			if(a < d)
+				printf("%.0f is the smallest\n", a);
+			else printf("%.0f is the smallest\n", d);
+		}
+		else if(c < d)
+			printf("%.0f is the smallest\n", c);
+		else printf("%.0f is the smallest\n", d);
+	}
+	else if(b < c) {
+		if(b < d)
+			printf("%.0f is the smallest\n", b);
+		else printf("%.0f is the smallest\n", d);
+	}
+	else if(c < d)
+		printf("%.0f is the smallest\n", c);
+	else printf("%.0f is the smallest\n", d);
+
+	return(0);
+}
+
+/* Provide a fix for the buggy function */

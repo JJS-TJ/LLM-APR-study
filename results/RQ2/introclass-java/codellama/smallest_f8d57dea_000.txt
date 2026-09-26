@@ -1,0 +1,36 @@
+No.2 Patch
+public void exec () throws Exception {
+    IntObj v1 = new IntObj (), v2 = new IntObj (), v3 = new IntObj (), v4 =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    v1.value = scanner.nextInt ();
+    v2.value = scanner.nextInt ();
+    v3.value = scanner.nextInt ();
+    v4.value = scanner.nextInt ();
+    int min = Math.min (Math.min (v1.value, v2.value),
+                        Math.min (v3.value, v4.value));
+    output += (String.format ("%d is the smallest\n", min));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+public void exec () throws Exception {
+    IntObj v1 = new IntObj (), v2 = new IntObj (), v3 = new IntObj (), v4 =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    v1.value = scanner.nextInt ();
+    v2.value = scanner.nextInt ();
+    v3.value = scanner.nextInt ();
+    v4.value = scanner.nextInt ();
+    int min = Math.min (Math.min (v1.value, v2.value),
+                        Math.min (v3.value, v4.value));
+    output += (String.format ("%d is the smallest\n", min));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */

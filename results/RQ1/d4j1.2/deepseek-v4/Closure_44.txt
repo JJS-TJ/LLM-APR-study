@@ -1,0 +1,18 @@
+No.0 Patch
+void add(String newcode) {
+    maybeEndStatement();
+
+    if (newcode.length() == 0) {
+      return;
+    }
+
+    char c = newcode.charAt(0);
+    if (c == '/' && getLastChar() == '/') {
+      append(" ");
+    } else if ((isWordChar(c) || c == '\\') &&
+        isWordChar(getLastChar())) {
+      append(" ");
+    }
+
+    append(newcode);
+  }

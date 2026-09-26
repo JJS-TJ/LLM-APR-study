@@ -1,0 +1,60 @@
+No.1 Patch
+int main(){
+int a, b, c, d, x, y;
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d %d %d %d", &a, &b, &c, &d);
+x = a;
+y = b;
+if (x>y)
+x = y;
+y = c;
+if (x>y)
+x = y;
+y = d;
+if (x>y)
+x = y;
+printf("%d is the smallest\n", x);
+return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+int main(){
+int a, b, c, d, x;
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d %d %d %d", &a, &b, &c, &d);
+x = a;
+if (x>b)
+x = b;
+if (x>c)
+x = c;
+if (x>d)
+x = d;
+printf("%d is the smallest\n", x);
+return 0;
+}
+
+/* Question 4 */
+/* Find the largest number in an array */
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+int main(){
+int a, b, c, d, x, y;
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d %d %d %d", &a, &b, &c, &d);
+x = a;
+y = b;
+if (x>y)
+x = y;
+y = c;
+if (x>y)
+x = y;
+y = d;
+if (x>y)
+x = y;
+printf("%d is the smallest\n", x);
+return 0;
+}
+
+/* Provide a fix for the buggy function */

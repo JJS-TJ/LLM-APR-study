@@ -1,0 +1,17 @@
+No.4 Patch
+int main () {
+
+    int num, digit;
+    printf("\nEnter an integer > ");
+    scanf("%d", &num);
+    do {
+        digit = num % 10;
+        if ((digit < 0) && ((num/10)!= 0))
+           digit = digit*-1;
+        printf("%d\n", digit);
+        num = num/10;
+    } while (num!= 0);
+    return 0;
+}
+
+/* Provide a fix for the buggy function */

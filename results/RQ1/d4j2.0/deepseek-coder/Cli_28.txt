@@ -1,0 +1,46 @@
+No.7 Patch
+protected void processProperties(Properties properties)
+{
+    if (properties == null)
+    {
+        return;
+    }
+
+    for (Enumeration propertyNamesEnumeration = properties.propertyNames(); propertyNamesEnumeration.hasMoreElements();)
+    {
+        String propertyName = propertyNamesEnumeration.nextElement().toString();
+
+        if (!cmd.hasOption(propertyName))
+        {
+            Option commandLineOption = getOptions().getOption(propertyName);
+
+            // get the value from the properties instance
+            String value = properties.getProperty(propertyName);
+
+            if (commandLineOption.hasArg())
+            {
+                if (commandLineOption.getValues() == null || commandLineOption.getValues().length == 0)
+                {
+                    try
+                    {
+                        commandLineOption.addValueForProcessing(value);
+                    }
+                    catch (RuntimeException exp)
+                    {
+                        // if we cannot add the value don't worry about it
+                    }
+                }
+            }
+            else if (!"yes".equalsIgnoreCase(value)
+                    && !"true".equalsIgnoreCase(value)
+                    && !"1".equalsIgnoreCase(value))
+            {
+                // if the value is not yes, true or 1 then don't add the
+                // option to the CommandLine
+                continue;
+            }
+
+            cmd.addOption(commandLineOption);
+        }
+    }
+}

@@ -1,0 +1,24 @@
+No.8 Patch
+inline void LinkReferences::visit(Reference& ope) {
+    // Check if the reference is a macro parameter
+    for (size_t i = 0; i < params_.size(); i++) {
+        const auto& param = params_[i];
+        if (param == ope.name_) {
+            ope.iarg_ = i;
+            return;
+        }
+    }
+
+    // Check if the reference is a definition rule
+    auto found_rule = grammar_.find(ope.name_);
+    if (found_rule != grammar_.end()) {
+        auto& rule = found_rule->second;
+        ope.rule_ = &rule;
+    }
+
+    for (auto arg: ope.args_) {
+        arg->accept(*this);
+    }
+}
+
+/* Provide a fix for the buggy function */

@@ -1,0 +1,4 @@
+No.0 Patch
+static boolean mayBeString(Node n, boolean recurse) {
+  return mayBeStringHelper(n);
+}

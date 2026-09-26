@@ -1,0 +1,215 @@
+No.0 Patch
+int main()
+{
+	int A, B, C, D;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i %i %i %i", &A, &B, &C, &D);
+
+	if ( A <= B && A <= C && A <= D)
+		{ printf("%i is the smallest\n", A);
+		  return 0;}
+	else if ( B <= A && B <= C && B <= D)
+		{ printf("%i is the smallest\n", B);
+		  return 0;}
+	else if ( C <= A && C <= B && C <= D)
+		{ printf("%i is the smallest\n", C);
+		  return 0;}
+	else if ( D <= A && D <= B && D <= C )
+		{ printf("%i is the smallest\n", D);
+		  return 0;}
+}
+
+/* Provide a fix for the buggy function */
+No.1 Patch
+#include<stdio.h>
+int main()
+{
+	int A, B, C, D;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i %i %i %i", &A, &B, &C, &D);
+
+	if ( A <= B && A <= C && A <= D)
+		printf("%i is the smallest\n", A);
+	else if ( B <= A && B <= C && B <= D)
+		printf("%i is the smallest\n", B);
+	else if ( C <= A && C <= B && C <= D)
+		printf("%i is the smallest\n", C);
+	else if ( D <= A && D <= B && D <= C )
+		printf("%i is the smallest\n", D);
+
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+int main()
+{
+	int A, B, C, D;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i %i %i %i", &A, &B, &C, &D);
+
+	int smallest = A;
+
+	if ( B < smallest ) smallest = B;
+	if ( C < smallest ) smallest = C;
+	if ( D < smallest ) smallest = D;
+
+	printf("%i is the smallest\n", smallest);
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+int main()
+{
+	int A, B, C, D;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i %i %i %i", &A, &B, &C, &D);
+
+	if ( A <= B && A <= C && A <= D)
+		{ printf("%i is the smallest\n", A);
+		  return 0;}
+	else if ( B <= A && B <= C && B <= D)
+		{ printf("%i is the smallest\n", B);
+		  return 0;}
+	else if ( C <= A && C <= B && C <= D)
+		{ printf("%i is the smallest\n", C);
+		  return 0;}
+	else if ( D <= A && D <= B && D <= C )
+		{ printf("%i is the smallest\n", D);
+		  return 0;}
+}
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+#include<stdio.h>
+int main()
+{
+	int A, B, C, D;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i %i %i %i", &A, &B, &C, &D);
+
+	if ( A <= B && A <= C && A <= D)
+		printf("%i is the smallest\n", A);
+	else if ( B <= A && B <= C && B <= D)
+		printf("%i is the smallest\n", B);
+	else if ( C <= A && C <= B && C <= D)
+		printf("%i is the smallest\n", C);
+	else if ( D <= A && D <= B && D <= C )
+		printf("%i is the smallest\n", D);
+
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+int main()
+{
+	int A, B, C, D;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i %i %i %i", &A, &B, &C, &D);
+
+	int smallest = A;
+
+	if ( B < smallest ) smallest = B;
+	if ( C < smallest ) smallest = C;
+	if ( D < smallest ) smallest = D;
+
+	printf("%i is the smallest\n", smallest);
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+int main()
+{
+	int A, B, C, D;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i %i %i %i", &A, &B, &C, &D);
+
+	if ( A <= B && A <= C && A <= D)
+		{ printf("%i is the smallest\n", A);
+		  return 0;}
+	else if ( B <= A && B <= C && B <= D)
+		{ printf("%i is the smallest\n", B);
+		  return 0;}
+	else if ( C <= A && C <= B && C <= D)
+		{ printf("%i is the smallest\n", C);
+		  return 0;}
+	else if ( D <= A && D <= B && D <= C )
+		{ printf("%i is the smallest\n", D);
+		  return 0;}
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+#include<stdio.h>
+int main()
+{
+	int A, B, C, D;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i %i %i %i", &A, &B, &C, &D);
+
+	if ( A <= B && A <= C && A <= D)
+		printf("%i is the smallest\n", A);
+	else if ( B <= A && B <= C && B <= D)
+		printf("%i is the smallest\n", B);
+	else if ( C <= A && C <= B && C <= D)
+		printf("%i is the smallest\n", C);
+	else if ( D <= A && D <= B && D <= C )
+		printf("%i is the smallest\n", D);
+
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+int main()
+{
+	int A, B, C, D;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i %i %i %i", &A, &B, &C, &D);
+
+	int smallest = A;
+
+	if ( B < smallest ) smallest = B;
+	if ( C < smallest ) smallest = C;
+	if ( D < smallest ) smallest = D;
+
+	printf("%i is the smallest\n", smallest);
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+int main()
+{
+	int A, B, C, D;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i %i %i %i", &A, &B, &C, &D);
+
+	if ( A <= B && A <= C && A <= D)
+		{ printf("%i is the smallest\n", A);
+		  return 0;}
+	else if ( B <= A && B <= C && B <= D)
+		{ printf("%i is the smallest\n", B);
+		  return 0;}
+	else if ( C <= A && C <= B && C <= D)
+		{ printf("%i is the smallest\n", C);
+		  return 0;}
+	else if ( D <= A && D <= B && D <= C )
+		{ printf("%i is the smallest\n", D);
+		  return 0;}
+}
+
+/* Provide a fix for the buggy function */

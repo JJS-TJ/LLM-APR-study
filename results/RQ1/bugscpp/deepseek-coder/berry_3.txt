@@ -1,0 +1,15 @@
+No.4 Patch
+static void class_inherit(bparser *parser, bexpdesc *e)
+{
+    if (next_type(parser) == OptColon) { /* ':' */
+        bexpdesc e1;
+        scan_next_token(parser); /* skip ':' */
+        expr(parser, &e1);
+        check_var(parser, &e1);
+        if (e1.v.ss.tt == ETREG) {
+            be_code_setsuper(parser->finfo, e, &e1);
+        }
+    }
+}
+
+/* Provide a fix for the buggy function */

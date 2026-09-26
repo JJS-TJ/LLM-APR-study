@@ -1,0 +1,35 @@
+No.0 Patch
+public void exec () throws Exception {
+    IntObj n = new IntObj (), temp = new IntObj (), digit = new IntObj ();
+    DoubleObj i = new DoubleObj ();
+    output += (String.format ("\nEnter an integer > "));
+    n.value = scanner.nextInt ();
+    output += (String.format ("\n"));
+    
+    if (n.value == 0) {
+        output += (String.format ("0\n"));
+        output += (String.format ("That's all, have a nice day!\n"));
+        return;
+    }
+    
+    temp.value = Math.abs (n.value);
+    i.value = Math.log10 (temp.value);
+    i.value = (int) Math.ceil (i.value);
+    if (Math.log10 (temp.value) % 1 == 0) {
+        i.value++;
+    }
+    while (n.value != 0) {
+        digit.value = n.value % 10;
+        n.value = n.value / 10;
+        if (i.value != 1) {
+            output += (String.format ("%d\n", Math.abs (digit.value)));
+        }
+        if (i.value == 1) {
+            output += (String.format ("%d\n", digit.value));
+        }
+        i.value--;
+    }
+    output += (String.format ("That's all, have a nice day!\n"));
+}
+
+/* Provide a fix for the buggy function */

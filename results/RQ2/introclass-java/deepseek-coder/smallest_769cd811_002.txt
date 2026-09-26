@@ -1,0 +1,286 @@
+No.0 Patch
+public void exec () throws Exception {
+    IntObj x = new IntObj (), y = new IntObj (), z = new IntObj (), t =
+        new IntObj (), a = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    x.value = scanner.nextInt ();
+    y.value = scanner.nextInt ();
+    z.value = scanner.nextInt ();
+    t.value = scanner.nextInt ();
+    if (x.value >= y.value) {
+        a.value = y.value;
+    } else {
+        a.value = x.value;
+    }
+    if (y.value >= z.value) {
+        if(z.value < a.value){
+            a.value = z.value;
+        }
+    }
+    if (z.value >= t.value) {
+        if(t.value < a.value){
+            a.value = t.value;
+        }
+    }
+    output += (String.format ("%d is the smallest \n", a.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.1 Patch
+public void exec () throws Exception {
+    IntObj x = new IntObj (), y = new IntObj (), z = new IntObj (), t =
+        new IntObj (), a = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    x.value = scanner.nextInt ();
+    y.value = scanner.nextInt ();
+    z.value = scanner.nextInt ();
+    t.value = scanner.nextInt ();
+    if (x.value <= y.value && x.value <= z.value && x.value <= t.value) {
+        a.value = x.value;
+    }
+    if (y.value <= x.value && y.value <= z.value && y.value <= t.value) {
+        a.value = y.value;
+    }
+    if (z.value <= x.value && z.value <= y.value && z.value <= t.value) {
+        a.value = z.value;
+    }
+    if (t.value <= x.value && t.value <= y.value && t.value <= z.value) {
+        a.value = t.value;
+    }
+    output += (String.format ("%d is the smallest \n", a.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+public void exec () throws Exception {
+    IntObj x = new IntObj (), y = new IntObj (), z = new IntObj (), t =
+        new IntObj (), a = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    x.value = scanner.nextInt ();
+    y.value = scanner.nextInt ();
+    z.value = scanner.nextInt ();
+    t.value = scanner.nextInt ();
+    a.value = x.value;
+    if (y.value < a.value) {
+        a.value = y.value;
+    }
+    if (z.value < a.value) {
+        a.value = z.value;
+    }
+    if (t.value < a.value) {
+        a.value = t.value;
+    }
+    output += (String.format ("%d is the smallest \n", a.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+public void exec () throws Exception {
+    IntObj x = new IntObj (), y = new IntObj (), z = new IntObj (), t =
+        new IntObj (), a = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    x.value = scanner.nextInt ();
+    y.value = scanner.nextInt ();
+    z.value = scanner.nextInt ();
+    t.value = scanner.nextInt ();
+    if (x.value >= y.value) {
+        a.value = y.value;
+    } else {
+        a.value = x.value;
+    }
+    if (y.value >= z.value) {
+        if(z.value < a.value){
+            a.value = z.value;
+        }
+    }
+    if (z.value >= t.value) {
+        if(t.value < a.value){
+            a.value = t.value;
+        }
+    }
+    output += (String.format ("%d is the smallest \n", a.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+public void exec () throws Exception {
+    IntObj x = new IntObj (), y = new IntObj (), z = new IntObj (), t =
+        new IntObj (), a = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    x.value = scanner.nextInt ();
+    y.value = scanner.nextInt ();
+    z.value = scanner.nextInt ();
+    t.value = scanner.nextInt ();
+    if (x.value <= y.value && x.value <= z.value && x.value <= t.value) {
+        a.value = x.value;
+    }
+    if (y.value <= x.value && y.value <= z.value && y.value <= t.value) {
+        a.value = y.value;
+    }
+    if (z.value <= x.value && z.value <= y.value && z.value <= t.value) {
+        a.value = z.value;
+    }
+    if (t.value <= x.value && t.value <= y.value && t.value <= z.value) {
+        a.value = t.value;
+    }
+    output += (String.format ("%d is the smallest \n", a.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+public void exec () throws Exception {
+    IntObj x = new IntObj (), y = new IntObj (), z = new IntObj (), t =
+        new IntObj (), a = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    x.value = scanner.nextInt ();
+    y.value = scanner.nextInt ();
+    z.value = scanner.nextInt ();
+    t.value = scanner.nextInt ();
+    a.value = x.value;
+    if (y.value < a.value) {
+        a.value = y.value;
+    }
+    if (z.value < a.value) {
+        a.value = z.value;
+    }
+    if (t.value < a.value) {
+        a.value = t.value;
+    }
+    output += (String.format ("%d is the smallest \n", a.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+public void exec () throws Exception {
+    IntObj x = new IntObj (), y = new IntObj (), z = new IntObj (), t =
+        new IntObj (), a = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    x.value = scanner.nextInt ();
+    y.value = scanner.nextInt ();
+    z.value = scanner.nextInt ();
+    t.value = scanner.nextInt ();
+    if (x.value >= y.value) {
+        a.value = y.value;
+    } else {
+        a.value = x.value;
+    }
+    if (y.value >= z.value) {
+        if(z.value < a.value){
+            a.value = z.value;
+        }
+    }
+    if (z.value >= t.value) {
+        if(t.value < a.value){
+            a.value = t.value;
+        }
+    }
+    output += (String.format ("%d is the smallest \n", a.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+public void exec () throws Exception {
+    IntObj x = new IntObj (), y = new IntObj (), z = new IntObj (), t =
+        new IntObj (), a = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    x.value = scanner.nextInt ();
+    y.value = scanner.nextInt ();
+    z.value = scanner.nextInt ();
+    t.value = scanner.nextInt ();
+    if (x.value <= y.value && x.value <= z.value && x.value <= t.value) {
+        a.value = x.value;
+    }
+    if (y.value <= x.value && y.value <= z.value && y.value <= t.value) {
+        a.value = y.value;
+    }
+    if (z.value <= x.value && z.value <= y.value && z.value <= t.value) {
+        a.value = z.value;
+    }
+    if (t.value <= x.value && t.value <= y.value && t.value <= z.value) {
+        a.value = t.value;
+    }
+    output += (String.format ("%d is the smallest \n", a.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+public void exec () throws Exception {
+    IntObj x = new IntObj (), y = new IntObj (), z = new IntObj (), t =
+        new IntObj (), a = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    x.value = scanner.nextInt ();
+    y.value = scanner.nextInt ();
+    z.value = scanner.nextInt ();
+    t.value = scanner.nextInt ();
+    a.value = x.value;
+    if (y.value < a.value) {
+        a.value = y.value;
+    }
+    if (z.value < a.value) {
+        a.value = z.value;
+    }
+    if (t.value < a.value) {
+        a.value = t.value;
+    }
+    output += (String.format ("%d is the smallest \n", a.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+public void exec () throws Exception {
+    IntObj x = new IntObj (), y = new IntObj (), z = new IntObj (), t =
+        new IntObj (), a = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    x.value = scanner.nextInt ();
+    y.value = scanner.nextInt ();
+    z.value = scanner.nextInt ();
+    t.value = scanner.nextInt ();
+    if (x.value >= y.value) {
+        a.value = y.value;
+    } else {
+        a.value = x.value;
+    }
+    if (y.value >= z.value) {
+        if(z.value < a.value){
+            a.value = z.value;
+        }
+    }
+    if (z.value >= t.value) {
+        if(t.value < a.value){
+            a.value = t.value;
+        }
+    }
+    output += (String.format ("%d is the smallest \n", a.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */

@@ -1,0 +1,14 @@
+No.0 Patch
+static boolean preserveWhitespace(Node node) {
+    int level = 0;
+    Node current = node;
+    while (current != null && current instanceof Element && level < 5) {
+        Element el = (Element) current;
+        if (el.tag.preserveWhitespace()) {
+            return true;
+        }
+        current = el.parent();
+        level++;
+    }
+    return false;
+}

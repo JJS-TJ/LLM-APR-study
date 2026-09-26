@@ -1,0 +1,88 @@
+```cpp
+/* Fixed Function */
+void Jp2Image::encodeJp2Header(const DataBuf& boxBuf,DataBuf& outBuf)
+{
+    DataBuf output(boxBuf.size_ + iccProfile_.size_ + 100); // allocate sufficient space
+    long    outlen = sizeof(Jp2BoxHeader) ; // now many bytes have we written to output?
+    long    inlen = sizeof(Jp2BoxHeader) ; // how many bytes have we read from boxBuf?
+    enforce(sizeof(Jp2BoxHeader) <= static_cast<size_t>(output.size_), Exiv2::kerCorruptedMetadata);
+    Jp2BoxHeader* pBox   = (Jp2BoxHeader*) boxBuf.pData_;
+    uint32_t      length = getLong((byte*)&pBox->length, bigEndian);
+    enforce(length <= static_cast<size_t>(output.size_), Exiv2::kerCorruptedMetadata);
+    uint32_t      count  = sizeof (Jp2BoxHeader);
+    char*         p      = (char*) boxBuf.pData_;
+    bool          bWroteColor = false ;
+
+    while ( count < length || !bWroteColor ) {
+        // only check bounds and read a sub-box header when there is actually
+        // a sub-box left to read. When count == length we're synthesizing a
+        // missing color-header box, so p+count is not a valid box to inspect.
+        if ( count < length ) {
+            enforce(sizeof(Jp2BoxHeader) <= length - count, Exiv2::kerCorruptedMetadata);
+        }
+        Jp2BoxHeader* pSubBox = (Jp2BoxHeader*) (p+count) ;
+
+        // copy data.  pointer could be into a memory mapped file which we will decode!
+        Jp2BoxHeader   subBox = *pSubBox ;
+        Jp2BoxHeader   newBox =  subBox;
+
+        if ( count < length ) {
+            subBox.length = getLong((byte*)&subBox.length, bigEndian);
+            subBox.type   = getLong((byte*)&subBox.type  , bigEndian);
+#ifdef EXIV2_DEBUG_MESSAGES
+            std::cout << "Jp2Image::encodeJp2Header subbox: "<< toAscii(subBox.type) << " length = " << subBox.length << std::endl;
+#endif
+            enforce(subBox.length > 0, Exiv2::kerCorruptedMetadata);
+            enforce(subBox.length <= length - count, Exiv2::kerCorruptedMetadata);
+            count        += subBox.length;
+            newBox.type   = subBox.type;
+        } else {
+            subBox.length=0;
+            newBox.type = kJp2BoxTypeColorHeader;
+            count = length;
+        }
+
+        uint32_t newlen = subBox.length;
+        if ( newBox.type == kJp2BoxTypeColorHeader ) {
+            bWroteColor = true ;
+            if ( ! iccProfileDefined() ) {
+                const char* pad   = "\x01\x00\x00\x00\x00\x00\x10\x00\x00\x05\x1cuuid";
+                uint32_t    psize = 15;
+                newlen            = sizeof(newBox) + psize ;
+                enforce(newlen <= static_cast<size_t>(output.size_ - outlen), Exiv2::kerCorruptedMetadata);
+                ul2Data((byte*)&newBox.length,psize      ,bigEndian);
+                ul2Data((byte*)&newBox.type  ,newBox.type,bigEndian);
+                ::memcpy(output.pData_+outlen                     ,&newBox            ,sizeof(newBox));
+                ::memcpy(output.pData_+outlen+sizeof(newBox)      ,pad                ,psize         );
+            } else {
+                const char* pad   = "\x02\x00\x00";
+                uint32_t    psize = 3;
+                newlen            = sizeof(newBox) + psize + iccProfile_.size_;
+                enforce(newlen <= static_cast<size_t>(output.size_ - outlen), Exiv2::kerCorruptedMetadata);
+                ul2Data((byte*)&newBox.length,newlen,bigEndian);
+                ul2Data((byte*)&newBox.type,newBox.type,bigEndian);
+                ::memcpy(output.pData_+outlen                     ,&newBox            ,sizeof(newBox)  );
+                ::memcpy(output.pData_+outlen+sizeof(newBox)      , pad               ,psize           );
+                ::memcpy(output.pData_+outlen+sizeof(newBox)+psize,iccProfile_.pData_,iccProfile_.size_);
+            }
+        } else {
+            enforce(newlen <= static_cast<size_t>(output.size_ - outlen), Exiv2::kerCorruptedMetadata);
+            ::memcpy(output.pData_+outlen,boxBuf.pData_+inlen,subBox.length);
+        }
+
+        outlen += newlen;
+        inlen  += subBox.length;
+    }
+
+    // allocate the correct number of bytes, copy the data and update the box header
+    outBuf.alloc(outlen);
+    ::memcpy(outBuf.pData_,output.pData_,outlen);
+    pBox   = (Jp2BoxHeader*) outBuf.pData_;
+    ul2Data((byte*)&pBox->type,kJp2BoxTypeJp2Header,bigEndian);
+    ul2Data((byte*)&pBox->length,outlen,bigEndian);
+} // Jp2Image::encodeJp2Header
+```
+
+The bug: `enforce(sizeof(Jp2BoxHeader) <= length - count, ...)` and the subsequent `pSubBox` dereference run unconditionally on every loop iteration. But the loop condition is `count < length || !bWroteColor`, so it can also run one extra time *after* `count` has already reached `length`, when there's no color-header box in the file and one needs to be synthesized. In that case `length - count` is `0`, so the enforce always fails and throws `kerCorruptedMetadata` even though the input is perfectly valid — it just lacks a color header box (a common, legal case). It also means `pSubBox` points past the valid sub-box data.
+
+The fix guards that bounds check (and the header dereference logic) with `if (count < length)`, matching the same condition already used a few lines below to decide whether to parse a real sub-box or synthesize a color-header box.

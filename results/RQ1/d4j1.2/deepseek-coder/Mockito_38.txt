@@ -1,0 +1,26 @@
+No.1 Patch
+private boolean toStringEquals(Matcher m, Object arg) {
+    return StringDescription.toString(m).equals(String.valueOf(arg));
+}
+No.2 Patch
+private boolean toStringEquals(Matcher m, Object arg) {
+    return StringDescription.toString(m).equals(arg == null ? "null" : arg.toString());
+}
+No.3 Patch
+private boolean toStringEquals(Matcher m, Object arg) {
+    if(arg == null){
+        return false;
+    }
+    return StringDescription.toString(m).equals(arg.toString());
+}
+No.6 Patch
+private boolean toStringEquals(Matcher m, Object arg) {
+    return arg != null && StringDescription.toString(m).equals(arg.toString());
+}
+No.7 Patch
+private boolean toStringEquals(Matcher m, Object arg) {
+    if (arg == null) {
+        return false;
+    }
+    return StringDescription.toString(m).equals(arg.toString());
+}

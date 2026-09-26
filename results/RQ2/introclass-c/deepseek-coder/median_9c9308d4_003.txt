@@ -1,0 +1,178 @@
+No.0 Patch
+int main () {
+
+double n1, n2, n3, median;
+
+printf("Please enter 3 numbers separated by spaces > ");
+scanf("%lf %lf %lf", &n1, &n2, &n3);
+
+if((n1 >= n2 && n1 <= n3) || (n1 <= n2 && n1 >= n3))
+median = n1;
+else if((n2 >= n1 && n2 <= n3) || (n2 <= n1 && n2 >= n3))
+median = n2;
+else if((n3 >= n1 && n3 <= n2) || (n3 <= n1 && n3 >= n2))
+median = n3;
+
+printf("%.0lf is the median\n", median);
+
+
+
+
+
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+#include <stdio.h>
+
+int main() {
+
+    double n1, n2, n3, median;
+
+    printf("Please enter 3 numbers separated by spaces > ");
+    scanf("%lf %lf %lf", &n1, &n2, &n3);
+
+    if(n1 >= n2 && n1 <= n3 || n1 >= n3 && n1 <= n2) {
+        median = n1;
+    }
+    else if(n2 >= n1 && n2 <= n3 || n2 >= n3 && n2 <= n1) {
+        median = n2;
+    }
+    else if(n3 >= n1 && n3 <= n2 || n3 >= n2 && n3 <= n1) {
+        median = n3;
+    }
+    printf("%.0lf is the median\n", median);
+
+    return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+#include <stdio.h>
+
+int main()
+{
+    double n1, n2, n3, median;
+    printf("Please enter 3 numbers separated by spaces > ");
+    scanf("%lf %lf %lf", &n1, &n2, &n3);
+    
+    if ((n1 >= n2 && n1 <= n3) || (n1 <= n2 && n1 >= n3))
+    {
+        median = n1;
+    }
+    else if ((n2 >= n1 && n2 <= n3) || (n2 <= n1 && n2 >= n3))
+    {
+        median = n2;
+    }
+    else
+    {
+        median = n3;
+    }
+    
+    printf("%.0lf is the median\n", median);
+    
+    return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+int main () {
+
+double n1, n2, n3, median;
+
+printf("Please enter 3 numbers separated by spaces > ");
+scanf("%lf %lf %lf", &n1, &n2, &n3);
+
+if((n1 >= n2 && n1 <= n3) || (n1 <= n2 && n1 >= n3))
+median = n1;
+else if((n2 >= n1 && n2 <= n3) || (n2 <= n1 && n2 >= n3))
+median = n2;
+else if((n3 >= n1 && n3 <= n2) || (n3 <= n1 && n3 >= n2))
+median = n3;
+
+printf("%.0lf is the median\n", median);
+
+
+
+
+
+}
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+#include <stdio.h>
+
+int main() {
+
+    double n1, n2, n3, median;
+
+    printf("Please enter 3 numbers separated by spaces > ");
+    scanf("%lf %lf %lf", &n1, &n2, &n3);
+
+    if(n1 >= n2 && n1 <= n3 || n1 >= n3 && n1 <= n2) {
+        median = n1;
+    }
+    else if(n2 >= n1 && n2 <= n3 || n2 >= n3 && n2 <= n1) {
+        median = n2;
+    }
+    else if(n3 >= n1 && n3 <= n2 || n3 >= n2 && n3 <= n1) {
+        median = n3;
+    }
+    printf("%.0lf is the median\n", median);
+
+    return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+#include <stdio.h>
+
+int main()
+{
+    double n1, n2, n3, median;
+    printf("Please enter 3 numbers separated by spaces > ");
+    scanf("%lf %lf %lf", &n1, &n2, &n3);
+    
+    if ((n1 >= n2 && n1 <= n3) || (n1 <= n2 && n1 >= n3))
+    {
+        median = n1;
+    }
+    else if ((n2 >= n1 && n2 <= n3) || (n2 <= n1 && n2 >= n3))
+    {
+        median = n2;
+    }
+    else
+    {
+        median = n3;
+    }
+    
+    printf("%.0lf is the median\n", median);
+    
+    return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+int main () {
+
+double n1, n2, n3, median;
+
+printf("Please enter 3 numbers separated by spaces > ");
+scanf("%lf %lf %lf", &n1, &n2, &n3);
+
+if((n1 >= n2 && n1 <= n3) || (n1 <= n2 && n1 >= n3))
+median = n1;
+else if((n2 >= n1 && n2 <= n3) || (n2 <= n1 && n2 >= n3))
+median = n2;
+else if((n3 >= n1 && n3 <= n2) || (n3 <= n1 && n3 >= n2))
+median = n3;
+
+printf("%.0lf is the median\n", median);
+
+
+
+
+
+}
+
+/* Provide a fix for the buggy function */

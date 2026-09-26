@@ -1,0 +1,66 @@
+No.1 Patch
+public void describeTo(Description description) {
+    description.appendText("same(");
+    appendQuoting(description);
+    if (wanted != null) {
+        description.appendText(wanted.toString());
+    } else {
+        description.appendText("null");
+    }
+    appendQuoting(description);
+    description.appendText(")");
+}
+No.2 Patch
+public void describeTo(Description description) {
+    description.appendText("same(");
+    appendQuoting(description);
+    description.appendText(wanted != null ? wanted.toString() : "null");
+    appendQuoting(description);
+    description.appendText(")");
+}
+No.3 Patch
+public void describeTo(Description description) {
+    description.appendText("same(");
+    if (wanted == null) {
+        description.appendText("null");
+    } else {
+        appendQuoting(description);
+        description.appendText(wanted.toString());
+        appendQuoting(description);
+    }
+    description.appendText(")");
+}
+No.4 Patch
+public void describeTo(Description description) {
+    description.appendText("same(");
+    if (wanted != null) {
+        appendQuoting(description);
+        description.appendText(wanted.toString());
+        appendQuoting(description);
+    } else {
+        description.appendText("null");
+    }
+    description.appendText(")");
+}
+No.5 Patch
+public void describeTo(Description description) {
+    description.appendText("same(");
+    if (wanted != null) {
+        appendQuoting(description);
+        description.appendText(wanted.toString());
+        appendQuoting(description);
+    }
+    description.appendText(")");
+}
+No.7 Patch
+public void describeTo(Description description) {
+    description.appendText("same(");
+    if(wanted != null) {
+        appendQuoting(description);
+        description.appendText(wanted.toString());
+        appendQuoting(description);
+    } else {
+        description.appendText("null");
+    }
+    description.appendText(")");
+}

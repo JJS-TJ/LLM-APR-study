@@ -1,0 +1,178 @@
+### Fixed Function (Buggy `Jp2Image::printStructure`)
+
+The original code had several potential issues:
+
+1. **Missing validation of box lengths** – A box length smaller than the header size (`sizeof(Jp2BoxHeader) = 8`) could lead to negative allocations or infinite loops.
+2. **Negative allocation for `rawData`** – In the UUID box handling, `box.length - sizeof(uuid) - sizeof(box)` could be negative, causing a huge allocation or crash.
+3. **Unchecked negative size for `DataBuf`** – Inside the sub-box loop, `subBox.length - sizeof(box)` could underflow if the sub-box length is less than 8.
+4. **Lack of bounds checks against the file size** – A malformed box length could cause seeks beyond the end of the file.
+
+The following fixed version adds robust size validation and throws `Error` when invalid metadata is detected.
+
+```cpp
+void Jp2Image::printStructure(std::ostream& out, PrintStructureOption option, int depth)
+{
+    if (io_->open() != 0)
+        throw Error(kerDataSourceOpenFailed, io_->path(), strError());
+
+    // Ensure that this is the correct image type
+    if (!isJp2Type(*io_, false)) {
+        if (io_->error() || io_->eof())
+            throw Error(kerFailedToReadImageData);
+        throw Error(kerNotAJpeg);
+    }
+
+    bool bPrint = option == kpsBasic || option == kpsRecursive;
+    bool bRecursive = option == kpsRecursive;
+    bool bICC = option == kpsIccProfile;
+    bool bXMP = option == kpsXMP;
+    bool bIPTCErase = option == kpsIptcErase;
+
+    if (bPrint) {
+        out << "STRUCTURE OF JPEG2000 FILE: " << io_->path() << std::endl;
+        out << " address |   length | box       | data" << std::endl;
+    }
+
+    if (bPrint || bXMP || bICC || bIPTCErase) {
+        Jp2BoxHeader box = {1, 1};
+        Jp2BoxHeader subBox = {1, 1};
+        Jp2UuidBox uuid = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+        bool bLF = false;
+
+        while (box.length && box.type != kJp2BoxTypeClose && io_->read((byte*)&box, sizeof(box)) == sizeof(box)) {
+            long position = io_->tell();
+            box.length = getLong((byte*)&box.length, bigEndian);
+            box.type = getLong((byte*)&box.type, bigEndian);
+
+            // Validate box length: must be at least header size (8) and fit in remaining file
+            if (box.length < sizeof(box) || box.length > static_cast<unsigned long>(io_->size() - position + sizeof(box))) {
+                throw Error(kerCorruptedMetadata);
+            }
+
+            if (bPrint) {
+                out << Internal::stringFormat("%8ld | %8ld | ", (size_t)(position - sizeof(box)),
+                                              (size_t)box.length)
+                    << toAscii(box.type) << "      | ";
+                bLF = true;
+                if (box.type == kJp2BoxTypeClose)
+                    lf(out, bLF);
+            }
+            if (box.type == kJp2BoxTypeClose)
+                break;
+
+            switch (box.type) {
+                case kJp2BoxTypeJp2Header: {
+                    lf(out, bLF);
+
+                    while (io_->read((byte*)&subBox, sizeof(subBox)) == sizeof(subBox) &&
+                           io_->tell() < position + (long)box.length)  // don't read beyond the box!
+                    {
+                        int address = io_->tell() - sizeof(subBox);
+                        subBox.length = getLong((byte*)&subBox.length, bigEndian);
+                        subBox.type = getLong((byte*)&subBox.type, bigEndian);
+
+                        // Validate sub-box length
+                        if (subBox.length < sizeof(subBox) || subBox.length > io_->size() - io_->tell() + sizeof(subBox)) {
+                            throw Error(kerCorruptedMetadata);
+                        }
+
+                        DataBuf data(subBox.length - sizeof(box));  // safe because subBox.length >= 8
+                        io_->read(data.pData_, data.size_);
+                        if (bPrint) {
+                            out << Internal::stringFormat("%8ld | %8ld |  sub:", (size_t)address,
+                                                          (size_t)subBox.length)
+                                << toAscii(subBox.type) << " | "
+                                << Internal::binaryToString(makeSlice(data, 0, 30));
+                            bLF = true;
+                        }
+
+                        if (subBox.type == kJp2BoxTypeColorHeader) {
+                            long pad = 3;  // don't know why there are 3 padding bytes
+                            if (bPrint) {
+                                out << " | pad:";
+                                for (int i = 0; i < 3; i++)
+                                    out << " " << (int)data.pData_[i];
+                            }
+                            long iccLength = getULong(data.pData_ + pad, bigEndian);
+                            if (bPrint) {
+                                out << " | iccLength:" << iccLength;
+                            }
+                            if (bICC) {
+                                out.write((const char*)data.pData_ + pad, iccLength);
+                            }
+                        }
+                        lf(out, bLF);
+                    }
+                } break;
+
+                case kJp2BoxTypeUuid: {
+                    if (io_->read((byte*)&uuid, sizeof(uuid)) == sizeof(uuid)) {
+                        bool bIsExif = memcmp(uuid.uuid, kJp2UuidExif, sizeof(uuid)) == 0;
+                        bool bIsIPTC = memcmp(uuid.uuid, kJp2UuidIptc, sizeof(uuid)) == 0;
+                        bool bIsXMP = memcmp(uuid.uuid, kJp2UuidXmp, sizeof(uuid)) == 0;
+
+                        bool bUnknown = !(bIsExif || bIsIPTC || bIsXMP);
+
+                        if (bPrint) {
+                            if (bIsExif)
+                                out << "Exif: ";
+                            if (bIsIPTC)
+                                out << "IPTC: ";
+                            if (bIsXMP)
+                                out << "XMP : ";
+                            if (bUnknown)
+                                out << "????: ";
+                        }
+
+                        // Validate that UUID box contains enough data after header and UUID
+                        long dataSize = box.length - sizeof(uuid) - sizeof(box);
+                        if (dataSize < 0) {
+                            throw Error(kerCorruptedMetadata);
+                        }
+
+                        DataBuf rawData;
+                        rawData.alloc(dataSize);
+                        long bufRead = io_->read(rawData.pData_, rawData.size_);
+                        if (io_->error())
+                            throw Error(kerFailedToReadImageData);
+                        if (bufRead != rawData.size_)
+                            throw Error(kerInputDataReadFailed);
+
+                        if (bPrint) {
+                            out << Internal::binaryToString(makeSlice(rawData, 0, 40));
+                            out.flush();
+                        }
+                        lf(out, bLF);
+
+                        if (bIsExif && bRecursive && rawData.size_ > 0) {
+                            if ((rawData.pData_[0] == rawData.pData_[1]) &&
+                                (rawData.pData_[0] == 'I' || rawData.pData_[0] == 'M')) {
+                                BasicIo::UniquePtr p = BasicIo::UniquePtr(new MemIo(rawData.pData_, rawData.size_));
+                                printTiffStructure(*p, out, option, depth);
+                            }
+                        }
+
+                        if (bIsIPTC && bRecursive) {
+                            IptcData::printStructure(out, makeSlice(rawData.pData_, 0, rawData.size_), depth);
+                        }
+
+                        if (bIsXMP && bXMP) {
+                            out.write((const char*)rawData.pData_, rawData.size_);
+                        }
+                    }
+                } break;
+
+                default:
+                    break;
+            }
+
+            // Move to the next box.
+            io_->seek(static_cast<long>(position - sizeof(box) + box.length), BasicIo::beg);
+            if (io_->error())
+                throw Error(kerFailedToReadImageData);
+            if (bPrint)
+                lf(out, bLF);
+        }
+    }
+}
+```

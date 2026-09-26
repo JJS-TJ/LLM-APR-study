@@ -1,0 +1,43 @@
+The third function `_yr_scan_wicompare` has a bug: it compares only the **low byte** of each wide (UTF‑16) character with the narrow string's byte, without verifying that the **high byte** is zero. This can cause false matches when the wide string contains characters with non-zero high bytes (e.g., Unicode letters that are not plain ASCII). Additionally, it may incorrectly accept non-ASCII wide characters whose low byte coincidentally matches the ASCII lowercase of the narrow character.
+
+**Fix:** Before comparing the low byte, check that the high byte (`s1[1]`) is zero. If not, stop the comparison (the strings do not match). Also, the check `data_size < string_length * 2` is correct because each wide character occupies 2 bytes.
+
+The corrected function:
+
+```c
+static int _yr_scan_wicompare(
+    const uint8_t* data,
+    size_t data_size,
+    uint8_t* string,
+    size_t string_length)
+{
+  const uint8_t* s1 = data;
+  const uint8_t* s2 = string;
+
+  size_t i = 0;
+
+  if (data_size < string_length * 2)
+    return 0;
+
+  while (i < string_length)
+  {
+    // Ensure the high byte is zero (plain ASCII in UTF-16LE)
+    if (s1[1] != 0)
+      return 0;
+
+    if (yr_lowercase[*s1] != yr_lowercase[*s2])
+      return 0;
+
+    s1 += 2;
+    s2++;
+    i++;
+  }
+
+  return (int) (i * 2);
+}
+```
+
+**Explanation of changes:**
+- Added `if (s1[1] != 0) return 0;` inside the loop to reject any wide character with a non‑zero high byte.
+- Moved the case‑insensitive comparison to inside the loop after the high‑byte check, and simplified the loop condition (no need for the comma operator in the original buggy version).
+- The return value remains `i * 2` (total bytes matched) when all characters are equal, or `0` otherwise.

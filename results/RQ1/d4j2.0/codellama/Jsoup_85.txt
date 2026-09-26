@@ -1,0 +1,7 @@
+No.2 Patch
+public Attribute(String key, String val, Attributes parent) {
+    this.key = Attributes.checkNotNull(key).trim();
+    Validate.notEmpty(this.key); // trimming could potentially make empty, so validate here
+    this.val = val;
+    this.parent = parent;
+}

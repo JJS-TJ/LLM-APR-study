@@ -1,0 +1,9 @@
+No.3 Patch
+public JSType caseObjectType(ObjectType type) {
+  if (value.equals("function")) {
+    JSType ctorType = getNativeType(U2U_CONSTRUCTOR_TYPE);
+    return resultEqualsValue && ctorType.isSubtype(type) ? ctorType : type;
+      // If ctorType is a subtype of type, return ctorType, otherwise return type
+  }
+  return matchesExpectation("object") ? type : null;
+}

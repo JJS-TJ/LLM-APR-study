@@ -1,0 +1,12 @@
+```cpp
+/* Fixed Function */
+  template <typename T = Ast> parser &enable_ast() {
+    for (auto &x : *grammar_) {
+      auto &rule = x.second;
+      if (!rule.action) { add_ast_action<T>(rule); }
+    }
+    return *this;
+  }
+```
+
+The bug is that `add_ast_action` is a template and must be called with the explicit template argument `T`: `add_ast_action<T>(rule)`.

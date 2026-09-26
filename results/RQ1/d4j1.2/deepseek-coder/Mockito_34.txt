@@ -1,0 +1,48 @@
+No.3 Patch
+public void captureArgumentsFrom(Invocation i) {
+    int k = 0;
+    for (Matcher m : matchers) {
+        if (m instanceof CapturesArguments && k < i.getArguments().length) {
+            ((CapturesArguments) m).captureFrom(i.getArguments()[k]);
+        }
+        k++;
+    }
+}
+No.5 Patch
+public void captureArgumentsFrom(Invocation i) {
+    int k = 0;
+    for (Matcher m : matchers) {
+        if (m instanceof CapturesArguments) {
+            if (k < i.getArguments().length) {
+                ((CapturesArguments) m).captureFrom(i.getArguments()[k]);
+            } else {
+                ((CapturesArguments) m).captureFrom(null); // or handle the case as you want
+            }
+        }
+        k++;
+    }
+}
+No.7 Patch
+public void captureArgumentsFrom(Invocation i) {
+    int k = 0;
+    for (Matcher m : matchers) {
+        if (m instanceof CapturesArguments && i.getArguments().length > k) {
+            ((CapturesArguments) m).captureFrom(i.getArguments()[k]);
+        }
+        k++;
+    }
+}
+No.8 Patch
+public void captureArgumentsFrom(Invocation i) {
+    int k = 0;
+    for (Matcher m : matchers) {
+        if (m instanceof CapturesArguments) {
+            if (k < i.getArguments().length) {
+                ((CapturesArguments) m).captureFrom(i.getArguments()[k]);
+            } else {
+                ((CapturesArguments) m).captureFrom(null);
+            }
+        }
+        k++;
+    }
+}

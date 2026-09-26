@@ -1,0 +1,257 @@
+No.0 Patch
+int main()
+{
+	int	frst,
+		scnd,
+		thrd,
+		frth,
+		smallest;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &frst, &scnd, &thrd, &frth);
+	smallest = frst;
+
+	if (scnd < smallest)
+		smallest = scnd;
+	if (thrd < smallest)
+		smallest = thrd;
+	if (frth < smallest)
+		smallest = frth;
+
+	printf("%d is the smallest\n", smallest);
+
+	return (0);
+}
+
+/* Provide a fix for the buggy function */
+No.1 Patch
+#include <stdio.h>
+
+int main()
+{
+	int	frst,
+		scnd,
+		thrd,
+		frth,
+		min;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &frst, &scnd, &thrd, &frth);
+
+	min = frst;
+	if (scnd < min)
+		min = scnd;
+	if (thrd < min)
+		min = thrd;
+	if (frth < min)
+		min = frth;
+	printf("%d is the smallest\n", min);
+
+	return (0);
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+int main()
+{
+	int	frst,
+		scnd,
+		thrd,
+		frth,
+		min;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &frst, &scnd, &thrd, &frth);
+
+	min = frst;
+	if (scnd < min)
+		min = scnd;
+	if (thrd < min)
+		min = thrd;
+	if (frth < min)
+		min = frth;
+
+	printf("%d is the smallest\n", min);
+
+	return (0);
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+int main()
+{
+	int	frst,
+		scnd,
+		thrd,
+		frth,
+		smallest;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &frst, &scnd, &thrd, &frth);
+	smallest = frst;
+
+	if (scnd < smallest)
+		smallest = scnd;
+	if (thrd < smallest)
+		smallest = thrd;
+	if (frth < smallest)
+		smallest = frth;
+
+	printf("%d is the smallest\n", smallest);
+
+	return (0);
+}
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+#include <stdio.h>
+
+int main()
+{
+	int	frst,
+		scnd,
+		thrd,
+		frth,
+		min;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &frst, &scnd, &thrd, &frth);
+
+	min = frst;
+	if (scnd < min)
+		min = scnd;
+	if (thrd < min)
+		min = thrd;
+	if (frth < min)
+		min = frth;
+	printf("%d is the smallest\n", min);
+
+	return (0);
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+int main()
+{
+	int	frst,
+		scnd,
+		thrd,
+		frth,
+		min;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &frst, &scnd, &thrd, &frth);
+
+	min = frst;
+	if (scnd < min)
+		min = scnd;
+	if (thrd < min)
+		min = thrd;
+	if (frth < min)
+		min = frth;
+
+	printf("%d is the smallest\n", min);
+
+	return (0);
+}
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+int main()
+{
+	int	frst,
+		scnd,
+		thrd,
+		frth,
+		smallest;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &frst, &scnd, &thrd, &frth);
+	smallest = frst;
+
+	if (scnd < smallest)
+		smallest = scnd;
+	if (thrd < smallest)
+		smallest = thrd;
+	if (frth < smallest)
+		smallest = frth;
+
+	printf("%d is the smallest\n", smallest);
+
+	return (0);
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+#include <stdio.h>
+
+int main()
+{
+	int	frst,
+		scnd,
+		thrd,
+		frth,
+		min;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &frst, &scnd, &thrd, &frth);
+
+	min = frst;
+	if (scnd < min)
+		min = scnd;
+	if (thrd < min)
+		min = thrd;
+	if (frth < min)
+		min = frth;
+	printf("%d is the smallest\n", min);
+
+	return (0);
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+int main()
+{
+	int	frst,
+		scnd,
+		thrd,
+		frth,
+		min;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &frst, &scnd, &thrd, &frth);
+
+	min = frst;
+	if (scnd < min)
+		min = scnd;
+	if (thrd < min)
+		min = thrd;
+	if (frth < min)
+		min = frth;
+
+	printf("%d is the smallest\n", min);
+
+	return (0);
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+int main()
+{
+	int	frst,
+		scnd,
+		thrd,
+		frth,
+		smallest;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &frst, &scnd, &thrd, &frth);
+	smallest = frst;
+
+	if (scnd < smallest)
+		smallest = scnd;
+	if (thrd < smallest)
+		smallest = thrd;
+	if (frth < smallest)
+		smallest = frth;
+
+	printf("%d is the smallest\n", smallest);
+
+	return (0);
+}
+
+/* Provide a fix for the buggy function */

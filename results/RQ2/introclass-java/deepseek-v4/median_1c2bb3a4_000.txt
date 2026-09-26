@@ -1,0 +1,20 @@
+No.0 Patch
+public void exec () throws Exception {
+    IntObj x = new IntObj (), y = new IntObj (), z = new IntObj ();
+    output +=
+        (String.format ("Please enter 3 numbers separated by spaces > "));
+    x.value = scanner.nextInt ();
+    y.value = scanner.nextInt ();
+    z.value = scanner.nextInt ();
+    int median;
+    if ((x.value <= y.value && y.value <= z.value) || (z.value <= y.value && y.value <= x.value)) {
+        median = y.value;
+    } else if ((y.value <= x.value && x.value <= z.value) || (z.value <= x.value && x.value <= y.value)) {
+        median = x.value;
+    } else {
+        median = z.value;
+    }
+    output += (String.format ("%d is the median\n", median));
+}
+
+/* Provide a fix for the buggy function */

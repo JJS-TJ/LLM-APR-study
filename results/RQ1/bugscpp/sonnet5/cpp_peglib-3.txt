@@ -1,0 +1,12 @@
+```cpp
+/* Fixed Function */
+  template <typename T = Ast> parser &enable_ast() {
+    for (auto &x : *grammar_) {
+      auto &rule = x.second;
+      if (!rule.action) { add_ast_action<T>(rule); }
+    }
+    return *this;
+  }
+```
+
+The bug: `add_ast_action(rule)` ignored the template parameter `T`, so `enable_ast<T>()` would always build the default AST type instead of the user-specified one. Passing `T` explicitly to `add_ast_action<T>` fixes it.

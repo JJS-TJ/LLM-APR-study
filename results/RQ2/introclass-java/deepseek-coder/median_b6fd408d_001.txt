@@ -1,0 +1,90 @@
+No.2 Patch
+public void exec () throws Exception {
+    IntObj n1 = new IntObj (), n2 = new IntObj (), n3 = new IntObj (), temp =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 3 numbers separated by spaces > "));
+    n1.value = scanner.nextInt ();
+    n2.value = scanner.nextInt ();
+    n3.value = scanner.nextInt ();
+    if (n2.value < n1.value) {
+        temp.value = n2.value;
+        n2.value = n1.value;
+        n1.value = temp.value;
+    }
+    if (n3.value < n1.value) {
+        temp.value = n3.value;
+        n3.value = n1.value;
+        n1.value = temp.value;
+    }
+    if (n3.value < n2.value) {
+        temp.value = n3.value;
+        n3.value = n2.value;
+        n2.value = temp.value;
+    }
+    output += (String.format ("%d is the median\n", n2.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+public void exec () throws Exception {
+    IntObj n1 = new IntObj (), n2 = new IntObj (), n3 = new IntObj (), temp =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 3 numbers separated by spaces > "));
+    n1.value = scanner.nextInt ();
+    n2.value = scanner.nextInt ();
+    n3.value = scanner.nextInt ();
+    if (n2.value < n1.value) {
+        temp.value = n2.value;
+        n2.value = n1.value;
+        n1.value = temp.value;
+    }
+    if (n3.value < n1.value) {
+        temp.value = n3.value;
+        n3.value = n1.value;
+        n1.value = temp.value;
+    }
+    if (n3.value < n2.value) {
+        temp.value = n3.value;
+        n3.value = n2.value;
+        n2.value = temp.value;
+    }
+    output += (String.format ("%d is the median\n", n2.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+public void exec () throws Exception {
+    IntObj n1 = new IntObj (), n2 = new IntObj (), n3 = new IntObj (), temp =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 3 numbers separated by spaces > "));
+    n1.value = scanner.nextInt ();
+    n2.value = scanner.nextInt ();
+    n3.value = scanner.nextInt ();
+    if (n2.value < n1.value) {
+        temp.value = n2.value;
+        n2.value = n1.value;
+        n1.value = temp.value;
+    }
+    if (n3.value < n1.value) {
+        temp.value = n3.value;
+        n3.value = n1.value;
+        n1.value = temp.value;
+    }
+    if (n3.value < n2.value) {
+        temp.value = n3.value;
+        n3.value = n2.value;
+        n2.value = temp.value;
+    }
+    output += (String.format ("%d is the median\n", n2.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */

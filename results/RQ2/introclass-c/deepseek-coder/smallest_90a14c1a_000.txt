@@ -1,0 +1,66 @@
+No.2 Patch
+int main()
+{
+
+	int one, two, three, four, smallest;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &one, &two, &three, &four);
+
+	smallest = one;
+
+	if (two < smallest)
+		smallest = two;
+	if (three < smallest)
+		smallest = three;
+	if (four < smallest)
+		smallest = four;
+
+	printf("%d is the smallest\n", smallest);
+	return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+int main()
+{
+
+	int one, two, three, four, smallest;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &one, &two, &three, &four);
+
+	smallest = one;
+
+	if (two < smallest)
+		smallest = two;
+	if (three < smallest)
+		smallest = three;
+	if (four < smallest)
+		smallest = four;
+
+	printf("%d is the smallest\n", smallest);
+	return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+int main()
+{
+
+	int one, two, three, four, smallest;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &one, &two, &three, &four);
+
+	smallest = one;
+
+	if (two < smallest)
+		smallest = two;
+	if (three < smallest)
+		smallest = three;
+	if (four < smallest)
+		smallest = four;
+
+	printf("%d is the smallest\n", smallest);
+	return(0);
+}
+
+/* Provide a fix for the buggy function */

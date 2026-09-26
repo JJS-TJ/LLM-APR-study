@@ -1,0 +1,85 @@
+No.2 Patch
+public void exec () throws Exception {
+    output += ("Please enter 4 numbers separated by spaces > ");
+    int firstNumber = scanner.nextInt ();
+    int secondNumber = scanner.nextInt ();
+    int thirdNumber = scanner.nextInt ();
+    int fourthNumber = scanner.nextInt ();
+    if (firstNumber < secondNumber) {
+        if (firstNumber < thirdNumber) {
+            if (firstNumber < fourthNumber) {
+                output += (String.format ("%d is the smallest\n",
+                        firstNumber));
+            } else {
+                output += (String.format ("%d is the smallest\n",
+                        fourthNumber));
+            }
+        } else if (thirdNumber < fourthNumber) {
+            output += (String.format ("%d is the smallest\n", thirdNumber));
+        } else {
+            output += (String.format ("%d is the smallest\n", fourthNumber));
+        }
+    } else if (secondNumber < thirdNumber) {
+        if (secondNumber < fourthNumber) {
+            output += (String.format ("%d is the smallest\n",
+                    secondNumber));
+        } else {
+            output += (String.format ("%d is the smallest\n",
+                    fourthNumber));
+        }
+    } else if (thirdNumber < fourthNumber) {
+        output += (String.format ("%d is the smallest\n", thirdNumber));
+    } else {
+        output += (String.format ("%d is the smallest\n", fourthNumber));
+    }
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+public void exec () throws Exception {
+    IntObj one = new IntObj (), two = new IntObj (), three =
+        new IntObj (), four = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    one.value = scanner.nextInt ();
+    two.value = scanner.nextInt ();
+    three.value = scanner.nextInt ();
+    four.value = scanner.nextInt ();
+    if (one.value > two.value) {
+        int temp = one.value;
+        one.value = two.value;
+        two.value = temp;
+    }
+    if (one.value > three.value) {
+        int temp = one.value;
+        one.value = three.value;
+        three.value = temp;
+    }
+    if (one.value > four.value) {
+        int temp = one.value;
+        one.value = four.value;
+        four.value = temp;
+    }
+    if (two.value > three.value) {
+        int temp = two.value;
+        two.value = three.value;
+        three.value = temp;
+    }
+    if (two.value > four.value) {
+        int temp = two.value;
+        two.value = four.value;
+        four.value = temp;
+    }
+    if (three.value > four.value) {
+        int temp = three.value;
+        three.value = four.value;
+        four.value = temp;
+    }
+    output += (String.format ("%d is the smallest\n", one.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */

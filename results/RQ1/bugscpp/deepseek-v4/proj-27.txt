@@ -1,0 +1,187 @@
+The bug in the `buildProjectedCRS` function is that the ESRI-style name substitution block uses `cartesianCS` (via `cartesianCS->axisList()`) **before** it is guaranteed to be non-null. The `cartesianCS` pointer may be `nullptr` at that point if the coordinate system node is missing or not a CartesianCS. Later in the function, there is a special case block that creates a proper `cartesianCS` for certain methods, but this block occurs **after** the ESRI block. This leads to a potential null-pointer dereference.
+
+**Fix:** Move the ESRI name substitution block **after** the special case block that ensures `cartesianCS` is non-null (or at least after it has been set appropriately). This preserves the logic while avoiding a crash.
+
+```cpp
+ProjectedCRSNNPtr
+WKTParser::Private::buildProjectedCRS(const WKTNodeNNPtr &node) {
+
+    const auto *nodeP = node->GP();
+    auto &conversionNode = nodeP->lookForChild(WKTConstants::CONVERSION);
+    auto &projectionNode = nodeP->lookForChild(WKTConstants::PROJECTION);
+    if (isNull(conversionNode) && isNull(projectionNode)) {
+        ThrowMissing(WKTConstants::CONVERSION);
+    }
+
+    auto &baseGeodCRSNode =
+        nodeP->lookForChild(WKTConstants::BASEGEODCRS,
+                            WKTConstants::BASEGEOGCRS, WKTConstants::GEOGCS);
+    if (isNull(baseGeodCRSNode)) {
+        throw ParsingException(
+            "Missing BASEGEODCRS / BASEGEOGCRS / GEOGCS node");
+    }
+    auto baseGeodCRS = buildGeodeticCRS(baseGeodCRSNode);
+
+    auto props = buildProperties(node);
+
+    auto &csNode = nodeP->lookForChild(WKTConstants::CS_);
+    const auto &nodeValue = nodeP->value();
+    if (isNull(csNode) && !ci_equal(nodeValue, WKTConstants::PROJCS) &&
+        !ci_equal(nodeValue, WKTConstants::BASEPROJCRS)) {
+        ThrowMissing(WKTConstants::CS_);
+    }
+    auto cs = buildCS(csNode, node, UnitOfMeasure::NONE);
+    auto cartesianCS = nn_dynamic_pointer_cast<CartesianCS>(cs);
+
+    const std::string projCRSName = stripQuotes(nodeP->children()[0]);
+    // ---- The ESRI block is moved down to after cartesianCS is ensured non-null ----
+
+    if (isNull(conversionNode) && hasWebMercPROJ4String(node, projectionNode)) {
+        toWGS84Parameters_.clear();
+        return createPseudoMercator(props);
+    }
+
+    // WGS_84_Pseudo_Mercator: Particular case for corrupted ESRI WKT generated
+    // by older GDAL versions
+    // https://trac.osgeo.org/gdal/changeset/30732
+    // WGS_1984_Web_Mercator: deprecated ESRI:102113
+    if (metadata::Identifier::isEquivalentName(projCRSName.c_str(),
+                                               "WGS_84_Pseudo_Mercator") ||
+        metadata::Identifier::isEquivalentName(projCRSName.c_str(),
+                                               "WGS_1984_Web_Mercator")) {
+        toWGS84Parameters_.clear();
+        return createPseudoMercator(props);
+    }
+
+    auto linearUnit = buildUnitInSubNode(node, UnitOfMeasure::Type::LINEAR);
+    auto angularUnit = baseGeodCRS->coordinateSystem()->axisList()[0]->unit();
+
+    auto conversion =
+        !isNull(conversionNode)
+            ? buildConversion(conversionNode, linearUnit, angularUnit)
+            : buildProjection(node, projectionNode, linearUnit, angularUnit);
+
+    // No explicit AXIS node ? (WKT1)
+    if (isNull(nodeP->lookForChild(WKTConstants::AXIS))) {
+        props.set("IMPLICIT_CS", true);
+    }
+
+    if (isNull(csNode) && node->countChildrenOfName(WKTConstants::AXIS) == 0) {
+
+        const auto methodCode = conversion->method()->getEPSGCode();
+        // Krovak south oriented ?
+        if (methodCode == EPSG_CODE_METHOD_KROVAK) {
+            cartesianCS =
+                CartesianCS::create(
+                    PropertyMap(),
+                    CoordinateSystemAxis::create(
+                        util::PropertyMap().set(IdentifiedObject::NAME_KEY,
+                                                AxisName::Southing),
+                        emptyString, AxisDirection::SOUTH, linearUnit),
+                    CoordinateSystemAxis::create(
+                        util::PropertyMap().set(IdentifiedObject::NAME_KEY,
+                                                AxisName::Westing),
+                        emptyString, AxisDirection::WEST, linearUnit))
+                    .as_nullable();
+        } else if (methodCode ==
+                       EPSG_CODE_METHOD_POLAR_STEREOGRAPHIC_VARIANT_A ||
+                   methodCode ==
+                       EPSG_CODE_METHOD_LAMBERT_AZIMUTHAL_EQUAL_AREA) {
+            // It is likely that the ESRI definition of EPSG:32661 (UPS North) &
+            // EPSG:32761 (UPS South) uses the easting-northing order, instead
+            // of the EPSG northing-easting order.
+            // Same for WKT1_GDAL
+            const double lat0 = conversion->parameterValueNumeric(
+                EPSG_CODE_PARAMETER_LATITUDE_OF_NATURAL_ORIGIN,
+                common::UnitOfMeasure::DEGREE);
+            if (std::fabs(lat0 - 90) < 1e-10) {
+                cartesianCS =
+                    CartesianCS::createNorthPoleEastingSouthNorthingSouth(
+                        linearUnit)
+                        .as_nullable();
+            } else if (std::fabs(lat0 - -90) < 1e-10) {
+                cartesianCS =
+                    CartesianCS::createSouthPoleEastingNorthNorthingNorth(
+                        linearUnit)
+                        .as_nullable();
+            }
+        } else if (methodCode ==
+                   EPSG_CODE_METHOD_POLAR_STEREOGRAPHIC_VARIANT_B) {
+            const double lat_ts = conversion->parameterValueNumeric(
+                EPSG_CODE_PARAMETER_LATITUDE_STD_PARALLEL,
+                common::UnitOfMeasure::DEGREE);
+            if (lat_ts > 0) {
+                cartesianCS =
+                    CartesianCS::createNorthPoleEastingSouthNorthingSouth(
+                        linearUnit)
+                        .as_nullable();
+            } else if (lat_ts < 0) {
+                cartesianCS =
+                    CartesianCS::createSouthPoleEastingNorthNorthingNorth(
+                        linearUnit)
+                        .as_nullable();
+            }
+        } else if (methodCode ==
+                   EPSG_CODE_METHOD_TRANSVERSE_MERCATOR_SOUTH_ORIENTATED) {
+            cartesianCS =
+                CartesianCS::createWestingSouthing(linearUnit).as_nullable();
+        }
+    }
+
+    // Move ESRI block here, after cartesianCS is potentially created/set
+    if (esriStyle_ && dbContext_) {
+        // It is likely that the ESRI definition of EPSG:32661 (UPS North) &
+        // EPSG:32761 (UPS South) uses the easting-northing order, instead
+        // of the EPSG northing-easting order
+        // so don't substitue names to avoid confusion.
+        if (projCRSName == "UPS_North") {
+            props.set(IdentifiedObject::NAME_KEY, "WGS 84 / UPS North (E,N)");
+        } else if (projCRSName == "UPS_South") {
+            props.set(IdentifiedObject::NAME_KEY, "WGS 84 / UPS South (E,N)");
+        } else {
+            std::string outTableName;
+            std::string authNameFromAlias;
+            std::string codeFromAlias;
+            auto authFactory = AuthorityFactory::create(NN_NO_CHECK(dbContext_),
+                                                        std::string());
+            auto officialName = authFactory->getOfficialNameFromAlias(
+                projCRSName, "projected_crs", "ESRI", false, outTableName,
+                authNameFromAlias, codeFromAlias);
+            if (!officialName.empty()) {
+                // Special case for https://github.com/OSGeo/PROJ/issues/2086
+                // The name of the CRS to identify is
+                // NAD_1983_HARN_StatePlane_Colorado_North_FIPS_0501
+                // whereas it should be
+                // NAD_1983_HARN_StatePlane_Colorado_North_FIPS_0501_Feet
+                constexpr double US_FOOT_CONV_FACTOR = 12.0 / 39.37;
+                // Now cartesianCS is guaranteed non-null (or will be caught later)
+                if (projCRSName.find("_FIPS_") != std::string::npos &&
+                    projCRSName.find("_Feet") == std::string::npos &&
+                    std::fabs(
+                        cartesianCS->axisList()[0]->unit().conversionToSI() -
+                        US_FOOT_CONV_FACTOR) < 1e-10 * US_FOOT_CONV_FACTOR) {
+                    auto officialNameFromFeet =
+                        authFactory->getOfficialNameFromAlias(
+                            projCRSName + "_Feet", "projected_crs", "ESRI",
+                            false, outTableName, authNameFromAlias,
+                            codeFromAlias);
+                    if (!officialNameFromFeet.empty()) {
+                        officialName = officialNameFromFeet;
+                    }
+                }
+
+                props.set(IdentifiedObject::NAME_KEY, officialName);
+            }
+        }
+    }
+
+    if (!cartesianCS) {
+        ThrowNotExpectedCSType("Cartesian");
+    }
+
+    addExtensionProj4ToProp(nodeP, props);
+
+    return ProjectedCRS::create(props, baseGeodCRS, conversion,
+                                NN_NO_CHECK(cartesianCS));
+}
+```

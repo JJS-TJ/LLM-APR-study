@@ -1,0 +1,49 @@
+No.0 Patch
+public int[] add(ReadablePartial partial, int fieldIndex, int[] values, int valueToAdd) {
+        // overridden as superclass algorithm can't handle
+        // 2004-02-29 + 48 months -> 2008-02-29 type dates
+        if (valueToAdd == 0) {
+            return values;
+        }
+        if (partial.size() > 0) {
+            // month is largest field and being added to, such as month-day
+            if (partial.getFieldType(0).equals(DateTimeFieldType.monthOfYear()) && fieldIndex == 0) {
+                // only optimize if month is first and being added to
+                int curMonth0 = partial.getValue(0) - 1;
+                int newMonth = ((curMonth0 + (valueToAdd % 12) + 12) % 12) + 1;
+                int newYear = curMonth0 + valueToAdd;
+                if (newYear < 0) {
+                    newYear = newYear / 12 - 1;
+                } else {
+                    newYear = newYear / 12;
+                }
+                int[] newValues = new int[values.length];
+                newValues[0] = newMonth;
+                if (partial.size() > 1) {
+                    // adjust day to maximum for month
+                    int maxDay = iChronology.dayOfMonth().getMaximumValue(
+                            iChronology.monthOfYear().set(
+                                    iChronology.year().set(0L, newYear), newMonth));
+                    if (values[1] > maxDay) {
+                        newValues[1] = maxDay;
+                    } else {
+                        newValues[1] = values[1];
+                    }
+                    for (int i = 2; i < values.length; i++) {
+                        newValues[i] = values[i];
+                    }
+                }
+                return newValues;
+            }
+        }
+        if (DateTimeUtils.isContiguous(partial)) {
+            long instant = 0L;
+            for (int i = 0, isize = partial.size(); i < isize; i++) {
+                instant = partial.getFieldType(i).getField(iChronology).set(instant, values[i]);
+            }
+            instant = add(instant, valueToAdd);
+            return iChronology.get(partial, instant);
+        } else {
+            return super.add(partial, fieldIndex, values, valueToAdd);
+        }
+    }

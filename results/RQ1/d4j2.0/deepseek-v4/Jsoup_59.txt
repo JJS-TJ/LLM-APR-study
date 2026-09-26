@@ -1,0 +1,29 @@
+No.0 Patch
+final void newAttribute() {
+    if (attributes == null)
+        attributes = new Attributes();
+
+    if (pendingAttributeName != null) {
+        // the tokeniser has skipped whitespace control chars, but trimming could collapse to empty for other control codes, so verify here
+        pendingAttributeName = pendingAttributeName.trim();
+        if (!pendingAttributeName.isEmpty()) {
+            Attribute attribute;
+            if (hasPendingAttributeValue) {
+                String value = pendingAttributeValue.length() > 0 ? pendingAttributeValue.toString() : pendingAttributeValueS;
+                if (value == null)
+                    value = "";
+                attribute = new Attribute(pendingAttributeName, value);
+            } else if (hasEmptyAttributeValue) {
+                attribute = new Attribute(pendingAttributeName, "");
+            } else {
+                attribute = new BooleanAttribute(pendingAttributeName);
+            }
+            attributes.put(attribute);
+        }
+    }
+    pendingAttributeName = null;
+    hasEmptyAttributeValue = false;
+    hasPendingAttributeValue = false;
+    reset(pendingAttributeValue);
+    pendingAttributeValueS = null;
+}

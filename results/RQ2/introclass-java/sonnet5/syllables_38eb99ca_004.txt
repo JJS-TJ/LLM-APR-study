@@ -1,0 +1,17 @@
+No.0 Patch
+public void exec() throws Exception {
+    IntObj count = new IntObj(0);
+    output += (String.format("Please enter a string > "));
+    String input = scanner.nextLine();
+    
+    for (int i = 0; i < input.length(); i++) {
+        char c = Character.toLowerCase(input.charAt(i));
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'y') {
+            count.value++;
+        }
+    }
+    
+    output += (String.format("The number of syllables is %d.\n", count.value));
+}
+
+/* Provide a fix for the buggy function */

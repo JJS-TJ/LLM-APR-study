@@ -1,0 +1,84 @@
+No.0 Patch
+public void exec () throws Exception {
+    IntObj x = new IntObj (), y = new IntObj (), z = new IntObj (), t =
+        new IntObj (), a = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    x.value = scanner.nextInt ();
+    y.value = scanner.nextInt ();
+    z.value = scanner.nextInt ();
+    t.value = scanner.nextInt ();
+    if (x.value < y.value) {
+        a.value = x.value;
+    } else {
+        a.value = y.value;
+    }
+    if (z.value < a.value) {
+        a.value = z.value;
+    }
+    if (t.value < a.value) {
+        a.value = t.value;
+    }
+    output += (String.format ("%d is the smallest\n", a.value));
+    if (true)
+        return;;
+}
+
+// You can also use a ternary operator to do this:
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+public void exec () throws Exception {
+    IntObj x = new IntObj (), y = new IntObj (), z = new IntObj (), t =
+        new IntObj (), a = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    x.value = scanner.nextInt ();
+    y.value = scanner.nextInt ();
+    z.value = scanner.nextInt ();
+    t.value = scanner.nextInt ();
+    a.value = x.value;
+    if (y.value < a.value) {
+        a.value = y.value;
+    }
+    if (z.value < a.value) {
+        a.value = z.value;
+    }
+    if (t.value < a.value) {
+        a.value = t.value;
+    }
+    output += (String.format ("%d is the smallest\n", a.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+public void exec () throws Exception {
+    IntObj x = new IntObj (), y = new IntObj (), z = new IntObj (), t =
+        new IntObj (), a = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    x.value = scanner.nextInt ();
+    y.value = scanner.nextInt ();
+    z.value = scanner.nextInt ();
+    t.value = scanner.nextInt ();
+    if (x.value < y.value) {
+        a.value = x.value;
+    } else {
+        a.value = y.value;
+    }
+    if (z.value < a.value) {
+        a.value = z.value;
+    }
+    if (t.value < a.value) {
+        a.value = t.value;
+    }
+    output += (String.format ("%d is the smallest\n", a.value));
+    if (true)
+        return;;
+}
+
+// You can also use a ternary operator to do this:
+
+/* Provide a fix for the buggy function */

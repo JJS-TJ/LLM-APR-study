@@ -1,0 +1,106 @@
+No.1 Patch
+public Class getGenericType(Field field) {
+    Type generic = field.getGenericType();
+    if (generic != null && generic instanceof ParameterizedType) {
+        Type actual = ((ParameterizedType) generic).getActualTypeArguments()[0];
+        if (actual instanceof Class) {
+            return (Class) actual;
+        }
+        if (actual instanceof ParameterizedType) {
+            Type actualType = ((ParameterizedType) actual).getRawType();
+            if (actualType instanceof Class) {
+                return (Class) actualType;
+            }
+        }
+        //in case of nested generics we don't go deep
+    }
+    
+    return Object.class;
+}
+No.2 Patch
+public Class getGenericType(Field field) {        
+    Type generic = field.getGenericType();
+    if (generic != null && generic instanceof ParameterizedType) {
+        Type actual = ((ParameterizedType) generic).getActualTypeArguments()[0];
+            if (actual instanceof Class) {
+                return (Class) actual;
+            }
+            else if (actual instanceof ParameterizedType) {
+                return (Class) ((ParameterizedType) actual).getRawType();
+            }
+            //in case of nested generics we don't go deep
+    }
+    
+    return Object.class;
+}
+No.4 Patch
+public Class getGenericType(Field field) {        
+    Type generic = field.getGenericType();
+    if (generic instanceof ParameterizedType) {
+        Type actual = ((ParameterizedType) generic).getActualTypeArguments()[0];
+            if (actual instanceof ParameterizedType) {
+                actual = ((ParameterizedType) actual).getRawType();
+                return (Class) actual;
+            }
+            return (Class) actual;
+            //in case of nested generics we don't go deep
+    }
+    
+    return Object.class;
+}
+No.5 Patch
+public Class getGenericType(Field field) {        
+    Type generic = field.getGenericType();
+    if (generic != null && generic instanceof ParameterizedType) {
+        Type actual = ((ParameterizedType) generic).getActualTypeArguments()[0];
+        if (actual instanceof ParameterizedType) {
+            actual = ((ParameterizedType) actual).getRawType();
+        }
+        return (Class) actual;
+        //in case of nested generics we don't go deep
+    }
+    
+    return Object.class;
+}
+No.6 Patch
+public Class getGenericType(Field field) {
+    Type generic = field.getGenericType();
+    if (generic instanceof ParameterizedType) {
+        Type actual = ((ParameterizedType) generic).getActualTypeArguments()[0];
+        if (actual instanceof ParameterizedType) {
+            actual = ((ParameterizedType) actual).getRawType();
+        }
+        return (Class) actual;
+    }
+    return Object.class;
+}
+No.8 Patch
+public Class getGenericType(Field field) {        
+    Type generic = field.getGenericType();
+    if (generic != null && generic instanceof ParameterizedType) {
+        Type actual = ((ParameterizedType) generic).getActualTypeArguments()[0];
+        if (actual instanceof Class) {
+            return (Class) actual;
+        }
+        if (actual instanceof ParameterizedType) {
+            return (Class) ((ParameterizedType) actual).getRawType();
+        }
+    }
+    
+    return Object.class;
+}
+No.9 Patch
+public Class getGenericType(Field field) {
+    Type generic = field.getGenericType();
+    if (generic != null && generic instanceof ParameterizedType) {
+        Type actual = ((ParameterizedType) generic).getActualTypeArguments()[0];
+        if (actual instanceof ParameterizedType) {
+            return (Class) ((ParameterizedType) actual).getRawType();
+        } else {
+            return (Class) actual;
+        }
+        //in case of nested generics we don't go deep
+    }
+    
+    return Object.class;
+}

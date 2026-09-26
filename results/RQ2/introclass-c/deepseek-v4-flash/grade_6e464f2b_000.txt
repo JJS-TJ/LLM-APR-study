@@ -1,0 +1,29 @@
+No.0 Patch
+int main(void){
+
+	float a,b,c,d,s;
+	char g;
+
+	printf("Enter thresholds for A, B, C, D\nin that order, decreasing percentages > ");
+	if (scanf("%f%f%f%f",&a,&b,&c,&d) != 4) return 1;
+	printf("Thank you. Now enter student score (percent) >");
+	if (scanf("%f",&s) != 1) return 1;
+
+	if (s < d)
+		printf("Student has failed the course\n");
+	else if (s < c)
+		g = 'D';
+	else if (s < b)
+		g = 'C';
+	else if (s < a)
+		g = 'B';
+	else
+		g = 'A';
+
+	if (g=='A'||g=='B'||g=='C'||g=='D')
+		printf("Student has an %c grade\n",g);
+
+	return 0;
+}
+
+/* Provide a fix for the buggy function */

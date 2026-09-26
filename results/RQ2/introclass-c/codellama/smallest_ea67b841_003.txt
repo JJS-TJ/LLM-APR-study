@@ -1,0 +1,150 @@
+No.0 Patch
+int main () {
+
+	int a, b, c, d, SN;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d %d %d %d",&a,&b,&c,&d);
+	SN=a<b ? (a<c ? (a<d ? a : d) : (c<d ? c : d)) : (b<c ? (b<d ? b : d) : (c<d ? c : d));
+	printf("%d is the smallest\n",SN);
+
+	return 0;
+}
+
+/* In a hurry? Just copy and paste the following! */
+
+/* Provide a fix for the buggy function */
+No.1 Patch
+int main () {
+
+	int a, b, c, d, SN;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d %d %d %d",&a,&b,&c,&d);
+	SN=a<b ? (a<c ? (a<d ? a : d) : (c<d ? c : d)) : (b<c ? (b<d ? b : d) : (c<d ? c : d));
+	printf("%d is the smallest\n",SN);
+
+	return 0;
+}
+
+/* In a hurry? Just copy and paste the following! */
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+int main () {
+
+	int a, b, c, d, SN;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d %d %d %d",&a,&b,&c,&d);
+	SN=a<b ? (a<c ? (a<d ? a : d) : (c<d ? c : d)) : (b<c ? (b<d ? b : d) : (c<d ? c : d));
+	printf("%d is the smallest\n",SN);
+
+	return 0;
+}
+
+/* In a hurry? Just copy and paste the following! */
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+int main () {
+
+	int a, b, c, d, SN;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d %d %d %d",&a,&b,&c,&d);
+	SN=a<b ? (a<c ? (a<d ? a : d) : (c<d ? c : d)) : (b<c ? (b<d ? b : d) : (c<d ? c : d));
+	printf("%d is the smallest\n",SN);
+
+	return 0;
+}
+
+/* In a hurry? Just copy and paste the following! */
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+int main () {
+
+	int a, b, c, d, SN;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d %d %d %d",&a,&b,&c,&d);
+	SN=a<b ? (a<c ? (a<d ? a : d) : (c<d ? c : d)) : (b<c ? (b<d ? b : d) : (c<d ? c : d));
+	printf("%d is the smallest\n",SN);
+
+	return 0;
+}
+
+/* In a hurry? Just copy and paste the following! */
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+int main () {
+
+	int a, b, c, d, SN;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d %d %d %d",&a,&b,&c,&d);
+	SN=a<b ? (a<c ? (a<d ? a : d) : (c<d ? c : d)) : (b<c ? (b<d ? b : d) : (c<d ? c : d));
+	printf("%d is the smallest\n",SN);
+
+	return 0;
+}
+
+/* In a hurry? Just copy and paste the following! */
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+int main () {
+
+	int a, b, c, d, SN;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d %d %d %d",&a,&b,&c,&d);
+	SN=a<b ? (a<c ? (a<d ? a : d) : (c<d ? c : d)) : (b<c ? (b<d ? b : d) : (c<d ? c : d));
+	printf("%d is the smallest\n",SN);
+
+	return 0;
+}
+
+/* In a hurry? Just copy and paste the following! */
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+int main () {
+
+	int a, b, c, d, SN;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d %d %d %d",&a,&b,&c,&d);
+	SN=a<b ? (a<c ? (a<d ? a : d) : (c<d ? c : d)) : (b<c ? (b<d ? b : d) : (c<d ? c : d));
+	printf("%d is the smallest\n",SN);
+
+	return 0;
+}
+
+/* In a hurry? Just copy and paste the following! */
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+int main () {
+
+	int a, b, c, d, SN;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d %d %d %d",&a,&b,&c,&d);
+	SN=a<b ? (a<c ? (a<d ? a : d) : (c<d ? c : d)) : (b<c ? (b<d ? b : d) : (c<d ? c : d));
+	printf("%d is the smallest\n",SN);
+
+	return 0;
+}
+
+/* In a hurry? Just copy and paste the following! */
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+int main () {
+
+	int a, b, c, d, SN;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d %d %d %d",&a,&b,&c,&d);
+	SN=a<b ? (a<c ? (a<d ? a : d) : (c<d ? c : d)) : (b<c ? (b<d ? b : d) : (c<d ? c : d));
+	printf("%d is the smallest\n",SN);
+
+	return 0;
+}
+
+/* In a hurry? Just copy and paste the following! */
+
+/* Provide a fix for the buggy function */

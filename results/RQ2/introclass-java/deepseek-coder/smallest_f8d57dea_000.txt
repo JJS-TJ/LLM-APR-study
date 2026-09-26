@@ -1,0 +1,225 @@
+No.0 Patch
+public void exec () throws Exception {
+    IntObj v1 = new IntObj (), v2 = new IntObj (), v3 = new IntObj (), v4 =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    v1.value = scanner.nextInt ();
+    v2.value = scanner.nextInt ();
+    v3.value = scanner.nextInt ();
+    v4.value = scanner.nextInt ();
+    int min = v1.value;
+    if (v2.value < min) min = v2.value;
+    if (v3.value < min) min = v3.value;
+    if (v4.value < min) min = v4.value;
+    output += (String.format ("%d is the smallest\n", min));
+}
+
+/* Provide a fix for the buggy function */
+No.1 Patch
+public void exec () throws Exception {
+    int v1, v2, v3, v4, smallest;
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    v1 = scanner.nextInt ();
+    v2 = scanner.nextInt ();
+    v3 = scanner.nextInt ();
+    v4 = scanner.nextInt ();
+    smallest = v1;
+    if (v2 < smallest) {
+        smallest = v2;
+    }
+    if (v3 < smallest) {
+        smallest = v3;
+    }
+    if (v4 < smallest) {
+        smallest = v4;
+    }
+    output += (String.format ("%d is the smallest\n", smallest));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+public void exec () throws Exception {
+    IntObj v1 = new IntObj (), v2 = new IntObj (), v3 = new IntObj (), v4 =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    v1.value = scanner.nextInt ();
+    v2.value = scanner.nextInt ();
+    v3.value = scanner.nextInt ();
+    v4.value = scanner.nextInt ();
+    int min = v1.value;
+    if (v2.value < min) {
+        min = v2.value;
+    }
+    if (v3.value < min) {
+        min = v3.value;
+    }
+    if (v4.value < min) {
+        min = v4.value;
+    }
+    output += (String.format ("%d is the smallest\n", min));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+public void exec () throws Exception {
+    IntObj v1 = new IntObj (), v2 = new IntObj (), v3 = new IntObj (), v4 =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    v1.value = scanner.nextInt ();
+    v2.value = scanner.nextInt ();
+    v3.value = scanner.nextInt ();
+    v4.value = scanner.nextInt ();
+    int min = v1.value;
+    if (v2.value < min) min = v2.value;
+    if (v3.value < min) min = v3.value;
+    if (v4.value < min) min = v4.value;
+    output += (String.format ("%d is the smallest\n", min));
+}
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+public void exec () throws Exception {
+    int v1, v2, v3, v4, smallest;
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    v1 = scanner.nextInt ();
+    v2 = scanner.nextInt ();
+    v3 = scanner.nextInt ();
+    v4 = scanner.nextInt ();
+    smallest = v1;
+    if (v2 < smallest) {
+        smallest = v2;
+    }
+    if (v3 < smallest) {
+        smallest = v3;
+    }
+    if (v4 < smallest) {
+        smallest = v4;
+    }
+    output += (String.format ("%d is the smallest\n", smallest));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+public void exec () throws Exception {
+    IntObj v1 = new IntObj (), v2 = new IntObj (), v3 = new IntObj (), v4 =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    v1.value = scanner.nextInt ();
+    v2.value = scanner.nextInt ();
+    v3.value = scanner.nextInt ();
+    v4.value = scanner.nextInt ();
+    int min = v1.value;
+    if (v2.value < min) {
+        min = v2.value;
+    }
+    if (v3.value < min) {
+        min = v3.value;
+    }
+    if (v4.value < min) {
+        min = v4.value;
+    }
+    output += (String.format ("%d is the smallest\n", min));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+public void exec () throws Exception {
+    IntObj v1 = new IntObj (), v2 = new IntObj (), v3 = new IntObj (), v4 =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    v1.value = scanner.nextInt ();
+    v2.value = scanner.nextInt ();
+    v3.value = scanner.nextInt ();
+    v4.value = scanner.nextInt ();
+    int min = v1.value;
+    if (v2.value < min) min = v2.value;
+    if (v3.value < min) min = v3.value;
+    if (v4.value < min) min = v4.value;
+    output += (String.format ("%d is the smallest\n", min));
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+public void exec () throws Exception {
+    int v1, v2, v3, v4, smallest;
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    v1 = scanner.nextInt ();
+    v2 = scanner.nextInt ();
+    v3 = scanner.nextInt ();
+    v4 = scanner.nextInt ();
+    smallest = v1;
+    if (v2 < smallest) {
+        smallest = v2;
+    }
+    if (v3 < smallest) {
+        smallest = v3;
+    }
+    if (v4 < smallest) {
+        smallest = v4;
+    }
+    output += (String.format ("%d is the smallest\n", smallest));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+public void exec () throws Exception {
+    IntObj v1 = new IntObj (), v2 = new IntObj (), v3 = new IntObj (), v4 =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    v1.value = scanner.nextInt ();
+    v2.value = scanner.nextInt ();
+    v3.value = scanner.nextInt ();
+    v4.value = scanner.nextInt ();
+    int min = v1.value;
+    if (v2.value < min) {
+        min = v2.value;
+    }
+    if (v3.value < min) {
+        min = v3.value;
+    }
+    if (v4.value < min) {
+        min = v4.value;
+    }
+    output += (String.format ("%d is the smallest\n", min));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+public void exec () throws Exception {
+    IntObj v1 = new IntObj (), v2 = new IntObj (), v3 = new IntObj (), v4 =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    v1.value = scanner.nextInt ();
+    v2.value = scanner.nextInt ();
+    v3.value = scanner.nextInt ();
+    v4.value = scanner.nextInt ();
+    int min = v1.value;
+    if (v2.value < min) min = v2.value;
+    if (v3.value < min) min = v3.value;
+    if (v4.value < min) min = v4.value;
+    output += (String.format ("%d is the smallest\n", min));
+}
+
+/* Provide a fix for the buggy function */

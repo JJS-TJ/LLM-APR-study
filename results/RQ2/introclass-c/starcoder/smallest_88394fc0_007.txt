@@ -1,0 +1,164 @@
+No.0 Patch
+#include <stdio.h>
+
+/* Function Declaration */
+
+int smallest(int x, int y, int z, int t);
+
+int main()
+{
+
+/* Declaring Variables */
+
+int a, b, c, d;
+
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d%d%d%d", &a, &b, &c, &d);
+
+/* Calling function */
+
+printf( "%d is the smallest number\n", smallest(a, b, c, d));
+
+return 0;
+
+}
+
+/* Function Definition */
+
+int smallest(int x, int y, int z, int t)
+{
+
+int min;
+
+min = x;
+
+if(y < min)
+   min = y;
+
+if(z < min)
+   min = z;
+
+if(t < min)
+   min = t;
+
+return min;
+
+}
+	
+	
+/* Note that to call this function we need to use its name and provide the values of the parameters that it needs to use. It's like calling the function we defined in the program before. */
+
+/* Write a program that finds the smallest number in a group of numbers. */
+
+/* Provide a fix for the buggy function */
+No.1 Patch
+int main() {
+	
+	int a, b, c, d;
+	
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &a, &b, &c, &d);
+	
+	int min = a;
+	
+	if(b < min)
+		min = b;
+		
+	if(c < min)
+		min = c;
+		
+	if(d < min)
+		min = d;
+	
+	printf( "%d is the smallest number\n", min);
+ 
+	
+	return 0;
+	
+	}
+	
+/* End of the program */
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+#include <stdio.h>
+
+/* Function Declaration */
+
+int smallest(int x, int y, int z, int t);
+
+int main()
+{
+
+/* Declaring Variables */
+
+int a, b, c, d;
+
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d%d%d%d", &a, &b, &c, &d);
+
+/* Calling function */
+
+printf( "%d is the smallest number\n", smallest(a, b, c, d));
+
+return 0;
+
+}
+
+/* Function Definition */
+
+int smallest(int x, int y, int z, int t)
+{
+
+int min;
+
+min = x;
+
+if(y < min)
+   min = y;
+
+if(z < min)
+   min = z;
+
+if(t < min)
+   min = t;
+
+return min;
+
+}
+	
+	
+/* Note that to call this function we need to use its name and provide the values of the parameters that it needs to use. It's like calling the function we defined in the program before. */
+
+/* Write a program that finds the smallest number in a group of numbers. */
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+int main() {
+	
+	int a, b, c, d;
+	
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &a, &b, &c, &d);
+	
+	int min = a;
+	
+	if(b < min)
+		min = b;
+		
+	if(c < min)
+		min = c;
+		
+	if(d < min)
+		min = d;
+	
+	printf( "%d is the smallest number\n", min);
+ 
+	
+	return 0;
+	
+	}
+	
+/* End of the program */
+
+/* Provide a fix for the buggy function */

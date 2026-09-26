@@ -1,0 +1,59 @@
+No.1 Patch
+public static boolean containsAny(CharSequence cs, char[] searchChars) {
+	if (isEmpty(cs) || ArrayUtils.isEmpty(searchChars)) {
+		return false;
+	}
+	int csLength = cs.length();
+	int searchLength = searchChars.length;
+	int csLast = csLength - 1;
+	for (int i = 0; i < csLength; i++) {
+		char ch = cs.charAt(i);
+		for (int j = 0; j < searchLength; j++) {
+			if (searchChars[j] == ch) {
+				if (Character.isHighSurrogate(ch)) {
+					if (i == csLast) {
+						// missing low surrogate, fine, like String.indexOf(String)
+						return true;
+					}
+					if (cs.charAt(i + 1) == searchChars[j]) {
+						return true;
+					}
+				} else {
+					// ch is in the Basic Multilingual Plane
+					return true;
+				}
+			}
+		}
+	}
+	return false;
+}
+No.6 Patch
+public static boolean containsAny(CharSequence cs, char[] searchChars) {
+	if (isEmpty(cs) || ArrayUtils.isEmpty(searchChars)) {
+		return false;
+	}
+	int csLength = cs.length();
+	int searchLength = searchChars.length;
+	int csLast = csLength - 1;
+	int searchLast = searchLength - 1;
+	for (int i = 0; i < csLength; i++) {
+		char ch = cs.charAt(i);
+		for (int j = 0; j < searchLength; j++) {
+			if (searchChars[j] == ch) {
+				if (Character.isHighSurrogate(ch)) {
+					if (j == searchLast) {
+						// missing low surrogate, fine, like String.indexOf(String)
+						return true;
+					}
+					if (i < csLast && searchChars[j + 1] == cs.charAt(i + 1)) {
+						return true;
+					}
+				} else {
+					// ch is in the Basic Multilingual Plane
+					return true;
+				}
+			}
+		}
+	}
+	return false;
+}

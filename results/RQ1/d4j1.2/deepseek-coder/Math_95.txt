@@ -1,0 +1,36 @@
+No.1 Patch
+protected double getInitialDomain(double p) {
+    double ret;
+    double d = getDenominatorDegreesOfFreedom();
+        // use mean
+        if (d > 2.0) {
+            ret = d / (d - 2.0);
+        } else {
+            ret = d;
+        }
+    return ret;
+}
+No.2 Patch
+protected double getInitialDomain(double p) {
+    double ret;
+    double d = getDenominatorDegreesOfFreedom();
+    if (d > 2.0) {
+        // use mean
+        ret = d / (d - 2.0);
+    } else {
+        ret = 1.0; // or any other default value that makes sense in your context
+    }
+    return ret;
+}
+No.5 Patch
+protected double getInitialDomain(double p) {
+    double ret;
+    double d = getDenominatorDegreesOfFreedom();
+    if (d > 2.0) {
+        // use mean
+        ret = d / (d - 2.0);
+    } else {
+        ret = 0.0; // or some other default value
+    }
+    return ret;
+}

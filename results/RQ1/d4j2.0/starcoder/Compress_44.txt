@@ -1,0 +1,9 @@
+No.0 Patch
+public ChecksumCalculatingInputStream(final Checksum checksum, final InputStream in) {
+    if (in == null || checksum == null) {
+        throw new NullPointerException();
+    }
+
+    this.checksum = checksum;
+    this.in = in;
+}

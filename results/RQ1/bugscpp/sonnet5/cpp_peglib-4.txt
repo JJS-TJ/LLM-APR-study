@@ -1,0 +1,31 @@
+The bug: when the reference is a macro parameter, it shouldn't also be linked to a grammar rule (they're mutually exclusive). The `grammar_.count(ope.name_)` check needs to be guarded by `!found_param`.
+
+```cpp
+inline void LinkReferences::visit(Reference& ope) {
+    // Check if the reference is a macro parameter
+    auto found_param = false;
+    for (size_t i = 0; i < params_.size(); i++) {
+        const auto& param = params_[i];
+        if (param == ope.name_) {
+            ope.iarg_ = i;
+            found_param = true;
+            break;
+        }
+    }
+
+    // Check if the reference is a definition rule
+    if (!found_param) {
+        auto it = grammar_.find(ope.name_);
+        if (it != grammar_.end()) {
+            auto& rule = it->second;
+            ope.rule_ = &rule;
+        }
+    }
+
+    for (auto arg: ope.args_) {
+        arg->accept(*this);
+    }
+}
+```
+
+Without the guard, a name that happens to match both a macro parameter and a grammar rule would get `ope.rule_` set even though it should resolve as a parameter, causing it to be treated as a rule reference instead of a parameter substitution.

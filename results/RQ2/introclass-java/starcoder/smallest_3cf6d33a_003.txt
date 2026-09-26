@@ -1,0 +1,17 @@
+No.4 Patch
+public void exec () throws Exception {
+    DoubleObj a = new DoubleObj (), b = new DoubleObj (), c =
+        new DoubleObj (), d = new DoubleObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a.value = scanner.nextDouble ();
+    b.value = scanner.nextDouble ();
+    c.value = scanner.nextDouble ();
+    d.value = scanner.nextDouble ();
+    double smallest = Math.min (Math.min (Math.min (a.value, b.value), c.value), d.value);
+    output += (String.format ("%.0f is the smallest\n", smallest));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */

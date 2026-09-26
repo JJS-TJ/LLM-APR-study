@@ -1,0 +1,200 @@
+No.0 Patch
+int main(){
+
+int a, b, c, median;
+
+printf("Please enter 3 numbers separated by spaces > ");
+scanf("%d%d%d", &a, &b, &c);
+
+if ((a<=b && b<=c) || (c<=b &&b<=a)){
+	median=b;}
+else if ((b<=c && c<=a) || (a<=c && c<=b)){
+	median=c;}
+else if ((c<=a && a<=b) || (b<=a && a<=c)){
+	median=a;}
+printf("%d is the median\n", median);
+
+return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.1 Patch
+int main(){
+
+int a, b, c, median;
+
+printf("Please enter 3 numbers separated by spaces > ");
+scanf("%d%d%d", &a, &b, &c);
+
+if ((a<=b && b<=c) || (c<=b &&b<=a)){
+	median=b;}
+else if ((b<=c && c<=a) || (a<=c && c<=b)){
+	median=c;}
+else if ((c<=a && a<=b) || (b<=a && a<=c)){
+	median=a;}
+printf("%d is the median\n", median);
+
+return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+int main(){
+
+int a, b, c, median;
+
+printf("Please enter 3 numbers separated by spaces > ");
+scanf("%d%d%d", &a, &b, &c);
+
+if ((a<=b && b<=c) || (c<=b &&b<=a)){
+	median=b;}
+else if ((b<=c && c<=a) || (a<=c && c<=b)){
+	median=c;}
+else if ((c<=a && a<=b) || (b<=a && a<=c)){
+	median=a;}
+printf("%d is the median\n", median);
+
+return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+int main(){
+
+int a, b, c, median;
+
+printf("Please enter 3 numbers separated by spaces > ");
+scanf("%d%d%d", &a, &b, &c);
+
+if ((a<=b && b<=c) || (c<=b &&b<=a)){
+	median=b;}
+else if ((b<=c && c<=a) || (a<=c && c<=b)){
+	median=c;}
+else if ((c<=a && a<=b) || (b<=a && a<=c)){
+	median=a;}
+printf("%d is the median\n", median);
+
+return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+int main(){
+
+int a, b, c, median;
+
+printf("Please enter 3 numbers separated by spaces > ");
+scanf("%d%d%d", &a, &b, &c);
+
+if ((a<=b && b<=c) || (c<=b &&b<=a)){
+	median=b;}
+else if ((b<=c && c<=a) || (a<=c && c<=b)){
+	median=c;}
+else if ((c<=a && a<=b) || (b<=a && a<=c)){
+	median=a;}
+printf("%d is the median\n", median);
+
+return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+int main(){
+
+int a, b, c, median;
+
+printf("Please enter 3 numbers separated by spaces > ");
+scanf("%d%d%d", &a, &b, &c);
+
+if ((a<=b && b<=c) || (c<=b &&b<=a)){
+	median=b;}
+else if ((b<=c && c<=a) || (a<=c && c<=b)){
+	median=c;}
+else if ((c<=a && a<=b) || (b<=a && a<=c)){
+	median=a;}
+printf("%d is the median\n", median);
+
+return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+int main(){
+
+int a, b, c, median;
+
+printf("Please enter 3 numbers separated by spaces > ");
+scanf("%d%d%d", &a, &b, &c);
+
+if ((a<=b && b<=c) || (c<=b &&b<=a)){
+	median=b;}
+else if ((b<=c && c<=a) || (a<=c && c<=b)){
+	median=c;}
+else if ((c<=a && a<=b) || (b<=a && a<=c)){
+	median=a;}
+printf("%d is the median\n", median);
+
+return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+int main(){
+
+int a, b, c, median;
+
+printf("Please enter 3 numbers separated by spaces > ");
+scanf("%d%d%d", &a, &b, &c);
+
+if ((a<=b && b<=c) || (c<=b &&b<=a)){
+	median=b;}
+else if ((b<=c && c<=a) || (a<=c && c<=b)){
+	median=c;}
+else if ((c<=a && a<=b) || (b<=a && a<=c)){
+	median=a;}
+printf("%d is the median\n", median);
+
+return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+int main(){
+
+int a, b, c, median;
+
+printf("Please enter 3 numbers separated by spaces > ");
+scanf("%d%d%d", &a, &b, &c);
+
+if ((a<=b && b<=c) || (c<=b &&b<=a)){
+	median=b;}
+else if ((b<=c && c<=a) || (a<=c && c<=b)){
+	median=c;}
+else if ((c<=a && a<=b) || (b<=a && a<=c)){
+	median=a;}
+printf("%d is the median\n", median);
+
+return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+int main(){
+
+int a, b, c, median;
+
+printf("Please enter 3 numbers separated by spaces > ");
+scanf("%d%d%d", &a, &b, &c);
+
+if ((a<=b && b<=c) || (c<=b &&b<=a)){
+	median=b;}
+else if ((b<=c && c<=a) || (a<=c && c<=b)){
+	median=c;}
+else if ((c<=a && a<=b) || (b<=a && a<=c)){
+	median=a;}
+printf("%d is the median\n", median);
+
+return 0;
+}
+
+/* Provide a fix for the buggy function */

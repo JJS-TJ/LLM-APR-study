@@ -1,0 +1,201 @@
+No.0 Patch
+public static boolean equal(GeneralPath p1, GeneralPath p2) {
+    if (p1 == null) {
+        return (p2 == null);
+    }
+    if (p2 == null) {
+        return false;
+    }
+    if (p1.getWindingRule() != p2.getWindingRule()) {
+        return false;
+    }
+    PathIterator iterator1 = p1.getPathIterator(null);
+    PathIterator iterator2 = p2.getPathIterator(null); // Corrected this line
+    double[] d1 = new double[6];
+    double[] d2 = new double[6];
+    boolean done = iterator1.isDone() && iterator2.isDone();
+    while (!done) {
+        if (iterator1.isDone() != iterator2.isDone()) {
+            return false;
+        }
+        int seg1 = iterator1.currentSegment(d1);
+        int seg2 = iterator2.currentSegment(d2);
+        if (seg1 != seg2) {
+            return false;
+        }
+        if (!Arrays.equals(d1, d2)) {
+            return false;
+        }
+        iterator1.next();
+        iterator2.next();
+        done = iterator1.isDone() && iterator2.isDone();
+    }
+    return true;
+}
+No.1 Patch
+public static boolean equal(GeneralPath p1, GeneralPath p2) {
+    if (p1 == null) {
+        return (p2 == null);
+    }
+    if (p2 == null) {
+        return false;
+    }
+    if (p1.getWindingRule() != p2.getWindingRule()) {
+        return false;
+    }
+    PathIterator iterator1 = p1.getPathIterator(null);
+    PathIterator iterator2 = p2.getPathIterator(null); // Use p2 instead of p1
+    double[] d1 = new double[6];
+    double[] d2 = new double[6];
+    boolean done1 = iterator1.isDone(); // Use separate variables for each iterator
+    boolean done2 = iterator2.isDone();
+    while (!done1 && !done2) { // Check both iterators for done
+        if (iterator1.currentSegment(d1) != iterator2.currentSegment(d2)) {
+            return false;
+        }
+        if (!Arrays.equals(d1, d2)) {
+            return false;
+        }
+        iterator1.next();
+        iterator2.next();
+        done1 = iterator1.isDone();
+        done2 = iterator2.isDone();
+    }
+    return done1 && done2; // Both iterators should be done
+}
+No.2 Patch
+public static boolean equal(GeneralPath p1, GeneralPath p2) {
+    if (p1 == null) {
+        return (p2 == null);
+    }
+    if (p2 == null) {
+        return false;
+    }
+    if (p1.getWindingRule() != p2.getWindingRule()) {
+        return false;
+    }
+    PathIterator iterator1 = p1.getPathIterator(null);
+    PathIterator iterator2 = p2.getPathIterator(null); // Changed from p1.getPathIterator(null);
+    double[] d1 = new double[6];
+    double[] d2 = new double[6];
+    boolean done = iterator1.isDone() && iterator2.isDone();
+    while (!done) {
+        if (iterator1.isDone() != iterator2.isDone()) {
+            return false;
+        }
+        int seg1 = iterator1.currentSegment(d1);
+        int seg2 = iterator2.currentSegment(d2);
+        if (seg1 != seg2) {
+            return false;
+        }
+        if (!Arrays.equals(d1, d2)) {
+            return false;
+        }
+        iterator1.next();
+        iterator2.next();
+        done = iterator1.isDone() && iterator2.isDone();
+    }
+    return true;
+}
+No.3 Patch
+public static boolean equal(GeneralPath p1, GeneralPath p2) {
+    if (p1 == null) {
+        return (p2 == null);
+    }
+    if (p2 == null) {
+        return false;
+    }
+    if (p1.getWindingRule() != p2.getWindingRule()) {
+        return false;
+    }
+    PathIterator iterator1 = p1.getPathIterator(null);
+    PathIterator iterator2 = p2.getPathIterator(null); // corrected here
+    double[] d1 = new double[6];
+    double[] d2 = new double[6];
+    boolean done = iterator1.isDone() && iterator2.isDone();
+    while (!done) {
+        if (iterator1.isDone() != iterator2.isDone()) {
+            return false;
+        }
+        int seg1 = iterator1.currentSegment(d1);
+        int seg2 = iterator2.currentSegment(d2);
+        if (seg1 != seg2) {
+            return false;
+        }
+        if (!Arrays.equals(d1, d2)) {
+            return false;
+        }
+        iterator1.next();
+        iterator2.next();
+        done = iterator1.isDone() && iterator2.isDone();
+    }
+    return true;
+}
+No.4 Patch
+public static boolean equal(GeneralPath p1, GeneralPath p2) {
+    if (p1 == null) {
+        return (p2 == null);
+    }
+    if (p2 == null) {
+        return false;
+    }
+    if (p1.getWindingRule() != p2.getWindingRule()) {
+        return false;
+    }
+    PathIterator iterator1 = p1.getPathIterator(null);
+    PathIterator iterator2 = p2.getPathIterator(null);
+    double[] d1 = new double[6];
+    double[] d2 = new double[6];
+    boolean done = iterator1.isDone() && iterator2.isDone();
+    while (!done) {
+        if (iterator1.isDone() != iterator2.isDone()) {
+            return false;
+        }
+        int seg1 = iterator1.currentSegment(d1);
+        int seg2 = iterator2.currentSegment(d2);
+        if (seg1 != seg2) {
+            return false;
+        }
+        if (!Arrays.equals(d1, d2)) {
+            return false;
+        }
+        iterator1.next();
+        iterator2.next();
+        done = iterator1.isDone() && iterator2.isDone();
+    }
+    return true;
+}
+No.6 Patch
+public static boolean equal(GeneralPath p1, GeneralPath p2) {
+    if (p1 == null) {
+        return (p2 == null);
+    }
+    if (p2 == null) {
+        return false;
+    }
+    if (p1.getWindingRule() != p2.getWindingRule()) {
+        return false;
+    }
+    PathIterator iterator1 = p1.getPathIterator(null);
+    PathIterator iterator2 = p2.getPathIterator(null); // Changed here
+    double[] d1 = new double[6];
+    double[] d2 = new double[6];
+    boolean done = iterator1.isDone() && iterator2.isDone();
+    while (!done) {
+        if (iterator1.isDone() != iterator2.isDone()) {
+            return false;
+        }
+        int seg1 = iterator1.currentSegment(d1);
+        int seg2 = iterator2.currentSegment(d2);
+        if (seg1 != seg2) {
+            return false;
+        }
+        if (!Arrays.equals(d1, d2)) {
+            return false;
+        }
+        iterator1.next();
+        iterator2.next();
+        done = iterator1.isDone() && iterator2.isDone();
+    }
+    return true;
+}

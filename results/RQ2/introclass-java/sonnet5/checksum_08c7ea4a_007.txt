@@ -1,0 +1,22 @@
+No.0 Patch
+public void exec() throws Exception {
+    char[] string = new char[1000];
+    CharObj checksumchar = new CharObj();
+    IntObj i = new IntObj(), stringlength =
+        new IntObj(), checksum_summation = new IntObj();
+    output +=
+        (String.format
+         ("Enter an abitrarily long string, ending with carriage return > "));
+    string = scanner.nextLine().toCharArray();
+    stringlength.value = string.length;
+    checksum_summation.value = 0;
+    for (i.value = 0; i.value < stringlength.value; i.value++) {
+        checksum_summation.value += (int) string[i.value];
+    }
+    checksum_summation.value %= 64;
+    checksum_summation.value += 32;
+    checksumchar.value = (char) checksum_summation.value;
+    output += (String.format("Check sum is %c\n", checksumchar.value));
+}
+
+/* Provide a fix for the buggy function */

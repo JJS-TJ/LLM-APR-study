@@ -1,0 +1,53 @@
+No.1 Patch
+private void processOptionToken(String token, boolean stopAtNonOption)
+{
+    if (options.hasOption(token))
+    {
+        currentOption = options.getOption(token);
+        tokens.add(token);
+    }
+    else if (stopAtNonOption)
+    {
+        eatTheRest = true;
+        tokens.add(token);
+    }
+    else
+    {
+        tokens.add(token);
+    }
+}
+No.2 Patch
+private void processOptionToken(String token, boolean stopAtNonOption)
+{
+    if (options.hasOption(token))
+    {
+        currentOption = options.getOption(token);
+        tokens.add(token);
+    }
+    else if (stopAtNonOption)
+    {
+        eatTheRest = true;
+        tokens.add(token);
+    }
+    else {
+        tokens.add(token);
+    }
+}
+No.9 Patch
+private void processOptionToken(String token, boolean stopAtNonOption)
+{
+    if (options.hasOption(token))
+    {
+        currentOption = options.getOption(token);
+        tokens.add(token);
+    }
+    else if (stopAtNonOption)
+    {
+        eatTheRest = true;
+        tokens.add(token);
+    }
+    else if (!stopAtNonOption)
+    {
+        tokens.add(token);
+    }
+}

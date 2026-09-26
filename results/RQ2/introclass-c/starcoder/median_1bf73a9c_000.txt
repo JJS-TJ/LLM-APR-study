@@ -1,0 +1,34 @@
+No.8 Patch
+int main() {
+
+	int first, second, third, ans;
+	
+	printf("Please enter 3 numbers separeted by spaces > ");
+	scanf("%d%d%d",&first,&second,&third);
+	
+	/* Sorting function */
+	if (first < second) {
+		if (second < third) {
+			ans = second;
+		} else if (first < third) {
+			ans = third;
+		} else {
+			ans = first;
+		}
+	} else {
+		if (first < third) {
+			ans = first;
+		} else if (second < third) {
+			ans = third;
+		} else {
+			ans = second;
+		}
+	}
+	
+	printf("%d is the median\n",ans);
+	
+	return 0;
+
+}
+
+/* Provide a fix for the buggy function */

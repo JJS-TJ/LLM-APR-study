@@ -1,0 +1,150 @@
+No.0 Patch
+public void exec () throws Exception {
+    DoubleObj num1 = new DoubleObj (), num2 = new DoubleObj (), num3 =
+        new DoubleObj (), num4 = new DoubleObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    num1.value = scanner.nextDouble ();
+    num2.value = scanner.nextDouble ();
+    num3.value = scanner.nextDouble ();
+    num4.value = scanner.nextDouble ();
+    double min = num1.value;
+    if (num2.value < min) min = num2.value;
+    if (num3.value < min) min = num3.value;
+    if (num4.value < min) min = num4.value;
+    output += (String.format ("%.0f is the smallest\n", min));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+public void exec () throws Exception {
+    DoubleObj num1 = new DoubleObj (), num2 = new DoubleObj (), num3 =
+        new DoubleObj (), num4 = new DoubleObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    num1.value = scanner.nextDouble ();
+    num2.value = scanner.nextDouble ();
+    num3.value = scanner.nextDouble ();
+    num4.value = scanner.nextDouble ();
+    double smallest = Math.min (num1.value, num2.value);
+    smallest = Math.min (smallest, num3.value);
+    smallest = Math.min (smallest, num4.value);
+    output += (String.format ("%.0f is the smallest\n", smallest));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+public void exec () throws Exception {
+    DoubleObj num1 = new DoubleObj (), num2 = new DoubleObj (), num3 =
+        new DoubleObj (), num4 = new DoubleObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    num1.value = scanner.nextDouble ();
+    num2.value = scanner.nextDouble ();
+    num3.value = scanner.nextDouble ();
+    num4.value = scanner.nextDouble ();
+    double smallest = num1.value;
+    if (num2.value < smallest) {
+        smallest = num2.value;
+    }
+    if (num3.value < smallest) {
+        smallest = num3.value;
+    }
+    if (num4.value < smallest) {
+        smallest = num4.value;
+    }
+    output += (String.format ("%.0f is the smallest\n", smallest));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+public void exec () throws Exception {
+    DoubleObj num1 = new DoubleObj (), num2 = new DoubleObj (), num3 =
+        new DoubleObj (), num4 = new DoubleObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    num1.value = scanner.nextDouble ();
+    num2.value = scanner.nextDouble ();
+    num3.value = scanner.nextDouble ();
+    num4.value = scanner.nextDouble ();
+    double min = num1.value;
+    if (num2.value < min) min = num2.value;
+    if (num3.value < min) min = num3.value;
+    if (num4.value < min) min = num4.value;
+    output += (String.format ("%.0f is the smallest\n", min));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+public void exec () throws Exception {
+    DoubleObj num1 = new DoubleObj (), num2 = new DoubleObj (), num3 =
+        new DoubleObj (), num4 = new DoubleObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    num1.value = scanner.nextDouble ();
+    num2.value = scanner.nextDouble ();
+    num3.value = scanner.nextDouble ();
+    num4.value = scanner.nextDouble ();
+    double smallest = Math.min (num1.value, num2.value);
+    smallest = Math.min (smallest, num3.value);
+    smallest = Math.min (smallest, num4.value);
+    output += (String.format ("%.0f is the smallest\n", smallest));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+public void exec () throws Exception {
+    DoubleObj num1 = new DoubleObj (), num2 = new DoubleObj (), num3 =
+        new DoubleObj (), num4 = new DoubleObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    num1.value = scanner.nextDouble ();
+    num2.value = scanner.nextDouble ();
+    num3.value = scanner.nextDouble ();
+    num4.value = scanner.nextDouble ();
+    double smallest = num1.value;
+    if (num2.value < smallest) {
+        smallest = num2.value;
+    }
+    if (num3.value < smallest) {
+        smallest = num3.value;
+    }
+    if (num4.value < smallest) {
+        smallest = num4.value;
+    }
+    output += (String.format ("%.0f is the smallest\n", smallest));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+public void exec () throws Exception {
+    DoubleObj num1 = new DoubleObj (), num2 = new DoubleObj (), num3 =
+        new DoubleObj (), num4 = new DoubleObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    num1.value = scanner.nextDouble ();
+    num2.value = scanner.nextDouble ();
+    num3.value = scanner.nextDouble ();
+    num4.value = scanner.nextDouble ();
+    double min = num1.value;
+    if (num2.value < min) min = num2.value;
+    if (num3.value < min) min = num3.value;
+    if (num4.value < min) min = num4.value;
+    output += (String.format ("%.0f is the smallest\n", min));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */

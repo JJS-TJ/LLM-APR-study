@@ -1,0 +1,39 @@
+No.3 Patch
+int main()
+{
+  int numbers[4];
+  int i, j, k, smallest, temp;
+
+  printf("Please enter 4 numbers separated by spaces > ");
+  for(i = 0; i < 4; i++)
+  {
+    scanf("%d", &numbers[i]);
+  }
+ 
+  for (k = 3; k > 0; k--)
+  {
+    for (j = 1; j <= k; j++)
+    {
+      if (numbers[j-1] > numbers[j])
+      {
+        temp = numbers[j-1];
+        numbers[j-1] = numbers[j];
+        numbers[j] = temp;
+      }
+    }
+  }
+
+  smallest = numbers[0];
+  printf("%d is the smallest\n", smallest);
+  return 0;
+}
+
+/* Explanation */
+/* There is a bug in the function we are trying to correct */
+/* The loop is not entered at all */
+/* This is because scanf is not being used */
+/* We use it in the first one, but we forgot to in the second */
+/* We can see that in the fixed version, the numbers are sorted */
+/* But scanf is still a bug */
+
+/* Provide a fix for the buggy function */

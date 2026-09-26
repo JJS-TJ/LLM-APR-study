@@ -1,0 +1,4 @@
+No.0 Patch
+public Dfp multiply(final int x) {
+            return multiply(newInstance(x));
+    }

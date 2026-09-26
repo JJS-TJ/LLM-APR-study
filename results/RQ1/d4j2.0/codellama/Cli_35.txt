@@ -1,0 +1,72 @@
+No.5 Patch
+public List<String> getMatchingOptions(String opt)
+{
+    opt = Util.stripLeadingHyphens(opt);
+    
+    List<String> matchingOpts = new ArrayList<String>();
+
+    // for a perfect match return the single option only
+
+    for (String longOpt : longOpts.keySet())
+    {
+        if (longOpt.equalsIgnoreCase(opt))
+        {
+            matchingOpts.add(longOpt);
+            break;
+        }
+        else if (longOpt.startsWith(opt))
+        {
+            matchingOpts.add(longOpt);
+        }
+    }
+    
+    return matchingOpts;
+}
+No.6 Patch
+public List<String> getMatchingOptions(String opt)
+{
+    opt = Util.stripLeadingHyphens(opt);
+    
+    List<String> matchingOpts = new ArrayList<String>();
+
+    // for a perfect match return the single option only
+
+    for (String longOpt : longOpts.keySet())
+    {
+        if (longOpt.startsWith(opt))
+        {
+            matchingOpts.add(longOpt);
+            if (longOpt.equals(opt))
+            {
+                break;
+            }
+        }
+    }
+    
+    return matchingOpts;
+}
+No.9 Patch
+public List<String> getMatchingOptions(String opt)
+{
+    opt = Util.stripLeadingHyphens(opt);
+    
+    List<String> matchingOpts = new ArrayList<String>();
+
+    // for a perfect match return the single option only
+
+    if (longOpts.containsKey(opt))
+    {
+        matchingOpts.add(opt);
+        return matchingOpts;
+    }
+    
+    for (String longOpt : longOpts.keySet())
+    {
+        if (longOpt.startsWith(opt))
+        {
+            matchingOpts.add(longOpt);
+        }
+    }
+    
+    return matchingOpts;
+}

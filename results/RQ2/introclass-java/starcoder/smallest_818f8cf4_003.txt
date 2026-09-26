@@ -1,0 +1,102 @@
+No.1 Patch
+public void exec () throws Exception {
+    IntObj num1 = new IntObj (), num2 = new IntObj (), num3 =
+        new IntObj (), num4 = new IntObj (), num_smallest = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    num1.value = scanner.nextInt ();
+    num2.value = scanner.nextInt ();
+    num3.value = scanner.nextInt ();
+    num4.value = scanner.nextInt ();
+    num_smallest.value = num1.value;
+    if (num2.value < num_smallest.value)
+        num_smallest.value = num2.value;
+    if (num3.value < num_smallest.value)
+        num_smallest.value = num3.value;
+    if (num4.value < num_smallest.value)
+        num_smallest.value = num4.value;
+    output += (String.format ("%d is the smallest\n", num_smallest.value));
+    if (true)
+        return;;
+}
+
+// What are the output of the following programs?
+// 1. output = (String.format ("%d is the smallest\n", num_smallest.value));
+// 2. output = (String.format ("%d is the smallest\n", num_smallest.value));
+// 3. output = (String.format ("%d is the smallest\n", num_smallest.value));
+// 4. output = (String.format ("%d is the smallest\n", num_smallest.value));
+
+// 1, 2, 3, and 4
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+public void exec () throws Exception {
+    IntObj num1 = new IntObj (), num2 = new IntObj (), num3 =
+        new IntObj (), num4 = new IntObj (), num_smallest = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    num1.value = scanner.nextInt ();
+    num2.value = scanner.nextInt ();
+    num3.value = scanner.nextInt ();
+    num4.value = scanner.nextInt ();
+    if ((num1.value <= num2.value) && (num1.value <= num3.value)
+            && (num1.value <= num4.value)) {
+        num_smallest.value = num1.value;
+        output += (String.format ("%d is the smallest\n", num_smallest.value));
+    } else if ((num2.value <= num1.value) && (num2.value <= num3.value)
+               && (num2.value <= num4.value)) {
+        num_smallest.value = num2.value;
+        output += (String.format ("%d is the smallest\n", num_smallest.value));
+    } else if ((num3.value <= num1.value) && (num3.value <= num2.value)
+               && (num3.value <= num4.value)) {
+        num_smallest.value = num3.value;
+        output += (String.format ("%d is the smallest\n", num_smallest.value));
+    } else if ((num4.value <= num1.value) && (num4.value <= num2.value)
+               && (num4.value <= num3.value)) {
+        num_smallest.value = num4.value;
+        output += (String.format ("%d is the smallest\n", num_smallest.value));
+    }
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+public void exec () throws Exception {
+    IntObj num1 = new IntObj (), num2 = new IntObj (), num3 =
+        new IntObj (), num4 = new IntObj (), num_smallest = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    num1.value = scanner.nextInt ();
+    num2.value = scanner.nextInt ();
+    num3.value = scanner.nextInt ();
+    num4.value = scanner.nextInt ();
+    num_smallest.value = min (num1, num2, num3, num4);
+    output += (String.format ("%d is the smallest\n", num_smallest.value));
+    if (true)
+        return;;
+}
+
+public int min (IntObj num1, IntObj num2, IntObj num3, IntObj num4) {
+    int num_smallest = 0;
+    if ((num1.value <= num2.value) && (num1.value <= num3.value)
+            && (num1.value <= num4.value)) {
+        num_smallest = num1.value;
+    } else if ((num2.value <= num1.value) && (num2.value <= num3.value)
+               && (num2.value <= num4.value)) {
+        num_smallest = num2.value;
+    } else if ((num3.value <= num1.value) && (num3.value <= num2.value)
+               && (num3.value <= num4.value)) {
+        num_smallest = num3.value;
+    } else if ((num4.value <= num1.value) && (num4.value <= num2.value)
+               && (num4.value <= num3.value)) {
+        num_smallest = num4.value;
+    }
+    return num_smallest;
+}
+
+// ---------------------------------------------------------------------
+
+// 16. Fix the bug in the following function
+
+/* Provide a fix for the buggy function */

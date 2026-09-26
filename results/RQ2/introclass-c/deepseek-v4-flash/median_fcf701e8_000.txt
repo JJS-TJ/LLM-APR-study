@@ -1,0 +1,41 @@
+No.0 Patch
+int main() {
+    int a, b, c;
+    printf("Please enter three integers separated by spaces > ");
+    scanf("%d%d%d", &a, &b, &c);
+
+    if (a < b && a < c) {
+        if (b < c) {
+            printf("%d is the median\n", b);
+        } else {
+            printf("%d is the median\n", c);
+        }
+    } else if (b < a && b < c) {
+        if (a < c) {
+            printf("%d is the median\n", a);
+        } else {
+            printf("%d is the median\n", c);
+        }
+    } else if (c < a && c < b) {
+        if (b < a) {
+            printf("%d is the median\n", b);
+        } else {
+            printf("%d is the median\n", a);
+        }
+    } else {
+        // Handle cases where numbers are equal
+        if (a == b && b == c) {
+            printf("%d is the median\n", a);
+        } else if (a == b) {
+            printf("%d is the median\n", a);
+        } else if (a == c) {
+            printf("%d is the median\n", a);
+        } else if (b == c) {
+            printf("%d is the median\n", b);
+        }
+    }
+
+    return 0;
+}
+
+/* Provide a fix for the buggy function */

@@ -1,0 +1,100 @@
+No.0 Patch
+#include <stdio.h>
+
+int main() {
+  int a, b, c, d, e;
+  printf ("Please enter 4 numbers separated by spaces > ");
+  scanf ("%d %d %d %d",&a,&b,&c,&d);
+  e=a<b? a : b;
+  e=e<c? e : c;
+  e=e<d? e : d;
+  printf("%d is the smallest\n", e);
+  return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+int main() {
+  int a, b, c, d, e;
+  printf ("Please enter 4 numbers separated by spaces > ");
+  scanf ("%d %d %d %d",&a,&b,&c,&d);
+  e = (a<b)? ((a<c)? ((a<d)? a : d) : ((c<d)? c : d)) : ((b<c)? ((b<d)? b : d) : ((c<d)? c : d));
+  printf("%d is the smallest\n", e);
+  return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+#include <stdio.h>
+int main() {
+  int a, b, c, d, e;
+  printf("Please enter 4 numbers separated by spaces > ");
+  scanf("%d %d %d %d", &a, &b, &c, &d);
+  e = a;
+  if (e > b)
+    e = b;
+  if (e > c)
+    e = c;
+  if (e > d)
+    e = d;
+  printf("%d is the smallest\n", e);
+  return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+int main() {
+  int a, b, c, d, e;
+  printf ("Please enter 4 numbers separated by spaces > ");
+  scanf ("%d %d %d %d",&a,&b,&c,&d);
+  e=a;
+  if (b<e)
+    e=b;
+  if (c<e)
+    e=c;
+  if (d<e)
+    e=d;
+  printf("%d is the smallest\n", e);
+  return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+int main() {
+  int a, b, c, d, e;
+  printf ("Please enter 4 numbers separated by spaces > ");
+  scanf ("%d %d %d %d",&a,&b,&c,&d);
+  e=a;
+  if (b<e)
+    e=b;
+  if (c<e)
+    e=c;
+  if (d<e)
+    e=d;
+  printf("%d is the smallest\n", e);
+  return 0;
+}
+
+/*
+
+Please enter 4 numbers separated by spaces > 5 7 9 1
+1 is the smallest
+
+*/
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+#include <stdio.h>
+
+int main() {
+  int a, b, c, d, e;
+  printf ("Please enter 4 numbers separated by spaces > ");
+  scanf ("%d %d %d %d",&a,&b,&c,&d);
+  e=a<b? a : b;
+  e=e<c? e : c;
+  e=e<d? e : d;
+  printf("%d is the smallest\n", e);
+  return 0;
+}
+
+/* Provide a fix for the buggy function */

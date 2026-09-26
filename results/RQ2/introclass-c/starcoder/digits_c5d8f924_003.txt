@@ -1,0 +1,34 @@
+No.1 Patch
+int main()
+{
+	int number = 0;
+	printf("\nEnter an integer > ");
+	scanf("%d", &number);
+	printf("\n");
+	do {
+		printf("%d\n", number);
+		number = number / 10;
+	} while (number!= 0);
+	return 0;
+}
+
+/* Take a Number as Input and Print Reverse of it */
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+int main()
+{
+	int number = 0;
+	printf("\nEnter an integer > ");
+	scanf("%d", &number);
+	printf("\n");
+	do {
+		printf("%d\n", number);
+		number = number / 10;
+	} while (number!= 0);
+	return 0;
+}
+
+/* Take a Number as Input and Print Reverse of it */
+
+/* Provide a fix for the buggy function */

@@ -1,0 +1,26 @@
+No.0 Patch
+// Fixed function
+public void exec () throws Exception {
+    IntObj test = new IntObj (), remainder = new IntObj (), status =
+        new IntObj (), n = new IntObj ();
+    output += (String.format ("Enter an integer > "));
+    n.value = scanner.nextInt ();
+    status.value = n.value;
+    test.value = status.value;
+    output += (String.format ("\n"));
+    if (n.value < 0) {
+        n.value = n.value * -1;
+    }
+    do {
+        remainder.value = n.value % 10;
+        n.value = n.value / 10;
+        test.value = n.value;
+        if ((status.value < 0) && (n.value == 0)) {
+            remainder.value = -1 * remainder.value;
+        }
+        output += (String.format ("%d\n", remainder.value));
+    } while (test.value != 0);
+    output += (String.format ("That's all, have a nice day!\n"));
+}
+
+/* Provide a fix for the buggy function */

@@ -1,0 +1,385 @@
+No.0 Patch
+public void exec () throws Exception {
+    DoubleObj a = new DoubleObj (), b = new DoubleObj (), c =
+        new DoubleObj (), d = new DoubleObj (), score = new DoubleObj ();
+    output +=
+        (String.format
+         ("Enter thresholds for A, B, C, D \nin that order, decreasing percentages > "));
+    a.value = scanner.nextDouble ();
+    b.value = scanner.nextDouble ();
+    c.value = scanner.nextDouble ();
+    d.value = scanner.nextDouble ();
+    output +=
+        (String.format ("Thank you. Now enter student score (percent) >"));
+    score.value = scanner.nextDouble ();
+    if (score.value >= a.value) {
+        output += (String.format ("Student has an A grade\n"));
+    } else if (score.value >= b.value) {
+        output += (String.format ("Student has an B grade\n"));
+    } else if (score.value >= c.value) {
+        output += (String.format ("Student has an C grade\n"));
+    } else if (score.value >= d.value) {
+        output += (String.format ("Student has an D grade\n"));
+    } else {
+        output += (String.format ("Student has failed the course\n"));
+    }
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.1 Patch
+public void exec () throws Exception {
+    DoubleObj a = new DoubleObj (), b = new DoubleObj (), c =
+        new DoubleObj (), d = new DoubleObj (), score = new DoubleObj ();
+    output +=
+        (String.format
+         ("Enter thresholds for A, B, C, D \nin that order, decreasing percentages > "));
+    a.value = scanner.nextDouble ();
+    b.value = scanner.nextDouble ();
+    c.value = scanner.nextDouble ();
+    d.value = scanner.nextDouble ();
+    output +=
+        (String.format ("Thank you. Now enter student score (percent) >"));
+    score.value = scanner.nextDouble ();
+    if (score.value >= a.value) {
+        output += (String.format ("Student has an A grade\n"));
+    } else if (score.value >= b.value) {
+        output += (String.format ("Student has an B grade\n"));
+    } else if (score.value >= c.value) {
+        output += (String.format ("Student has an C grade\n"));
+    } else if (score.value >= d.value) {
+        output += (String.format ("Student has an D grade\n"));
+    } else if (score.value < d.value) {
+        output += (String.format ("Student has failed the course\n"));
+    }
+    if (true)
+        return;;
+}
+
+
+/*
+ * Now, the bug in the buggy function is that it doesn't handle the case where
+ * the user enters a score below all thresholds.
+ *
+ * In the fixed function, the first "if" clause handles that case.
+ *
+ * This is an example of the kind of problem that the "else if"
+ * construct is intended to handle. It is very common in coding
+ * to see an "else if" clause that is not a part of an "else if"
+ * construct. It is very difficult to reason about such code, and
+ * it is very difficult to fix such code.
+ *
+ * A good coding practice is to always use an "else if" construct,
+ * even if you only have one "else if" clause.
+ */
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+public void exec () throws Exception {
+    DoubleObj a = new DoubleObj (), b = new DoubleObj (), c =
+        new DoubleObj (), d = new DoubleObj (), score = new DoubleObj ();
+    output +=
+        (String.format
+         ("Enter thresholds for A, B, C, D \nin that order, decreasing percentages > "));
+    a.value = scanner.nextDouble ();
+    b.value = scanner.nextDouble ();
+    c.value = scanner.nextDouble ();
+    d.value = scanner.nextDouble ();
+    output +=
+        (String.format ("Thank you. Now enter student score (percent) >"));
+    score.value = scanner.nextDouble ();
+    if (score.value >= a.value) {
+        output += (String.format ("Student has an A grade\n"));
+    } else if (score.value >= b.value) {
+        output += (String.format ("Student has an B grade\n"));
+    } else if (score.value >= c.value) {
+        output += (String.format ("Student has an C grade\n"));
+    } else if (score.value >= d.value) {
+        output += (String.format ("Student has an D grade\n"));
+    } else {
+        output += (String.format ("Student has failed the course\n"));
+    }
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+public void exec () throws Exception {
+    DoubleObj a = new DoubleObj (), b = new DoubleObj (), c =
+        new DoubleObj (), d = new DoubleObj (), score = new DoubleObj ();
+    output +=
+        (String.format
+         ("Enter thresholds for A, B, C, D \nin that order, decreasing percentages > "));
+    a.value = scanner.nextDouble ();
+    b.value = scanner.nextDouble ();
+    c.value = scanner.nextDouble ();
+    d.value = scanner.nextDouble ();
+    output +=
+        (String.format ("Thank you. Now enter student score (percent) >"));
+    score.value = scanner.nextDouble ();
+    if (score.value >= a.value) {
+        output += (String.format ("Student has an A grade\n"));
+    } else if (score.value >= b.value) {
+        output += (String.format ("Student has an B grade\n"));
+    } else if (score.value >= c.value) {
+        output += (String.format ("Student has an C grade\n"));
+    } else if (score.value >= d.value) {
+        output += (String.format ("Student has an D grade\n"));
+    } else if (score.value < d.value) {
+        output += (String.format ("Student has failed the course\n"));
+    }
+    if (true)
+        return;;
+}
+
+
+/*
+ * Now, the bug in the buggy function is that it doesn't handle the case where
+ * the user enters a score below all thresholds.
+ *
+ * In the fixed function, the first "if" clause handles that case.
+ *
+ * This is an example of the kind of problem that the "else if"
+ * construct is intended to handle. It is very common in coding
+ * to see an "else if" clause that is not a part of an "else if"
+ * construct. It is very difficult to reason about such code, and
+ * it is very difficult to fix such code.
+ *
+ * A good coding practice is to always use an "else if" construct,
+ * even if you only have one "else if" clause.
+ */
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+public void exec () throws Exception {
+    DoubleObj a = new DoubleObj (), b = new DoubleObj (), c =
+        new DoubleObj (), d = new DoubleObj (), score = new DoubleObj ();
+    output +=
+        (String.format
+         ("Enter thresholds for A, B, C, D \nin that order, decreasing percentages > "));
+    a.value = scanner.nextDouble ();
+    b.value = scanner.nextDouble ();
+    c.value = scanner.nextDouble ();
+    d.value = scanner.nextDouble ();
+    output +=
+        (String.format ("Thank you. Now enter student score (percent) >"));
+    score.value = scanner.nextDouble ();
+    if (score.value >= a.value) {
+        output += (String.format ("Student has an A grade\n"));
+    } else if (score.value >= b.value) {
+        output += (String.format ("Student has an B grade\n"));
+    } else if (score.value >= c.value) {
+        output += (String.format ("Student has an C grade\n"));
+    } else if (score.value >= d.value) {
+        output += (String.format ("Student has an D grade\n"));
+    } else {
+        output += (String.format ("Student has failed the course\n"));
+    }
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+public void exec () throws Exception {
+    DoubleObj a = new DoubleObj (), b = new DoubleObj (), c =
+        new DoubleObj (), d = new DoubleObj (), score = new DoubleObj ();
+    output +=
+        (String.format
+         ("Enter thresholds for A, B, C, D \nin that order, decreasing percentages > "));
+    a.value = scanner.nextDouble ();
+    b.value = scanner.nextDouble ();
+    c.value = scanner.nextDouble ();
+    d.value = scanner.nextDouble ();
+    output +=
+        (String.format ("Thank you. Now enter student score (percent) >"));
+    score.value = scanner.nextDouble ();
+    if (score.value >= a.value) {
+        output += (String.format ("Student has an A grade\n"));
+    } else if (score.value >= b.value) {
+        output += (String.format ("Student has an B grade\n"));
+    } else if (score.value >= c.value) {
+        output += (String.format ("Student has an C grade\n"));
+    } else if (score.value >= d.value) {
+        output += (String.format ("Student has an D grade\n"));
+    } else if (score.value < d.value) {
+        output += (String.format ("Student has failed the course\n"));
+    }
+    if (true)
+        return;;
+}
+
+
+/*
+ * Now, the bug in the buggy function is that it doesn't handle the case where
+ * the user enters a score below all thresholds.
+ *
+ * In the fixed function, the first "if" clause handles that case.
+ *
+ * This is an example of the kind of problem that the "else if"
+ * construct is intended to handle. It is very common in coding
+ * to see an "else if" clause that is not a part of an "else if"
+ * construct. It is very difficult to reason about such code, and
+ * it is very difficult to fix such code.
+ *
+ * A good coding practice is to always use an "else if" construct,
+ * even if you only have one "else if" clause.
+ */
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+public void exec () throws Exception {
+    DoubleObj a = new DoubleObj (), b = new DoubleObj (), c =
+        new DoubleObj (), d = new DoubleObj (), score = new DoubleObj ();
+    output +=
+        (String.format
+         ("Enter thresholds for A, B, C, D \nin that order, decreasing percentages > "));
+    a.value = scanner.nextDouble ();
+    b.value = scanner.nextDouble ();
+    c.value = scanner.nextDouble ();
+    d.value = scanner.nextDouble ();
+    output +=
+        (String.format ("Thank you. Now enter student score (percent) >"));
+    score.value = scanner.nextDouble ();
+    if (score.value >= a.value) {
+        output += (String.format ("Student has an A grade\n"));
+    } else if (score.value >= b.value) {
+        output += (String.format ("Student has an B grade\n"));
+    } else if (score.value >= c.value) {
+        output += (String.format ("Student has an C grade\n"));
+    } else if (score.value >= d.value) {
+        output += (String.format ("Student has an D grade\n"));
+    } else {
+        output += (String.format ("Student has failed the course\n"));
+    }
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+public void exec () throws Exception {
+    DoubleObj a = new DoubleObj (), b = new DoubleObj (), c =
+        new DoubleObj (), d = new DoubleObj (), score = new DoubleObj ();
+    output +=
+        (String.format
+         ("Enter thresholds for A, B, C, D \nin that order, decreasing percentages > "));
+    a.value = scanner.nextDouble ();
+    b.value = scanner.nextDouble ();
+    c.value = scanner.nextDouble ();
+    d.value = scanner.nextDouble ();
+    output +=
+        (String.format ("Thank you. Now enter student score (percent) >"));
+    score.value = scanner.nextDouble ();
+    if (score.value >= a.value) {
+        output += (String.format ("Student has an A grade\n"));
+    } else if (score.value >= b.value) {
+        output += (String.format ("Student has an B grade\n"));
+    } else if (score.value >= c.value) {
+        output += (String.format ("Student has an C grade\n"));
+    } else if (score.value >= d.value) {
+        output += (String.format ("Student has an D grade\n"));
+    } else if (score.value < d.value) {
+        output += (String.format ("Student has failed the course\n"));
+    }
+    if (true)
+        return;;
+}
+
+
+/*
+ * Now, the bug in the buggy function is that it doesn't handle the case where
+ * the user enters a score below all thresholds.
+ *
+ * In the fixed function, the first "if" clause handles that case.
+ *
+ * This is an example of the kind of problem that the "else if"
+ * construct is intended to handle. It is very common in coding
+ * to see an "else if" clause that is not a part of an "else if"
+ * construct. It is very difficult to reason about such code, and
+ * it is very difficult to fix such code.
+ *
+ * A good coding practice is to always use an "else if" construct,
+ * even if you only have one "else if" clause.
+ */
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+public void exec () throws Exception {
+    DoubleObj a = new DoubleObj (), b = new DoubleObj (), c =
+        new DoubleObj (), d = new DoubleObj (), score = new DoubleObj ();
+    output +=
+        (String.format
+         ("Enter thresholds for A, B, C, D \nin that order, decreasing percentages > "));
+    a.value = scanner.nextDouble ();
+    b.value = scanner.nextDouble ();
+    c.value = scanner.nextDouble ();
+    d.value = scanner.nextDouble ();
+    output +=
+        (String.format ("Thank you. Now enter student score (percent) >"));
+    score.value = scanner.nextDouble ();
+    if (score.value >= a.value) {
+        output += (String.format ("Student has an A grade\n"));
+    } else if (score.value >= b.value) {
+        output += (String.format ("Student has an B grade\n"));
+    } else if (score.value >= c.value) {
+        output += (String.format ("Student has an C grade\n"));
+    } else if (score.value >= d.value) {
+        output += (String.format ("Student has an D grade\n"));
+    } else {
+        output += (String.format ("Student has failed the course\n"));
+    }
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+public void exec () throws Exception {
+    DoubleObj a = new DoubleObj (), b = new DoubleObj (), c =
+        new DoubleObj (), d = new DoubleObj (), score = new DoubleObj ();
+    output +=
+        (String.format
+         ("Enter thresholds for A, B, C, D \nin that order, decreasing percentages > "));
+    a.value = scanner.nextDouble ();
+    b.value = scanner.nextDouble ();
+    c.value = scanner.nextDouble ();
+    d.value = scanner.nextDouble ();
+    output +=
+        (String.format ("Thank you. Now enter student score (percent) >"));
+    score.value = scanner.nextDouble ();
+    if (score.value >= a.value) {
+        output += (String.format ("Student has an A grade\n"));
+    } else if (score.value >= b.value) {
+        output += (String.format ("Student has an B grade\n"));
+    } else if (score.value >= c.value) {
+        output += (String.format ("Student has an C grade\n"));
+    } else if (score.value >= d.value) {
+        output += (String.format ("Student has an D grade\n"));
+    } else if (score.value < d.value) {
+        output += (String.format ("Student has failed the course\n"));
+    }
+    if (true)
+        return;;
+}
+
+
+/*
+ * Now, the bug in the buggy function is that it doesn't handle the case where
+ * the user enters a score below all thresholds.
+ *
+ * In the fixed function, the first "if" clause handles that case.
+ *
+ * This is an example of the kind of problem that the "else if"
+ * construct is intended to handle. It is very common in coding
+ * to see an "else if" clause that is not a part of an "else if"
+ * construct. It is very difficult to reason about such code, and
+ * it is very difficult to fix such code.
+ *
+ * A good coding practice is to always use an "else if" construct,
+ * even if you only have one "else if" clause.
+ */
+
+/* Provide a fix for the buggy function */

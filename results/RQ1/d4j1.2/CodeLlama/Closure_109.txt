@@ -1,0 +1,8 @@
+No.6 Patch
+private Node parseContextTypeExpression(JsDocToken token) {
+        return parseTypeExpression(token);
+}
+No.7 Patch
+private Node parseContextTypeExpression(JsDocToken token) {
+    return parseTypeExpression(token);
+}

@@ -1,0 +1,29 @@
+No.0 Patch
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+
+  int n, digit;
+
+  printf("Enter an integer > ");
+  scanf("%d", &n);
+
+  if (n == 0) {
+    printf("0\n");
+    return 0;
+  }
+
+  while (n != 0) {
+    digit = n % 10;
+    n = n / 10;
+    if ((digit < 0) && (n == 0))
+      printf("%d\n", digit);
+    else
+      printf("%d\n", abs(digit));
+  }
+
+  return 0;
+}
+
+/* Provide a fix for the buggy function */

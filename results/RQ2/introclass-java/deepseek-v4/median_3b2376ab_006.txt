@@ -1,0 +1,33 @@
+No.0 Patch
+public void exec () throws Exception {
+    IntObj n1 = new IntObj (), n2 = new IntObj (), n3 = new IntObj (), small =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 3 numbers separated by spaces > "));
+    n1.value = scanner.nextInt ();
+    n2.value = scanner.nextInt ();
+    n3.value = scanner.nextInt ();
+    if (n1.value <= n2.value) {
+        small.value = n1.value;
+        if (small.value > n3.value) {
+            output += (String.format ("%d is the median\n", n1.value));
+        } else if (n3.value > n2.value) {
+            output += (String.format ("%d is the median\n", n2.value));
+        } else {
+            output += (String.format ("%d is the median\n", n3.value));
+        }
+    } else {
+        small.value = n2.value;
+        if (small.value > n3.value) {
+            output += (String.format ("%d is the median\n", n2.value));
+        } else if (n3.value > n1.value) {
+            output += (String.format ("%d is the median\n", n1.value));
+        } else {
+            output += (String.format ("%d is the median\n", n3.value));
+        }
+    }
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */

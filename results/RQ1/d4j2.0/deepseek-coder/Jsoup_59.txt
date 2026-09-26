@@ -1,0 +1,32 @@
+No.9 Patch
+void newAttribute() {
+    if (attributes == null) {
+        attributes = new Attributes();
+    }
+
+    if (pendingAttributeName != null) {
+        String attributeName = pendingAttributeName.trim();
+        Attribute attribute;
+        
+        try {
+            if (hasPendingAttributeValue) {
+                String attributeValue = pendingAttributeValue.length() > 0 ? pendingAttributeValue.toString() : pendingAttributeValueS;
+                attribute = new Attribute(attributeName, attributeValue);
+            } else if (hasEmptyAttributeValue) {
+                attribute = new Attribute(attributeName, "");
+            } else {
+                attribute = new BooleanAttribute(attributeName);
+            }
+
+            attributes.put(attribute);
+        } catch (Exception e) {
+            System.out.println("Error creating or adding attribute: " + e.getMessage());
+        }
+        
+        pendingAttributeName = null;
+        hasEmptyAttributeValue = false;
+        hasPendingAttributeValue = false;
+        reset(pendingAttributeValue);
+        pendingAttributeValueS = null;
+    }
+}

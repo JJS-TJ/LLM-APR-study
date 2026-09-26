@@ -1,0 +1,23 @@
+No.0 Patch
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_LEN 1000
+
+int main(){
+  char string[MAX_LEN];
+  int count, i;
+  printf("Enter an abitrarily long string, ending with carriage return > ");
+  fgets(string, sizeof(string), stdin);
+  string[strcspn(string, "\n")] = '\0';
+  count = 0;
+  int len = strlen(string);
+  for(i=0; i < len; ++i){
+    count += (int)string[i];
+  }
+  count = count%64+' ';
+  printf("Check sum is %c\n", count);
+  return 0;
+}
+
+/* Provide a fix for the buggy function */

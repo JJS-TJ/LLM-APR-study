@@ -1,0 +1,23 @@
+No.6 Patch
+int proj_get_suggested_operation(PJ_CONTEXT *ctx, PJ_OBJ_LIST *operations,
+                                 PJ_DIRECTION direction, PJ_COORD coord) {
+    SANITIZE_CTX(ctx);
+    auto opList = dynamic_cast<PJ_OPERATION_LIST *>(operations);
+    if (opList == nullptr) {
+        proj_log_error(ctx, __FUNCTION__,
+                       "operations is not a list of operations");
+        return -1;
+    }
+
+    int iExcluded[2] = {-1, -1};
+    const auto &preparedOps = opList->getPreparedOperations(ctx);
+    int idx = pj_get_suggested_operation(ctx, preparedOps, iExcluded, direction,
+                                         coord);
+    if (idx >= 0) {
+        idx = preparedOps[idx].idxInOriginalList;
+    }
+    if (idx < 0) { // check if idx is still less than 0
+        idx = 0;
+    }
+    return idx;
+}

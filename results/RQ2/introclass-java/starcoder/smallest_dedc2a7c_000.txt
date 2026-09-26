@@ -1,0 +1,23 @@
+No.3 Patch
+public void exec () throws Exception {
+    FloatObj a = new FloatObj (), b = new FloatObj (), c =
+        new FloatObj (), d = new FloatObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a.value = scanner.nextFloat ();
+    b.value = scanner.nextFloat ();
+    c.value = scanner.nextFloat ();
+    d.value = scanner.nextFloat ();
+    float smallest = a.value;
+    if (b.value < smallest)
+        smallest = b.value;
+    if (c.value < smallest)
+        smallest = c.value;
+    if (d.value < smallest)
+        smallest = d.value;
+    output += (String.format ("%.0f is the smallest\n", smallest));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */

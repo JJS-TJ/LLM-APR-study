@@ -1,0 +1,28 @@
+No.0 Patch
+private boolean flipIfWarranted(final int n, final int step) {
+    if (1.5 * work[pingPong] < work[4 * (n - 1) + pingPong]) {
+        // flip array
+        for (int i = 0; i < n; i += step) {
+            final double tmp = work[i];
+            work[i] = work[n - i - 1];
+            work[n - i - 1] = tmp;
+        }
+        return true;
+    }
+    return false;
+}
+No.6 Patch
+private boolean flipIfWarranted(final int n, final int step) {
+    if (1.5 * work[pingPong] < work[4 * (n - 1) + pingPong]) {
+        // flip array
+        for (int i = 4 * n - 1; i >= 4 * n / 2; i -= 4) {
+            for (int j = 0; j < 4; j += step) {
+                final double tmp = work[i - j];
+                work[i - j] = work[i + j];
+                work[i + j] = tmp;
+            }
+        }
+        return true;
+    }
+    return false;
+}

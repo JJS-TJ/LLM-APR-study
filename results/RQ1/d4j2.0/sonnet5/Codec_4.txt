@@ -1,0 +1,4 @@
+No.0 Patch
+public Base64() {
+        this(0);
+    }

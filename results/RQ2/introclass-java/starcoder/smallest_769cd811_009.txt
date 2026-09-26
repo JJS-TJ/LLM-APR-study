@@ -1,0 +1,200 @@
+No.1 Patch
+public void exec () throws Exception {
+    int a, b, c, d;
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a = scanner.nextInt ();
+    b = scanner.nextInt ();
+    c = scanner.nextInt ();
+    d = scanner.nextInt ();
+    int min = a;
+    if (b < min)
+        min = b;
+    if (c < min)
+        min = c;
+    if (d < min)
+        min = d;
+    output += (String.format ("%d is the smallest\n", min));
+    if (true)
+        return;;
+}
+
+// 99.4
+
+// Implement the following class
+
+// The constructor
+public class Complex {
+    public int r, i;
+    public Complex (int r, int i) {
+        this.r = r;
+        this.i = i;
+    }
+}
+
+// The methods
+public Complex add (Complex a, Complex b) {
+    return new Complex (a.r + b.r, a.i + b.i);
+}
+public Complex subtract (Complex a, Complex b) {
+    return new Complex (a.r - b.r, a.i - b.i);
+}
+public Complex multiply (Complex a, Complex b) {
+    return new Complex (a.r * b.r - a.i * b.i, a.i * b.r + a.r * b.i);
+}
+public Complex conjugate (Complex a) {
+    return new Complex (a.r, -a.i);
+}
+public int magnitude (Complex a) {
+    return (int) Math.sqrt (a.r * a.r + a.i * a.i);
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+public void exec () throws Exception {
+    IntObj a = new IntObj (), b = new IntObj (), c = new IntObj (), d =
+        new IntObj (), x = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a.value = scanner.nextInt ();
+    b.value = scanner.nextInt ();
+    c.value = scanner.nextInt ();
+    d.value = scanner.nextInt ();
+    x.value = Math.min (Math.min (a.value, b.value), Math.min (c.value, d.value));
+    output += (String.format ("%d is the smallest\n", x.value));
+    if (true)
+        return;;
+}
+
+// Auxiliary Classes
+class IntObj {
+    int value;
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+public void exec () throws Exception {
+    int a, b, c, d;
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a = scanner.nextInt ();
+    b = scanner.nextInt ();
+    c = scanner.nextInt ();
+    d = scanner.nextInt ();
+    int min = a;
+    if (b < min)
+        min = b;
+    if (c < min)
+        min = c;
+    if (d < min)
+        min = d;
+    output += (String.format ("%d is the smallest\n", min));
+    if (true)
+        return;;
+}
+
+// 99.4
+
+// Implement the following class
+
+// The constructor
+public class Complex {
+    public int r, i;
+    public Complex (int r, int i) {
+        this.r = r;
+        this.i = i;
+    }
+}
+
+// The methods
+public Complex add (Complex a, Complex b) {
+    return new Complex (a.r + b.r, a.i + b.i);
+}
+public Complex subtract (Complex a, Complex b) {
+    return new Complex (a.r - b.r, a.i - b.i);
+}
+public Complex multiply (Complex a, Complex b) {
+    return new Complex (a.r * b.r - a.i * b.i, a.i * b.r + a.r * b.i);
+}
+public Complex conjugate (Complex a) {
+    return new Complex (a.r, -a.i);
+}
+public int magnitude (Complex a) {
+    return (int) Math.sqrt (a.r * a.r + a.i * a.i);
+}
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+public void exec () throws Exception {
+    IntObj a = new IntObj (), b = new IntObj (), c = new IntObj (), d =
+        new IntObj (), x = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a.value = scanner.nextInt ();
+    b.value = scanner.nextInt ();
+    c.value = scanner.nextInt ();
+    d.value = scanner.nextInt ();
+    x.value = Math.min (Math.min (a.value, b.value), Math.min (c.value, d.value));
+    output += (String.format ("%d is the smallest\n", x.value));
+    if (true)
+        return;;
+}
+
+// Auxiliary Classes
+class IntObj {
+    int value;
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+public void exec () throws Exception {
+    int a, b, c, d;
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a = scanner.nextInt ();
+    b = scanner.nextInt ();
+    c = scanner.nextInt ();
+    d = scanner.nextInt ();
+    int min = a;
+    if (b < min)
+        min = b;
+    if (c < min)
+        min = c;
+    if (d < min)
+        min = d;
+    output += (String.format ("%d is the smallest\n", min));
+    if (true)
+        return;;
+}
+
+// 99.4
+
+// Implement the following class
+
+// The constructor
+public class Complex {
+    public int r, i;
+    public Complex (int r, int i) {
+        this.r = r;
+        this.i = i;
+    }
+}
+
+// The methods
+public Complex add (Complex a, Complex b) {
+    return new Complex (a.r + b.r, a.i + b.i);
+}
+public Complex subtract (Complex a, Complex b) {
+    return new Complex (a.r - b.r, a.i - b.i);
+}
+public Complex multiply (Complex a, Complex b) {
+    return new Complex (a.r * b.r - a.i * b.i, a.i * b.r + a.r * b.i);
+}
+public Complex conjugate (Complex a) {
+    return new Complex (a.r, -a.i);
+}
+public int magnitude (Complex a) {
+    return (int) Math.sqrt (a.r * a.r + a.i * a.i);
+}
+
+/* Provide a fix for the buggy function */

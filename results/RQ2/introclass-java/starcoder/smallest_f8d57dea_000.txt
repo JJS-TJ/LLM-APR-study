@@ -1,0 +1,64 @@
+No.1 Patch
+public void exec () throws Exception {
+    IntObj v1 = new IntObj (), v2 = new IntObj (), v3 = new IntObj (), v4 =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    v1.value = scanner.nextInt ();
+    v2.value = scanner.nextInt ();
+    v3.value = scanner.nextInt ();
+    v4.value = scanner.nextInt ();
+    IntObj[] sorted = new IntObj[4];
+    sorted[0] = v1;
+    sorted[1] = v2;
+    sorted[2] = v3;
+    sorted[3] = v4;
+    int size = 4;
+    for (int i = 0; i < 3; i++) {
+        int j = i + 1;
+        while (j < size) {
+            if (sorted[i].value > sorted[j].value) {
+                IntObj temp = sorted[i];
+                sorted[i] = sorted[j];
+                sorted[j] = temp;
+            }
+            j++;
+        }
+    }
+    output +=
+        (String.format ("%d is the smallest\n", sorted[0].value));
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+public void exec () throws Exception {
+    IntObj v1 = new IntObj (), v2 = new IntObj (), v3 = new IntObj (), v4 =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    v1.value = scanner.nextInt ();
+    v2.value = scanner.nextInt ();
+    v3.value = scanner.nextInt ();
+    v4.value = scanner.nextInt ();
+    IntObj[] sorted = new IntObj[4];
+    sorted[0] = v1;
+    sorted[1] = v2;
+    sorted[2] = v3;
+    sorted[3] = v4;
+    int size = 4;
+    for (int i = 0; i < 3; i++) {
+        int j = i + 1;
+        while (j < size) {
+            if (sorted[i].value > sorted[j].value) {
+                IntObj temp = sorted[i];
+                sorted[i] = sorted[j];
+                sorted[j] = temp;
+            }
+            j++;
+        }
+    }
+    output +=
+        (String.format ("%d is the smallest\n", sorted[0].value));
+}
+
+/* Provide a fix for the buggy function */

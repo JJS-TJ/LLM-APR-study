@@ -1,0 +1,69 @@
+No.0 Patch
+public static long skip(InputStream input, long numToSkip) throws IOException {
+    long skipped = 0;
+    while (numToSkip > 0) {
+        long numRead = input.skip(numToSkip);
+        if (numRead == 0) {
+            if (input.read() == -1) {
+                break;
+            }
+            numRead = 1;
+        }
+        numToSkip -= numRead;
+        skipped += numRead;
+    }
+        
+    return skipped;
+}
+No.2 Patch
+public static long skip(InputStream input, long numToSkip) throws IOException {
+    long available = numToSkip;
+    while (numToSkip > 0) {
+        long skipped = input.skip(numToSkip);
+        if (skipped == 0) {
+            int byt = input.read();
+            if (byt < 0) {
+                break;
+            }
+            skipped = 1;
+        }
+        numToSkip -= skipped;
+    }
+        
+    return available - numToSkip;
+}
+No.4 Patch
+public static long skip(InputStream input, long numToSkip) throws IOException {
+    long available = numToSkip;
+    while (numToSkip > 0) {
+        long skipped = input.skip(numToSkip);
+        if (skipped == 0) {
+            int b = input.read();
+            if (b < 0) {
+                break;
+            }
+            skipped = 1;
+        }
+        numToSkip -= skipped;
+    }
+        
+    return available - numToSkip;
+}
+No.8 Patch
+public static long skip(InputStream input, long numToSkip) throws IOException {
+    long available = numToSkip;
+    while (numToSkip > 0) {
+        long skipped = input.skip(numToSkip);
+        if (skipped == 0) {
+            // We may have skipped fewer bytes than requested. If so, check
+            // to see if we are at EOF
+            if (input.read() == -1) {
+                break;
+            }
+            numToSkip--;
+        }
+        numToSkip -= skipped;
+    }
+        
+    return available - numToSkip;
+}

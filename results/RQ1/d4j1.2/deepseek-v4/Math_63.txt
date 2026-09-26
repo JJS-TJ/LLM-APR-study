@@ -1,0 +1,4 @@
+No.0 Patch
+public static boolean equals(double x, double y) {
+    return x == y;
+}

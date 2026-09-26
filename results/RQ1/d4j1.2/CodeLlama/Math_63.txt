@@ -1,0 +1,7 @@
+No.3 Patch
+public static boolean equals(double x, double y) {
+    if (Double.isNaN(x) || Double.isNaN(y)) {
+        return false;
+    }
+    return x == y;
+}

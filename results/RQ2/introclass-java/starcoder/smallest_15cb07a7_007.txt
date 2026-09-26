@@ -1,0 +1,34 @@
+No.0 Patch
+public void exec () throws Exception {
+    int [] array = new int [4];
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    for (int index = 0; index < array.length; index++)
+        array[index] = scanner.nextInt ();
+    int min = array[0];
+    for (int index = 1; index < array.length; index++)
+        if (array[index] < min)
+            min = array[index];
+    output += (String.format ("%d is the smallest\n", min));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+public void exec () throws Exception {
+    int [] array = new int [4];
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    for (int index = 0; index < array.length; index++)
+        array[index] = scanner.nextInt ();
+    int min = array[0];
+    for (int index = 1; index < array.length; index++)
+        if (array[index] < min)
+            min = array[index];
+    output += (String.format ("%d is the smallest\n", min));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */

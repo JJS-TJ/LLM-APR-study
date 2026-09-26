@@ -1,0 +1,26 @@
+No.0 Patch
+#include <stdio.h>
+
+int
+main(void)
+{
+
+int x,y, z;
+
+//**/
+printf("Please enter 3 numbers separated by space  > ");
+scanf("%d%d%d",&x,&y,&z);
+
+if ((x>=y && x<=z) || (x>=z && x<=y))
+printf("%d is the median\n",x);
+
+else if ((y>=x && y<=z) || (y>=z && y<=x))
+printf("%d is the median\n",y);
+
+else
+printf("%d is the median\n",z);
+
+return(0);
+}
+
+/* Provide a fix for the buggy function */

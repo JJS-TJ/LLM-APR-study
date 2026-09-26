@@ -1,0 +1,107 @@
+No.1 Patch
+/* Program to find smallest of 4 numbers */
+#include <stdio.h>
+int main()
+{
+int a, b, c, d, m, n, p;
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d %d %d %d", &a, &b, &c, &d);
+
+if (a > b)
+m = b;
+else
+m = a;
+
+if (m > c)
+n = c;
+else
+n = m;
+
+if (n > d)
+p = d;
+else
+p = n;
+
+printf("%d is the smallest\n", p);
+return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+int main() {
+
+double a, b, c, d, m, n, p;
+
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%lf""%lf""%lf""%lf", &a, &b, &c, &d);
+
+m=(a < b)? a : b;
+n=(c < d)? c : d;
+p=(m < n)? m : n;
+
+printf("%.0f is the smallest\n", p);
+
+return(0);
+
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+int main() {
+
+double a, b, c, d, m, n, p;
+
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%lf""%lf""%lf""%lf", &a, &b, &c, &d);
+
+if (a > b)
+m=b;
+else
+m=a;
+
+if (m > c)
+n=c;
+else
+n=m;
+
+if (n > d)
+p=d;
+else
+p=n;
+
+printf("%.0f is the smallest\n", p);
+
+return(0);
+
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+/* Program to find smallest of 4 numbers */
+#include <stdio.h>
+int main()
+{
+int a, b, c, d, m, n, p;
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d %d %d %d", &a, &b, &c, &d);
+
+if (a > b)
+m = b;
+else
+m = a;
+
+if (m > c)
+n = c;
+else
+n = m;
+
+if (n > d)
+p = d;
+else
+p = n;
+
+printf("%d is the smallest\n", p);
+return 0;
+}
+
+/* Provide a fix for the buggy function */

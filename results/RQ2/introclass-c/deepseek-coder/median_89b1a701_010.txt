@@ -1,0 +1,218 @@
+No.0 Patch
+int main() {
+	int a, b, c, m;
+	printf("Please enter 3 numbers separated by spaces > ");
+	scanf("%d %d %d", &a, &b, &c);
+	if ((a>=b && a<=c) || (a>=c && a<=b))
+		m = a;
+	else if ((b>=a && b<=c) || (b>=c && b<=a))
+		m = b;
+	else if ((c>=a && c<=b) || (c>=b && c<=a))
+		m = c;
+	printf("%d is the median\n", m);
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.1 Patch
+#include <stdio.h>
+
+int main() {
+	int a, b, c, m;
+	printf("Please enter 3 numbers separated by spaces > ");
+	scanf("%d %d %d", &a, &b, &c);
+	if ( a==b || a==c)
+		m = a;
+	else if ( b==c )
+		m = b;
+	else {
+		if ((a>=b && a<=c) || (a>=c && a<=b))
+			m = a;
+		else if ((b>=a && b<=c) || (b>=c && b<=a))
+			m = b;
+		else if ((c>=a && c<=b) || (c>=b && c<=a))
+			m = c;
+	}	
+	printf("%d is the median\n", m);
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+int main() {
+	int a, b, c, m;
+	printf("Please enter 3 numbers separated by spaces > ");
+	scanf("%d %d %d", &a, &b, &c);
+
+	// a==b==c is valid in C
+	if (a == b)
+		m = a;
+	else if (b == c)
+		m = b;
+	else if (c == a)
+		m = c;
+	else {
+		if ((a>=b && a<=c) || (a>=c && a<=b))
+			m = a;
+		else if ((b>=a && b<=c) || (b>=c && b<=a))
+			m = b;
+		else if ((c>=a && c<=b) || (c>=b && c<=a))
+			m = c;
+	}	
+	printf("%d is the median\n", m);
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+#include <stdio.h>
+
+int main() {
+	int a, b, c, m;
+	printf("Please enter 3 numbers separated by spaces > ");
+	scanf("%d %d %d", &a, &b, &c);
+
+	if ((a>=b && a<=c) || (a>=c && a<=b))
+		m = a;
+	else if ((b>=a && b<=c) || (b>=c && b<=a))
+		m = b;
+	else if ((c>=a && c<=b) || (c>=b && c<=a))
+		m = c;
+	else {
+		printf("ERROR: Numbers do not make a sequence\n");
+		return 0;
+	}	
+	printf("%d is the median\n", m);
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+int main() {
+	int a, b, c, m;
+	printf("Please enter 3 numbers separated by spaces > ");
+	scanf("%d %d %d", &a, &b, &c);
+	if ((a>=b && a<=c) || (a>=c && a<=b))
+		m = a;
+	else if ((b>=a && b<=c) || (b>=c && b<=a))
+		m = b;
+	else if ((c>=a && c<=b) || (c>=b && c<=a))
+		m = c;
+	printf("%d is the median\n", m);
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+#include <stdio.h>
+
+int main() {
+	int a, b, c, m;
+	printf("Please enter 3 numbers separated by spaces > ");
+	scanf("%d %d %d", &a, &b, &c);
+	if ( a==b || a==c)
+		m = a;
+	else if ( b==c )
+		m = b;
+	else {
+		if ((a>=b && a<=c) || (a>=c && a<=b))
+			m = a;
+		else if ((b>=a && b<=c) || (b>=c && b<=a))
+			m = b;
+		else if ((c>=a && c<=b) || (c>=b && c<=a))
+			m = c;
+	}	
+	printf("%d is the median\n", m);
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+int main() {
+	int a, b, c, m;
+	printf("Please enter 3 numbers separated by spaces > ");
+	scanf("%d %d %d", &a, &b, &c);
+
+	// a==b==c is valid in C
+	if (a == b)
+		m = a;
+	else if (b == c)
+		m = b;
+	else if (c == a)
+		m = c;
+	else {
+		if ((a>=b && a<=c) || (a>=c && a<=b))
+			m = a;
+		else if ((b>=a && b<=c) || (b>=c && b<=a))
+			m = b;
+		else if ((c>=a && c<=b) || (c>=b && c<=a))
+			m = c;
+	}	
+	printf("%d is the median\n", m);
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+#include <stdio.h>
+
+int main() {
+	int a, b, c, m;
+	printf("Please enter 3 numbers separated by spaces > ");
+	scanf("%d %d %d", &a, &b, &c);
+
+	if ((a>=b && a<=c) || (a>=c && a<=b))
+		m = a;
+	else if ((b>=a && b<=c) || (b>=c && b<=a))
+		m = b;
+	else if ((c>=a && c<=b) || (c>=b && c<=a))
+		m = c;
+	else {
+		printf("ERROR: Numbers do not make a sequence\n");
+		return 0;
+	}	
+	printf("%d is the median\n", m);
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+int main() {
+	int a, b, c, m;
+	printf("Please enter 3 numbers separated by spaces > ");
+	scanf("%d %d %d", &a, &b, &c);
+	if ((a>=b && a<=c) || (a>=c && a<=b))
+		m = a;
+	else if ((b>=a && b<=c) || (b>=c && b<=a))
+		m = b;
+	else if ((c>=a && c<=b) || (c>=b && c<=a))
+		m = c;
+	printf("%d is the median\n", m);
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+#include <stdio.h>
+
+int main() {
+	int a, b, c, m;
+	printf("Please enter 3 numbers separated by spaces > ");
+	scanf("%d %d %d", &a, &b, &c);
+	if ( a==b || a==c)
+		m = a;
+	else if ( b==c )
+		m = b;
+	else {
+		if ((a>=b && a<=c) || (a>=c && a<=b))
+			m = a;
+		else if ((b>=a && b<=c) || (b>=c && b<=a))
+			m = b;
+		else if ((c>=a && c<=b) || (c>=b && c<=a))
+			m = c;
+	}	
+	printf("%d is the median\n", m);
+	return 0;
+}
+
+/* Provide a fix for the buggy function */

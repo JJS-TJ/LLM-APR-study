@@ -1,0 +1,46 @@
+No.1 Patch
+static boolean preserveWhitespace(Node node) {
+    // check all the way up the parent hierarchy
+    while (node != null && node instanceof Element) {
+        Element el = (Element) node;
+        if (el.tag.preserveWhitespace()) {
+            return true;
+        }
+        node = el.parent();
+    }
+    return false;
+}
+No.3 Patch
+static boolean preserveWhitespace(Node node) {
+    // looks only at this element and five levels up, to prevent recursion & needless stack searches
+    if (node != null && node instanceof Element) {
+        Element el = (Element) node;
+            if (el.tag.preserveWhitespace())
+                return true;
+            else {
+                Node parent = el.parent();
+                for (int i = 0; i < 5 && parent != null; i++) {
+                    if (parent instanceof Element && ((Element) parent).tag.preserveWhitespace()) {
+                        return true;
+                    }
+                    parent = parent.parent();
+                }
+            }
+    }
+    return false;
+}
+No.7 Patch
+static boolean preserveWhitespace(Node node) {
+    // looks only at this element and five levels up, to prevent recursion & needless stack searches
+    if (node != null && node instanceof Element) {
+        Element el = (Element) node;
+        int count = 0;
+        while (el != null && count <= 5) {
+            if (el.tag.preserveWhitespace())
+                return true;
+            el = el.parent();
+            count++;
+        }
+    }
+    return false;
+}

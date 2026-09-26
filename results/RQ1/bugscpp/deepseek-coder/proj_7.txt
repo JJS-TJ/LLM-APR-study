@@ -1,0 +1,5 @@
+No.3 Patch
+static bool isIgnoredChar(char ch) {
+    return ch == ' ' || ch == '_' || ch == '-' || ch == '/' || ch == '(' ||
+           ch == ')' || ch == '.' || ch == '&' || ch == ',';
+}

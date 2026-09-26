@@ -1,0 +1,25 @@
+```c
+/* Fixed Function */
+uint32
+TIFFNumberOfStrips(TIFF* tif)
+{
+	TIFFDirectory *td = &tif->tif_dir;
+	uint32 nstrips;
+
+	/* If the value was already computed and stored in td_nstrips, return it.
+	   This avoids redundant calculations and respects the cached result
+	   set by ChopUpSingleUncompressedStrip after the initial assignment. */
+	if (td->td_nstrips != 0)
+		return (td->td_nstrips);
+
+	nstrips = (td->td_rowsperstrip == (uint32) -1 ? 1 :
+	     TIFFhowmany_32(td->td_imagelength, td->td_rowsperstrip));
+	if (td->td_planarconfig == PLANARCONFIG_SEPARATE)
+		nstrips = _TIFFMultiply32(tif, nstrips, (uint32)td->td_samplesperpixel,
+		    "TIFFNumberOfStrips");
+
+	/* Cache the computed value for future calls */
+	td->td_nstrips = nstrips;
+	return (nstrips);
+}
+```

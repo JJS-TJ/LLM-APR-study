@@ -1,0 +1,38 @@
+Looking at this function, the bug is in how object references are copied. `ecma_copy_value_if_not_object` skips incrementing the reference count when the value is an object — that's the correct behavior for a *weak* reference (WeakMap/WeakSet keys should not keep their target alive). But the code uses this same "weak" copy for every case: regular `Map`/`Set` keys and all `Map`/`WeakMap` values also use it, which means object keys/values in a normal `Map` or `Set` don't get their ref-count bumped. That can let the engine garbage-collect an object while it's still supposedly stored in the map/set.
+
+The fix: only use the weak copy for keys when the container is `WeakMap`/`WeakSet`; use a normal strong copy otherwise, and always use a strong copy for values (since only keys are weak in `WeakMap`).
+
+```c
+/* Fixed Function */
+static void
+ecma_op_internal_buffer_append (ecma_collection_t *container_p, /**< internal container pointer */
+                                ecma_value_t key_arg, /**< key argument */
+                                ecma_value_t value_arg, /**< value argument */
+                                lit_magic_string_id_t lit_id) /**< class id */
+{
+  JERRY_ASSERT (container_p != NULL);
+
+  ecma_value_t key;
+
+  if (lit_id == LIT_MAGIC_STRING_WEAKMAP_UL || lit_id == LIT_MAGIC_STRING_WEAKSET_UL)
+  {
+    /* Weak containers must not keep object keys alive. */
+    key = ecma_copy_value_if_not_object (key_arg);
+  }
+  else
+  {
+    /* Regular Map/Set need a strong reference to object keys. */
+    key = ecma_copy_value (key_arg);
+  }
+
+  ecma_collection_push_back (container_p, key);
+
+  if (lit_id == LIT_MAGIC_STRING_WEAKMAP_UL || lit_id == LIT_MAGIC_STRING_MAP_UL)
+  {
+    /* Values are always strongly referenced, even in a WeakMap. */
+    ecma_collection_push_back (container_p, ecma_copy_value (value_arg));
+  }
+
+  ECMA_CONTAINER_SET_SIZE (container_p, ECMA_CONTAINER_GET_SIZE (container_p) + 1);
+} /* ecma_op_internal_buffer_append */
+```

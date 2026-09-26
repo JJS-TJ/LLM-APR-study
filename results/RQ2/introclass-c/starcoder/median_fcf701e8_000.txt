@@ -1,0 +1,47 @@
+No.5 Patch
+int main () {
+
+	int a, b, c;
+     printf("Please enter three integers separated by spaces > ");
+     scanf("%d%d%d", &a, &b, &c);
+     
+     int median = a;
+     
+	while (a<b && a<c){
+		if (b<c){
+		median = b;
+		break;
+		}
+		else{
+		median = c;
+		break;
+		}
+	}
+
+	while (b<a && b<c){
+		if (a<c){
+		median = a;
+		break;
+		}
+		else{
+		median = c;
+		break;
+		}
+	}
+	
+	while (c<a && c<b){
+		if (b<a){
+		median = b;
+		break;
+		}
+		else{
+		median = a;
+		break;
+		}
+	}
+
+printf("%d is the median\n", median);
+return 0;
+}
+
+/* Provide a fix for the buggy function */

@@ -1,0 +1,62 @@
+No.1 Patch
+int main ()
+{
+	int int1, int2, int3, int4, tmp;
+	printf("Please enter 4 numbers separated by space > ");
+	scanf("%i%i%i%i", &int1, &int2, &int3, &int4);
+	tmp = int1;
+	if (int1 > int2)
+		tmp = int2;
+	if (tmp > int3)
+		tmp = int3;
+	if (tmp > int4)
+		tmp = int4;
+
+	printf("%i is the smallest\n", tmp);
+
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+int main()
+{
+	int int1, int2, int3, int4, tmp;
+	printf("Please enter 4 numbers separated by space > ");
+	scanf("%i%i%i%i", &int1, &int2, &int3, &int4);
+	if (int1 <= int2 && int1 <= int3 && int1 <= int4)
+	tmp = int1;
+	else if (int2 <= int1 && int2 <= int3 && int2 <= int4)
+	tmp = int2;
+	else if (int3 <= int1 && int3 <= int2 && int3 <= int4)
+	tmp = int3;
+	else if (int4 <= int1 && int4 <= int2 && int4 <= int3)
+	tmp = int4;
+
+	printf("%i is the smallest\n", tmp);
+
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+int main ()
+{
+	int int1, int2, int3, int4, tmp;
+	printf("Please enter 4 numbers separated by space > ");
+	scanf("%i%i%i%i", &int1, &int2, &int3, &int4);
+
+	tmp = int1;
+	if (tmp > int2)
+	tmp = int2;
+	if (tmp > int3)
+	tmp = int3;
+	if (tmp > int4)
+	tmp = int4;
+
+	printf("%i is the smallest\n", tmp);
+
+	return 0;
+}
+
+/* Provide a fix for the buggy function */

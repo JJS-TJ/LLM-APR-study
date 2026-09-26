@@ -1,0 +1,48 @@
+No.0 Patch
+public Document clean(Document dirtyDocument) {
+    if (dirtyDocument == null) {
+        throw new IllegalArgumentException("dirtyDocument cannot be null");
+    }
+
+    Document clean = Document.createShell(dirtyDocument.baseUri());
+    if (dirtyDocument.body() != null) {
+        copySafeNodes(dirtyDocument.body(), clean.body());
+    }
+
+    return clean;
+}
+No.1 Patch
+public Document clean(Document dirtyDocument) {
+    Validate.notNull(dirtyDocument);
+
+    Document clean = Document.createShell(dirtyDocument.baseUri());
+    if (dirtyDocument.body() != null) {
+        copySafeNodes(dirtyDocument.body(), clean.body());
+    }
+
+    return clean;
+}
+No.6 Patch
+public Document clean(Document dirtyDocument) {
+    Validate.notNull(dirtyDocument);
+
+    Document clean = Document.createShell(dirtyDocument.baseUri());
+    if(dirtyDocument.body() != null) {
+        copySafeNodes(dirtyDocument.body(), clean.body());
+    }
+
+    return clean;
+}
+No.7 Patch
+public Document clean(Document dirtyDocument) {
+    if (dirtyDocument == null) {
+        throw new IllegalArgumentException("Document cannot be null");
+    }
+
+    Document clean = Document.createShell(dirtyDocument.baseUri());
+    if (dirtyDocument.body() != null) {
+        copySafeNodes(dirtyDocument.body(), clean.body());
+    }
+
+    return clean;
+}

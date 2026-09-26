@@ -1,0 +1,233 @@
+No.0 Patch
+int main(){
+int num1, num2, num3, num4, small;
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d%d%d%d", &num1, &num2, &num3, &num4);
+small = num1;
+if (num2 < num1 && num2 < num3 && num2 < num4)
+	small = num2;
+if (num3 < num1 && num3 < num2 && num3 < num4)
+	small = num3;
+if (num4 < num1 && num4 < num2 && num4 < num3)
+	small = num4;
+printf("%d is the smallest\n", small);
+return(0);
+}
+
+/* Fix the bug in the following program */
+
+#include <stdio.h>
+
+/* Provide a fix for the buggy function */
+No.1 Patch
+int main(){
+int num1, num2, num3, num4, small;
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d%d%d%d", &num1, &num2, &num3, &num4);
+if (num1 < num2)
+	if (num1 < num3)
+		if (num1 < num4)
+			small = num1;
+		else
+			small = num4;
+	else
+		if (num3 < num4)
+			small = num3;
+		else
+			small = num4;
+else
+	if (num2 < num3)
+		if (num2 < num4)
+			small = num2;
+		else
+			small = num4;
+	else
+		if (num3 < num4)
+			small = num3;
+		else
+			small = num4;
+printf("%d is the smallest\n", small);
+return(0);
+}
+
+/* 11.3 */
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+int main(){
+int num1, num2, num3, num4, small;
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d%d%d%d", &num1, &num2, &num3, &num4);
+if (num1 < num2)
+	if (num1 < num3)
+		if (num1 < num4)
+			small = num1;
+		else 
+			small = num4;
+	else 
+		if (num3 < num4)
+			small = num3;
+		else 
+			small = num4;
+else 
+	if (num2 < num3)
+		if (num2 < num4)
+			small = num2;
+		else 
+			small = num4;
+	else 
+		if (num3 < num4)
+			small = num3;
+		else 
+			small = num4;
+printf("%d is the smallest\n", small);
+return(0);
+}
+
+/* Exercise 2 */
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+int main(){
+int num1, num2, num3, num4, small;
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d%d%d%d", &num1, &num2, &num3, &num4);
+small = num1;
+if (num2 < num1 && num2 < num3 && num2 < num4)
+	small = num2;
+if (num3 < num1 && num3 < num2 && num3 < num4)
+	small = num3;
+if (num4 < num1 && num4 < num2 && num4 < num3)
+	small = num4;
+printf("%d is the smallest\n", small);
+return(0);
+}
+
+/* Fix the bug in the following program */
+
+#include <stdio.h>
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+int main(){
+int num1, num2, num3, num4, small;
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d%d%d%d", &num1, &num2, &num3, &num4);
+if (num1 < num2)
+	if (num1 < num3)
+		if (num1 < num4)
+			small = num1;
+		else
+			small = num4;
+	else
+		if (num3 < num4)
+			small = num3;
+		else
+			small = num4;
+else
+	if (num2 < num3)
+		if (num2 < num4)
+			small = num2;
+		else
+			small = num4;
+	else
+		if (num3 < num4)
+			small = num3;
+		else
+			small = num4;
+printf("%d is the smallest\n", small);
+return(0);
+}
+
+/* 11.3 */
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+int main(){
+int num1, num2, num3, num4, small;
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d%d%d%d", &num1, &num2, &num3, &num4);
+if (num1 < num2)
+	if (num1 < num3)
+		if (num1 < num4)
+			small = num1;
+		else 
+			small = num4;
+	else 
+		if (num3 < num4)
+			small = num3;
+		else 
+			small = num4;
+else 
+	if (num2 < num3)
+		if (num2 < num4)
+			small = num2;
+		else 
+			small = num4;
+	else 
+		if (num3 < num4)
+			small = num3;
+		else 
+			small = num4;
+printf("%d is the smallest\n", small);
+return(0);
+}
+
+/* Exercise 2 */
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+int main(){
+int num1, num2, num3, num4, small;
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d%d%d%d", &num1, &num2, &num3, &num4);
+small = num1;
+if (num2 < num1 && num2 < num3 && num2 < num4)
+	small = num2;
+if (num3 < num1 && num3 < num2 && num3 < num4)
+	small = num3;
+if (num4 < num1 && num4 < num2 && num4 < num3)
+	small = num4;
+printf("%d is the smallest\n", small);
+return(0);
+}
+
+/* Fix the bug in the following program */
+
+#include <stdio.h>
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+int main(){
+int num1, num2, num3, num4, small;
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d%d%d%d", &num1, &num2, &num3, &num4);
+if (num1 < num2)
+	if (num1 < num3)
+		if (num1 < num4)
+			small = num1;
+		else
+			small = num4;
+	else
+		if (num3 < num4)
+			small = num3;
+		else
+			small = num4;
+else
+	if (num2 < num3)
+		if (num2 < num4)
+			small = num2;
+		else
+			small = num4;
+	else
+		if (num3 < num4)
+			small = num3;
+		else
+			small = num4;
+printf("%d is the smallest\n", small);
+return(0);
+}
+
+/* 11.3 */
+
+/* Provide a fix for the buggy function */

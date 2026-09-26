@@ -1,0 +1,28 @@
+No.0 Patch
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+#define sizeA 256
+
+int main() {
+    char string[sizeA];
+    int i;
+    int count = 0;
+
+    printf("Please enter a string > ");
+    fgets(string, sizeA, stdin);
+
+    for (i = 0; i < (int)strlen(string); i++) {
+        char c = tolower(string[i]);
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'y') {
+            count++;
+        }
+    }
+
+    printf("The number of syllables is %d.\n", count);
+
+    return 0;
+}
+
+/* Provide a fix for the buggy function */

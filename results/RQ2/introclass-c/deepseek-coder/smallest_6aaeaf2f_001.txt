@@ -1,0 +1,200 @@
+No.0 Patch
+int main ()
+{
+	int int1, int2, int3, int4, tmp;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i%i%i%i", &int1, &int2, &int3, &int4);
+	tmp = int1;
+	if (int2 < tmp)
+	tmp = int2;
+	if (int3 < tmp)
+	tmp = int3;
+	if (int4 < tmp)
+	tmp = int4;
+
+	printf("%i is the smallest\n", tmp);
+
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.1 Patch
+int main ()
+{
+	int int1, int2, int3, int4, tmp;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i%i%i%i", &int1, &int2, &int3, &int4);
+	tmp = int1;
+	if (int2 < tmp)
+	tmp = int2;
+	if (int3 < tmp)
+	tmp = int3;
+	if (int4 < tmp)
+	tmp = int4;
+
+	printf("%i is the smallest\n", tmp);
+
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+int main ()
+{
+	int int1, int2, int3, int4, tmp;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i%i%i%i", &int1, &int2, &int3, &int4);
+	tmp = int1;
+	if (int2 < tmp)
+	tmp = int2;
+	if (int3 < tmp)
+	tmp = int3;
+	if (int4 < tmp)
+	tmp = int4;
+
+	printf("%i is the smallest\n", tmp);
+
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+int main ()
+{
+	int int1, int2, int3, int4, tmp;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i%i%i%i", &int1, &int2, &int3, &int4);
+	tmp = int1;
+	if (int2 < tmp)
+	tmp = int2;
+	if (int3 < tmp)
+	tmp = int3;
+	if (int4 < tmp)
+	tmp = int4;
+
+	printf("%i is the smallest\n", tmp);
+
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+int main ()
+{
+	int int1, int2, int3, int4, tmp;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i%i%i%i", &int1, &int2, &int3, &int4);
+	tmp = int1;
+	if (int2 < tmp)
+	tmp = int2;
+	if (int3 < tmp)
+	tmp = int3;
+	if (int4 < tmp)
+	tmp = int4;
+
+	printf("%i is the smallest\n", tmp);
+
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+int main ()
+{
+	int int1, int2, int3, int4, tmp;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i%i%i%i", &int1, &int2, &int3, &int4);
+	tmp = int1;
+	if (int2 < tmp)
+	tmp = int2;
+	if (int3 < tmp)
+	tmp = int3;
+	if (int4 < tmp)
+	tmp = int4;
+
+	printf("%i is the smallest\n", tmp);
+
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+int main ()
+{
+	int int1, int2, int3, int4, tmp;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i%i%i%i", &int1, &int2, &int3, &int4);
+	tmp = int1;
+	if (int2 < tmp)
+	tmp = int2;
+	if (int3 < tmp)
+	tmp = int3;
+	if (int4 < tmp)
+	tmp = int4;
+
+	printf("%i is the smallest\n", tmp);
+
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+int main ()
+{
+	int int1, int2, int3, int4, tmp;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i%i%i%i", &int1, &int2, &int3, &int4);
+	tmp = int1;
+	if (int2 < tmp)
+	tmp = int2;
+	if (int3 < tmp)
+	tmp = int3;
+	if (int4 < tmp)
+	tmp = int4;
+
+	printf("%i is the smallest\n", tmp);
+
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+int main ()
+{
+	int int1, int2, int3, int4, tmp;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i%i%i%i", &int1, &int2, &int3, &int4);
+	tmp = int1;
+	if (int2 < tmp)
+	tmp = int2;
+	if (int3 < tmp)
+	tmp = int3;
+	if (int4 < tmp)
+	tmp = int4;
+
+	printf("%i is the smallest\n", tmp);
+
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+int main ()
+{
+	int int1, int2, int3, int4, tmp;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i%i%i%i", &int1, &int2, &int3, &int4);
+	tmp = int1;
+	if (int2 < tmp)
+	tmp = int2;
+	if (int3 < tmp)
+	tmp = int3;
+	if (int4 < tmp)
+	tmp = int4;
+
+	printf("%i is the smallest\n", tmp);
+
+	return 0;
+}
+
+/* Provide a fix for the buggy function */

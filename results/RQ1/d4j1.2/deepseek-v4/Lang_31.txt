@@ -1,0 +1,27 @@
+No.0 Patch
+public static boolean containsAny(CharSequence cs, char[] searchChars) {
+    if (isEmpty(cs) || ArrayUtils.isEmpty(searchChars)) {
+        return false;
+    }
+    int csLength = cs.length();
+    int searchLength = searchChars.length;
+    for (int i = 0; i < csLength; i++) {
+        int cp = Character.codePointAt(cs, i);
+        if (Character.isSupplementaryCodePoint(cp)) {
+            i++;
+        }
+        for (int j = 0; j < searchLength; j++) {
+            int scp;
+            if (j + 1 < searchLength && Character.isHighSurrogate(searchChars[j]) && Character.isLowSurrogate(searchChars[j + 1])) {
+                scp = Character.toCodePoint(searchChars[j], searchChars[j + 1]);
+                j++;
+            } else {
+                scp = searchChars[j];
+            }
+            if (scp == cp) {
+                return true;
+            }
+        }
+    }
+    return false;
+}

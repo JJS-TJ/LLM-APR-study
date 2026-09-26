@@ -1,0 +1,55 @@
+No.0 Patch
+public Attribute(String key, String val, Attributes parent) {
+    Validate.notNull(key);
+    key = key.trim();
+    Validate.notEmpty(key); // trimming could potentially make empty, so validate here
+    this.key = key;
+    this.val = val;
+    this.parent = parent;
+}
+No.1 Patch
+public Attribute(String key, String val, Attributes parent) {
+    Validate.notNull(key);
+    this.key = key.trim();
+    Validate.notEmpty(this.key); // trimming could potentially make the key empty, so validate here
+    this.val = val;
+    this.parent = parent;
+}
+No.2 Patch
+public Attribute(String key, String val, Attributes parent) {
+    if (key == null || key.trim().isEmpty()) {
+        throw new IllegalArgumentException("Key cannot be null or empty");
+    }
+    this.key = key.trim();
+    this.val = val;
+    this.parent = parent;
+}
+No.3 Patch
+public Attribute(String key, String val, Attributes parent) {
+    if(key == null || key.trim().isEmpty()) {
+        throw new IllegalArgumentException("Key cannot be null or empty");
+    }
+    this.key = key.trim();
+    this.val = val;
+    this.parent = parent;
+}
+No.5 Patch
+public Attribute(String key, String val, Attributes parent) {
+    Validate.notNull(key);
+    this.key = key.trim();
+    Validate.notEmpty(this.key); // validate the trimmed key
+    this.val = val;
+    this.parent = parent;
+}
+No.6 Patch
+public Attribute(String key, String val, Attributes parent) {
+    if (key == null) {
+        throw new IllegalArgumentException("Key cannot be null");
+    }
+    this.key = key.trim();
+    if (this.key.isEmpty()) {
+        throw new IllegalArgumentException("Key cannot be empty after trimming");
+    }
+    this.val = val;
+    this.parent = parent;
+}

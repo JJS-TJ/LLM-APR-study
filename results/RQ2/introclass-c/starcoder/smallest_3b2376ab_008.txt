@@ -1,0 +1,44 @@
+No.2 Patch
+int main(){
+        int n1, n2, n3, n4;
+        printf("Please enter 4 numbers separated by spaces > ");
+        scanf("%d%d%d%d", &n1, &n2, &n3, &n4);
+
+        int min = n1;
+
+        if (n2 < min)
+                min = n2;
+        
+        if (n3 < min)
+                min = n3;
+
+        if (n4 < min)
+                min = n4;
+
+        printf("%d is the smallest", min);
+
+        return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+int main(){
+
+        int n1, n2, n3, n4;
+        printf("Please enter 4 numbers separated by spaces > ");
+        scanf("%d%d%d%d", &n1, &n2, &n3, &n4);
+
+        int smallest_num = n1;
+        if (n2 < smallest_num)
+                smallest_num = n2;
+        if (n3 < smallest_num)
+                smallest_num = n3;
+        if (n4 < smallest_num)
+                smallest_num = n4;
+
+        printf("%d is the smallest", smallest_num);
+
+        return 0;
+}
+
+/* Provide a fix for the buggy function */

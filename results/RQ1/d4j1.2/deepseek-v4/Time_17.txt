@@ -1,0 +1,19 @@
+No.0 Patch
+public long adjustOffset(long instant, boolean earlierOrLater) {
+    // Evaluate 3 hours before and after to work out if anything is happening
+    long instantBeforeRef = instant - 3 * DateTimeConstants.MILLIS_PER_HOUR;
+    long instantAfterRef = instant + 3 * DateTimeConstants.MILLIS_PER_HOUR;
+    long localBefore = convertUTCToLocal(instantBeforeRef);
+    long localAfter = convertUTCToLocal(instantAfterRef);
+    if (localBefore == localAfter) {
+        return instant;  // not an overlap (gap or normal)
+    }
+    long local = convertUTCToLocal(instant);
+    long earlier = convertLocalToUTC(local, false, instantBeforeRef);
+    long later = convertLocalToUTC(local, false, instantAfterRef);
+    if (earlierOrLater) {
+        return later;
+    } else {
+        return earlier;
+    }
+}

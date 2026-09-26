@@ -1,0 +1,122 @@
+No.1 Patch
+static int
+prepare_JPEGTables(TIFF* tif)
+{
+	JPEGState* sp = JState(tif);
+
+	/* Initialize quant tables for current quality setting */
+	if (!TIFFjpeg_set_quality(sp, sp->jpegquality, FALSE))
+		return (0);
+	/* Mark only the tables we want for output */
+	/* NB: chrominance tables are currently used only with YCbCr */
+	if (!TIFFjpeg_suppress_tables(sp, TRUE))
+		return (0);
+	if (sp->jpegtablesmode & JPEGTABLESMODE_QUANT) {
+		unsuppress_quant_table(sp, 0);
+		if (sp->photometric == PHOTOMETRIC_YCBCR)
+			unsuppress_quant_table(sp, 1);
+	}
+	if (sp->jpegtablesmode & JPEGTABLESMODE_HUFF) {
+		unsuppress_huff_table(sp, 0);
+		if (sp->photometric == PHOTOMETRIC_YCBCR)
+			unsuppress_huff_table(sp, 1);
+	}
+	/* Direct libjpeg output into jpegtables */
+	if (!TIFFjpeg_tables_dest(sp, tif))
+		return (0);
+	/* Emit tables-only datastream */
+	if (!TIFFjpeg_write_tables(sp))
+		return (0);
+
+	return (1);
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+static int
+prepare_JPEGTables(TIFF* tif)
+{
+	JPEGState* sp = JState(tif);
+
+	/* Initialize quant tables for current quality setting */
+	if (!TIFFjpeg_set_quality(sp, sp->jpegquality, FALSE))
+		return (0);
+	/* Mark only the tables we want for output */
+	/* NB: chrominance tables are currently used only with YCbCr */
+	if (!TIFFjpeg_suppress_tables(sp, TRUE))
+		return (0);
+	if (sp->jpegtablesmode & JPEGTABLESMODE_QUANT) {
+		unsuppress_quant_table(sp, 0);
+		if (sp->photometric == PHOTOMETRIC_YCBCR)
+			unsuppress_quant_table(sp, 1);
+	}
+	if (sp->jpegtablesmode & JPEGTABLESMODE_HUFF) {
+		unsuppress_huff_table(sp, 0);
+		if (sp->photometric == PHOTOMETRIC_YCBCR)
+			unsuppress_huff_table(sp, 1);
+	}
+	/* Direct libjpeg output into jpegtables */
+	if (!TIFFjpeg_tables_dest(sp, tif))
+		return (0);
+	/* Emit tables-only datastream */
+	if (!TIFFjpeg_write_tables(sp))
+		return (0);
+
+	return (1);
+}
+No.8 Patch
+static int
+prepare_JPEGTables(TIFF* tif)
+{
+	JPEGState* sp = JState(tif);
+	const char module[] = "prepare_JPEGTables";
+
+	/* Initialize quant tables for current quality setting */
+	if (!TIFFjpeg_set_quality(sp, sp->jpegquality, FALSE))
+		return (0);
+	/* Mark only the tables we want for output */
+	/* NB: chrominance tables are currently used only with YCbCr */
+	if (!TIFFjpeg_suppress_tables(sp, TRUE))
+		return (0);
+	if (sp->jpegtablesmode & JPEGTABLESMODE_QUANT) {
+		unsuppress_quant_table(sp, 0);
+		if (sp->photometric == PHOTOMETRIC_YCBCR)
+			unsuppress_quant_table(sp, 1);
+	}
+	if (sp->jpegtablesmode & JPEGTABLESMODE_HUFF) {
+		unsuppress_huff_table(sp, 0);
+		if (sp->photometric == PHOTOMETRIC_YCBCR)
+			unsuppress_huff_table(sp, 1);
+	}
+	/* Direct libjpeg output into jpegtables */
+	if (!TIFFjpeg_tables_dest(sp, tif))
+		return (0);
+	/* Emit tables-only datastream */
+	if (!TIFFjpeg_write_tables(sp))
+		return (0);
+
+	/* We now have a valid jpegtables field that can be used */
+	/* for comparison in future sessions. */
+	if( sp->jpegtables == NULL
+	    || memcmp(sp->jpegtables,"\0\0\0\0\0\0\0\0\0",8) == 0 )
+        {
+                /* We hadn't set a jpegtables field before, so we'll */
+                /* need to allocate space. */
+                sp->jpegtables = (unsigned char *) _TIFFmalloc(8);
+                if( sp->jpegtables == NULL )
+                {
+                    TIFFErrorExt(tif->tif_clientdata, module,
+                            "Memory allocation error in prepare_JPEGTables");
+                    return (0);
+                }
+        }
+        if( TIFFReadRawStrip(tif,0,sp->jpegtables,8) < 0 )
+        {
+            TIFFErrorExt(tif->tif_clientdata, module,
+                    "Error reading jpegtables strip");
+            return (0);
+        }
+        return (1);
+}
+
+/* Provide a fix for the buggy function */

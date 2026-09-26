@@ -1,0 +1,131 @@
+No.0 Patch
+int main(){
+int num1, num2, num3, num4, small;
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d%d%d%d", &num1, &num2, &num3, &num4);
+small = num1;
+if (num2 < small)
+	small = num2;
+if (num3 < small)
+	small = num3;
+if (num4 < small)
+	small = num4;
+printf("%d is the smallest\n", small);
+return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+#include <stdio.h>
+
+int main(){
+int num1, num2, num3, num4, small;
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d%d%d%d", &num1, &num2, &num3, &num4);
+small = num1;
+if (num2 < small)
+	small = num2;
+if (num3 < small)
+	small = num3;
+if (num4 < small)
+	small = num4;
+printf("%d is the smallest\n", small);
+return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+int num1, num2, num3, num4, small;
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d%d%d%d", &num1, &num2, &num3, &num4);
+small = num1;
+if (num2 < small)
+	small = num2;
+if (num3 < small)
+	small = num3;
+if (num4 < small)
+	small = num4;
+printf("%d is the smallest\n", small);
+return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+#include<stdio.h>
+int main(){
+int num1, num2, num3, num4, small;
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d%d%d%d", &num1, &num2, &num3, &num4);
+small = num1;
+if (num2 < small)
+	small = num2;
+if (num3 < small)
+	small = num3;
+if (num4 < small)
+	small = num4;
+printf("%d is the smallest\n", small);
+return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+#include <stdio.h>
+int main(){
+int num1, num2, num3, num4, small;
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d%d%d%d", &num1, &num2, &num3, &num4);
+small = num1;
+if (small > num2)
+	small = num2;
+if (small > num3)
+	small = num3;
+if (small > num4)
+	small = num4;
+printf("%d is the smallest\n", small);
+return(0);
+}
+
+
+/* Write a program to swap the values of two variables
+without using a temporary variable */
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+int main(){
+int num1, num2, num3, num4, small;
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d%d%d%d", &num1, &num2, &num3, &num4);
+small = num1;
+if (num2 < small)
+	small = num2;
+if (num3 < small)
+	small = num3;
+if (num4 < small)
+	small = num4;
+printf("%d is the smallest\n", small);
+return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+#include <stdio.h>
+
+int main(){
+int num1, num2, num3, num4, small;
+printf("Please enter 4 numbers separated by spaces > ");
+scanf("%d%d%d%d", &num1, &num2, &num3, &num4);
+small = num1;
+if (num2 < small)
+	small = num2;
+if (num3 < small)
+	small = num3;
+if (num4 < small)
+	small = num4;
+printf("%d is the smallest\n", small);
+return(0);
+}
+
+/* Provide a fix for the buggy function */

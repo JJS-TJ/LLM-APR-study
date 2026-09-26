@@ -1,0 +1,69 @@
+No.2 Patch
+int main () {
+
+  char string[sizeA];
+  int i;
+  int count = 0;
+
+   printf("Please enter a string > ");
+   fgets(string,sizeA-1,stdin);
+  
+  for (i = 0; i < strlen(string); i++){
+	if (string[i] == 'a' || string[i] == 'e' || string[i] == 'o' || string[i] == 'u' || string[i] == 'y' || string[i] == 'i')
+	{
+	count++;
+	}
+    }
+
+  printf("The number of syllables is %d.\n", count);
+
+  return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+int main () {
+
+  char string[sizeA];
+  int i;
+  int count = 0;
+
+   printf("Please enter a string > ");
+   fgets(string,sizeA-1,stdin);
+  
+  for (i = 0; i < strlen(string); i++){
+	if (string[i] == 'a' || string[i] == 'e' || string[i] == 'o' || string[i] == 'u' || string[i] == 'y' || string[i] == 'i')
+	{
+	count++;
+	}
+    }
+
+  printf("The number of syllables is %d.\n", count);
+
+  return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+int main () {
+
+  char string[sizeA];
+  int i;
+  int count = 0;
+
+   printf("Please enter a string > ");
+   fgets(string,sizeA-1,stdin);
+  
+  for (i = 0; i < strlen(string); i++){
+	if (string[i] == 'a' || string[i] == 'e' || string[i] == 'o' || string[i] == 'u' || string[i] == 'y' || string[i] == 'i')
+	{
+	count++;
+	}
+    }
+
+  printf("The number of syllables is %d.\n", count);
+
+  return 0;
+}
+
+/* Provide a fix for the buggy function */

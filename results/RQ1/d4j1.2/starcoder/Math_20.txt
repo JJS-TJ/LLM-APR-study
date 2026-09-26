@@ -1,0 +1,18 @@
+No.2 Patch
+public double[] repairAndDecode(final double[] x) {
+    return
+        decode(repair(x));
+}
+No.3 Patch
+public double[] repairAndDecode(final double[] x) {
+    return
+        decode(
+            repair(x));
+}
+No.4 Patch
+public double[] repairAndDecode(final double[] x) {
+    return
+        decode(
+            repair(
+                x));
+}

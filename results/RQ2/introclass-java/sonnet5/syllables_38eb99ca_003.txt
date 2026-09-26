@@ -1,0 +1,20 @@
+No.0 Patch
+public void exec () throws Exception {
+    char[] string;
+    int i;
+    int count = 0;
+    output += (String.format ("Please enter a string > "));
+    string = (scanner.nextLine () + "\n").toCharArray ();
+    for (i = 0; i < string.length; i++) {
+        if (string[i] == 'a' || string[i] == 'e'
+                || string[i] == 'i' || string[i] == 'o'
+                || string[i] == 'u' || string[i] == 'y') {
+            count++;
+        }
+    }
+    output +=
+        (String.format ("The number of syllables is %d.\n", count));
+    return;
+}
+
+/* Provide a fix for the buggy function */

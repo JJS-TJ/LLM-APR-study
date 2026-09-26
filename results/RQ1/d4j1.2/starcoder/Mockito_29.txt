@@ -1,0 +1,31 @@
+No.1 Patch
+public void describeTo(Description description) {
+    description.appendText("same(");
+    appendQuoting(description);
+    description.appendText(wanted == null? "null" : wanted.toString());
+    appendQuoting(description);
+    description.appendText(")");
+}
+No.7 Patch
+public void describeTo(Description description) {
+    description.appendText("same(");
+    appendQuoting(description);
+    if (wanted!= null)
+        description.appendText(wanted.toString());
+    else
+        description.appendText("null");
+    appendQuoting(description);
+    description.appendText(")");
+}
+No.9 Patch
+public void describeTo(Description description) {
+    description.appendText("same(");
+    appendQuoting(description);
+    if (wanted == null) {
+        description.appendText("null");
+    } else {
+        description.appendText(wanted.toString());
+    }
+    appendQuoting(description);
+    description.appendText(")");
+}

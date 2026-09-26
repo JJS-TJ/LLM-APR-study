@@ -1,0 +1,14 @@
+```cpp
+const Token * Variable::declEndToken() const
+{
+    Token const * declEnd = typeStartToken();
+    while (declEnd && !Token::Match(declEnd, "[;,)={]")) {
+        if (declEnd->link() && Token::Match(declEnd,"(|[|<"))
+            declEnd = declEnd->link();
+        declEnd = declEnd->next();
+    }
+    return declEnd;
+}
+```
+
+The fix adds `<` to the token match check, so that when `declEnd` points to an opening angle bracket (template argument list, e.g. `std::vector<int>`), it jumps to its matching `>` via `link()` instead of stepping through the template parameters one token at a time. Without this, the loop could incorrectly stop at a `,` or `=` inside the template argument list instead of the real declaration end.

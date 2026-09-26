@@ -1,0 +1,25 @@
+No.0 Patch
+public void exec () throws Exception {
+    IntObj frst = new IntObj (), scnd = new IntObj (), thrd =
+        new IntObj (), frth = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    frst.value = scanner.nextInt ();
+    scnd.value = scanner.nextInt ();
+    thrd.value = scanner.nextInt ();
+    frth.value = scanner.nextInt ();
+    if (frst.value <= scnd.value && frst.value <= thrd.value
+            && frst.value <= frth.value) {
+        output += (String.format ("%d is the smallest\n", frst.value));
+    } else if (scnd.value <= frst.value && scnd.value <= thrd.value
+               && scnd.value <= frth.value) {
+        output += (String.format ("%d is the smallest\n", scnd.value));
+    } else if (thrd.value <= frst.value && thrd.value <= scnd.value
+               && thrd.value <= frth.value) {
+        output += (String.format ("%d is the smallest\n", thrd.value));
+    } else {
+        output += (String.format ("%d is the smallest\n", frth.value));
+    }
+}
+
+/* Provide a fix for the buggy function */

@@ -1,0 +1,176 @@
+No.0 Patch
+public void exec () throws Exception {
+    IntObj n1 = new IntObj (), n2 = new IntObj (), n3 = new IntObj (), n4 =
+        new IntObj (), small = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    n1.value = scanner.nextInt ();
+    n2.value = scanner.nextInt ();
+    n3.value = scanner.nextInt ();
+    n4.value = scanner.nextInt ();
+    small.value = n1.value;
+    if (n2.value < small.value) {
+        small.value = n2.value;
+    }
+    if (n3.value < small.value) {
+        small.value = n3.value;
+    }
+    if (n4.value < small.value) {
+        small.value = n4.value;
+    } else if (n4.value < n1.value) {
+        small.value = n4.value;
+    }
+    output += (String.format ("%d is the smallest\n", small.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.1 Patch
+public void exec () throws Exception {
+    IntObj n1 = new IntObj (), n2 = new IntObj (), n3 = new IntObj (), n4 =
+        new IntObj (), small = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    n1.value = scanner.nextInt ();
+    n2.value = scanner.nextInt ();
+    n3.value = scanner.nextInt ();
+    n4.value = scanner.nextInt ();
+    small.value = n1.value;
+    if (n2.value < small.value) {
+        small.value = n2.value;
+    }
+    if (n3.value < small.value) {
+        small.value = n3.value;
+    }
+    if (n4.value < small.value) {
+        small.value = n4.value;
+    } else if (n4.value < n1.value) {
+        small.value = n4.value;
+    }
+    output += (String.format ("%d is the smallest\n", small.value));
+    if (true)
+        return;;
+}
+
+// Example 2
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+public void exec () throws Exception {
+    IntObj n1 = new IntObj (), n2 = new IntObj (), n3 = new IntObj (), n4 =
+        new IntObj (), small = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    n1.value = scanner.nextInt ();
+    n2.value = scanner.nextInt ();
+    n3.value = scanner.nextInt ();
+    n4.value = scanner.nextInt ();
+    small.value = n1.value;
+    if (n2.value < small.value) {
+        small.value = n2.value;
+    }
+    if (n3.value < small.value) {
+        small.value = n3.value;
+    }
+    if (n4.value < small.value) {
+        small.value = n4.value;
+    } else if (n4.value < n1.value) {
+        small.value = n4.value;
+    }
+    output += (String.format ("%d is the smallest\n", small.value));
+    if (true)
+        return;;
+}
+
+// If a method returns void, a return statement is not required
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+public void exec () throws Exception {
+    IntObj n1 = new IntObj (), n2 = new IntObj (), n3 = new IntObj (), n4 =
+        new IntObj (), small = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    n1.value = scanner.nextInt ();
+    n2.value = scanner.nextInt ();
+    n3.value = scanner.nextInt ();
+    n4.value = scanner.nextInt ();
+    small.value = n1.value;
+    if (n2.value < small.value) {
+        small.value = n2.value;
+    }
+    if (n3.value < small.value) {
+        small.value = n3.value;
+    }
+    if (n4.value < small.value) {
+        small.value = n4.value;
+    } else if (n4.value < n1.value) {
+        small.value = n4.value;
+    }
+    output += (String.format ("%d is the smallest\n", small.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+public void exec () throws Exception {
+    IntObj n1 = new IntObj (), n2 = new IntObj (), n3 = new IntObj (), n4 =
+        new IntObj (), small = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    n1.value = scanner.nextInt ();
+    n2.value = scanner.nextInt ();
+    n3.value = scanner.nextInt ();
+    n4.value = scanner.nextInt ();
+    small.value = n1.value;
+    if (n2.value < small.value) {
+        small.value = n2.value;
+    }
+    if (n3.value < small.value) {
+        small.value = n3.value;
+    }
+    if (n4.value < small.value) {
+        small.value = n4.value;
+    } else if (n4.value < n1.value) {
+        small.value = n4.value;
+    }
+    output += (String.format ("%d is the smallest\n", small.value));
+    if (true)
+        return;;
+}
+
+// Example 2
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+public void exec () throws Exception {
+    IntObj n1 = new IntObj (), n2 = new IntObj (), n3 = new IntObj (), n4 =
+        new IntObj (), small = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    n1.value = scanner.nextInt ();
+    n2.value = scanner.nextInt ();
+    n3.value = scanner.nextInt ();
+    n4.value = scanner.nextInt ();
+    small.value = n1.value;
+    if (n2.value < small.value) {
+        small.value = n2.value;
+    }
+    if (n3.value < small.value) {
+        small.value = n3.value;
+    }
+    if (n4.value < small.value) {
+        small.value = n4.value;
+    } else if (n4.value < n1.value) {
+        small.value = n4.value;
+    }
+    output += (String.format ("%d is the smallest\n", small.value));
+    if (true)
+        return;;
+}
+
+// If a method returns void, a return statement is not required
+
+/* Provide a fix for the buggy function */

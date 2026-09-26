@@ -1,0 +1,120 @@
+No.2 Patch
+int main() {
+	
+	int a, b, c, d;
+	
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &a, &b, &c, &d);
+	
+	int smallest;
+	
+	smallest = a;
+	
+	if (b < smallest)
+		smallest = b;
+	if (c < smallest)
+		smallest = c;
+	if (d < smallest)
+		smallest = d;
+	
+	else if (a < smallest)
+		smallest = a;
+		printf("%d is the smallest", smallest);
+	
+	return 0;
+	
+	}
+
+		
+		
+	
+
+	
+	
+/* 5.1 */
+
+	/* Write a program that will ask the user to input a number between 1 and 100, 
+	then print all numbers between 1 and 100 that are multiples of the number 
+	entered by the user. */
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+int main() {
+	
+	int a, b, c, d;
+	
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &a, &b, &c, &d);
+	
+	int smallest;
+	
+	smallest = a;
+	
+	if (b < smallest)
+		smallest = b;
+	if (c < smallest)
+		smallest = c;
+	if (d < smallest)
+		smallest = d;
+	
+	else if (a < smallest)
+		smallest = a;
+		printf("%d is the smallest", smallest);
+	
+	return 0;
+	
+	}
+
+		
+		
+	
+
+	
+	
+/* 5.1 */
+
+	/* Write a program that will ask the user to input a number between 1 and 100, 
+	then print all numbers between 1 and 100 that are multiples of the number 
+	entered by the user. */
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+int main() {
+	
+	int a, b, c, d;
+	
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d%d%d%d", &a, &b, &c, &d);
+	
+	int smallest;
+	
+	smallest = a;
+	
+	if (b < smallest)
+		smallest = b;
+	if (c < smallest)
+		smallest = c;
+	if (d < smallest)
+		smallest = d;
+	
+	else if (a < smallest)
+		smallest = a;
+		printf("%d is the smallest", smallest);
+	
+	return 0;
+	
+	}
+
+		
+		
+	
+
+	
+	
+/* 5.1 */
+
+	/* Write a program that will ask the user to input a number between 1 and 100, 
+	then print all numbers between 1 and 100 that are multiples of the number 
+	entered by the user. */
+
+/* Provide a fix for the buggy function */

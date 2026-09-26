@@ -1,0 +1,69 @@
+No.7 Patch
+int
+main(void)
+{
+	int first, second, third, fourth;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i", &first);
+	scanf("%i", &second);
+	scanf("%i", &third);
+	scanf("%i", &fourth);
+
+	if (first<second) {
+		if (first<third) {
+			if (first<fourth)
+				printf("%i is the smallest\n", first);
+			else
+				printf("%i is the smallest\n", fourth);
+		} else {
+			if (third<fourth)
+				printf("%i is the smallest\n", third);
+			else
+				printf("%i is the smallest\n", fourth);
+		}
+	} else {
+		if (second<third) {
+			if (second<fourth)
+				printf("%i is the smallest\n", second);
+			else
+				printf("%i is the smallest\n", fourth);
+		} else {
+			if (third<fourth)
+				printf("%i is the smallest\n", third);
+			else
+				printf("%i is the smallest\n", fourth);
+		}
+	}
+
+	return(0);
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+int
+main(void)
+{
+	int first, second, third, fourth;
+	int min;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i", &first);
+	scanf("%i", &second);
+	scanf("%i", &third);
+	scanf("%i", &fourth);
+
+	min = first;
+
+	if (second < min)
+		min = second;
+	if (third < min)
+		min = third;
+	if (fourth < min)
+		min = fourth;
+
+	printf("%i is the smallest\n", min);
+
+	return(0);
+}
+
+/* Provide a fix for the buggy function */

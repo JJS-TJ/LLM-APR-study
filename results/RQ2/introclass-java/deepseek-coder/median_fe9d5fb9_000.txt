@@ -1,0 +1,266 @@
+No.0 Patch
+public void exec () throws Exception {
+    IntObj num1 = new IntObj (), num2 = new IntObj (), num3 =
+        new IntObj (), median = new IntObj (), big = new IntObj (), small =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 3 numbers separated by spaces > "));
+    num1.value = scanner.nextInt ();
+    num2.value = scanner.nextInt ();
+    num3.value = scanner.nextInt ();
+    if (num1.value > num2.value) {
+        small.value = num2.value;
+        big.value = num1.value;
+    } else {
+        big.value = num2.value;
+        small.value = num1.value;
+    }
+    if (num3.value > big.value) {
+        median.value = big.value;
+    } else if (num3.value < small.value) {
+        median.value = small.value;
+    } else {
+        median.value = num3.value;
+    }
+    output += (String.format ("%d is the median\n", median.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.1 Patch
+public void exec () throws Exception {
+    int num1, num2, num3;
+    output += (String.format ("Please enter 3 numbers separated by spaces > "));
+    num1 = scanner.nextInt ();
+    num2 = scanner.nextInt ();
+    num3 = scanner.nextInt ();
+    int big, small, median;
+    if (num1 > num2) {
+        small = num2;
+        big = num1;
+    } else {
+        big = num2;
+        small = num1;
+    }
+    if (num3 > big) {
+        median = big;
+    } else if (num3 < small) {
+        median = small;
+    } else {
+        median = num3;
+    }
+    output += (String.format ("%d is the median\n", median));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+public void exec () throws Exception {
+    IntObj num1 = new IntObj (), num2 = new IntObj (), num3 =
+        new IntObj (), median = new IntObj (), big = new IntObj (), small =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 3 numbers separated by spaces > "));
+    num1.value = scanner.nextInt ();
+    num2.value = scanner.nextInt ();
+    num3.value = scanner.nextInt ();
+    if (num1.value > num2.value) {
+        small.value = num2.value;
+        big.value = num1.value;
+    } else {
+        big.value = num2.value;
+        small.value = num1.value;
+    }
+    if (num3.value > big.value) {
+        median.value = big.value;
+    } else if (num3.value < small.value) {
+        median.value = small.value;
+    } else {
+        median.value = num3.value;
+    }
+    output += (String.format ("%d is the median\n", median.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+public void exec () throws Exception {
+    IntObj num1 = new IntObj (), num2 = new IntObj (), num3 =
+        new IntObj (), median = new IntObj (), big = new IntObj (), small =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 3 numbers separated by spaces > "));
+    num1.value = scanner.nextInt ();
+    num2.value = scanner.nextInt ();
+    num3.value = scanner.nextInt ();
+    if (num1.value > num2.value) {
+        small.value = num2.value;
+        big.value = num1.value;
+    } else {
+        big.value = num2.value;
+        small.value = num1.value;
+    }
+    if (num3.value > big.value) {
+        median.value = big.value;
+    } else if (num3.value < small.value) {
+        median.value = small.value;
+    } else {
+        median.value = num3.value;
+    }
+    output += (String.format ("%d is the median\n", median.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+public void exec () throws Exception {
+    IntObj num1 = new IntObj (), num2 = new IntObj (), num3 =
+        new IntObj (), median = new IntObj (), big = new IntObj (), small =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 3 numbers separated by spaces > "));
+    num1.value = scanner.nextInt ();
+    num2.value = scanner.nextInt ();
+    num3.value = scanner.nextInt ();
+    if (num1.value > num2.value) {
+        small.value = num2.value;
+        big.value = num1.value;
+    } else {
+        small.value = num1.value;
+        big.value = num2.value;
+    }
+    if (num3.value > big.value) {
+        median.value = big.value;
+    } else if (num3.value < small.value) {
+        median.value = small.value;
+    } else {
+        median.value = num3.value;
+    }
+    output += (String.format ("%d is the median\n", median.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+public void exec () throws Exception {
+    IntObj num1 = new IntObj (), num2 = new IntObj (), num3 =
+        new IntObj (), median = new IntObj (), big = new IntObj (), small =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 3 numbers separated by spaces > "));
+    num1.value = scanner.nextInt ();
+    num2.value = scanner.nextInt ();
+    num3.value = scanner.nextInt ();
+    if (num1.value > num2.value) {
+        small.value = num2.value;
+        big.value = num1.value;
+    } else {
+        big.value = num2.value;
+        small.value = num1.value;
+    }
+    if (num3.value > big.value) {
+        median.value = big.value;
+    } else if (num3.value < small.value) {
+        median.value = small.value;
+    } else {
+        median.value = num3.value;
+    }
+    output += (String.format ("%d is the median\n", median.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+public void exec () throws Exception {
+    int num1, num2, num3;
+    output += (String.format ("Please enter 3 numbers separated by spaces > "));
+    num1 = scanner.nextInt ();
+    num2 = scanner.nextInt ();
+    num3 = scanner.nextInt ();
+    int big, small, median;
+    if (num1 > num2) {
+        small = num2;
+        big = num1;
+    } else {
+        big = num2;
+        small = num1;
+    }
+    if (num3 > big) {
+        median = big;
+    } else if (num3 < small) {
+        median = small;
+    } else {
+        median = num3;
+    }
+    output += (String.format ("%d is the median\n", median));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+public void exec () throws Exception {
+    IntObj num1 = new IntObj (), num2 = new IntObj (), num3 =
+        new IntObj (), median = new IntObj (), big = new IntObj (), small =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 3 numbers separated by spaces > "));
+    num1.value = scanner.nextInt ();
+    num2.value = scanner.nextInt ();
+    num3.value = scanner.nextInt ();
+    if (num1.value > num2.value) {
+        small.value = num2.value;
+        big.value = num1.value;
+    } else {
+        big.value = num2.value;
+        small.value = num1.value;
+    }
+    if (num3.value > big.value) {
+        median.value = big.value;
+    } else if (num3.value < small.value) {
+        median.value = small.value;
+    } else {
+        median.value = num3.value;
+    }
+    output += (String.format ("%d is the median\n", median.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+public void exec () throws Exception {
+    IntObj num1 = new IntObj (), num2 = new IntObj (), num3 =
+        new IntObj (), median = new IntObj (), big = new IntObj (), small =
+        new IntObj ();
+    output +=
+        (String.format ("Please enter 3 numbers separated by spaces > "));
+    num1.value = scanner.nextInt ();
+    num2.value = scanner.nextInt ();
+    num3.value = scanner.nextInt ();
+    if (num1.value > num2.value) {
+        small.value = num2.value;
+        big.value = num1.value;
+    } else {
+        big.value = num2.value;
+        small.value = num1.value;
+    }
+    if (num3.value > big.value) {
+        median.value = big.value;
+    } else if (num3.value < small.value) {
+        median.value = small.value;
+    } else {
+        median.value = num3.value;
+    }
+    output += (String.format ("%d is the median\n", median.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */

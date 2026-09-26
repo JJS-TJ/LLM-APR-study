@@ -1,0 +1,23 @@
+No.0 Patch
+public void exec () throws Exception {
+    IntObj n1 = new IntObj (), n2 = new IntObj (), n3 = new IntObj (), n4 = new IntObj (), min = new IntObj ();
+    output += (String.format ("Please enter 4 numbers separated by spaces > "));
+    n1.value = scanner.nextInt ();
+    n2.value = scanner.nextInt ();
+    n3.value = scanner.nextInt ();
+    n4.value = scanner.nextInt ();
+    if (n1.value <= n2.value) {
+        min.value = n1.value;
+    } else {
+        min.value = n2.value;
+    }
+    if (min.value >= n3.value) {
+        min.value = n3.value;
+    }
+    if (min.value >= n4.value) {
+        min.value = n4.value;
+    }
+    output += (String.format ("%d is the smallest\n", min.value));
+}
+
+/* Provide a fix for the buggy function */

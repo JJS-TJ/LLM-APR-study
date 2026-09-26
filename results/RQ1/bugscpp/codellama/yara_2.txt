@@ -1,0 +1,26 @@
+No.5 Patch
+static int _yr_scan_wicompare(
+    const uint8_t* data,
+    size_t data_size,
+    uint8_t* string,
+    size_t string_length)
+{
+  const uint8_t* s1 = data;
+  const uint8_t* s2 = string;
+
+  size_t i = 0;
+
+  if (data_size < string_length * 2)
+    return 0;
+
+  while (i < string_length && yr_lowercase[*s1] == yr_lowercase[*s2])
+  {
+    s1++;
+    s2++;
+    i++;
+  }
+
+  return (int) ((i == string_length) ? i * 2 : 0);
+}
+
+/* Provide a fix for the buggy function */

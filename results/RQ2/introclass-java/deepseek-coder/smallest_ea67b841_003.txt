@@ -1,0 +1,208 @@
+No.0 Patch
+public void exec () throws Exception {
+    IntObj a = new IntObj (), b = new IntObj (), c = new IntObj (), d =
+        new IntObj (), SN = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a.value = scanner.nextInt ();
+    b.value = scanner.nextInt ();
+    c.value = scanner.nextInt ();
+    d.value = scanner.nextInt ();
+    SN.value = a.value;
+    if (b.value < SN.value) {
+        SN.value = b.value;
+    }
+    if (c.value < SN.value) {
+        SN.value = c.value;
+    }
+    if (d.value < SN.value) {
+        SN.value = d.value;
+    }
+    output += (String.format ("%d is the smallest\n", SN.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.2 Patch
+public void exec () throws Exception {
+    IntObj a = new IntObj (), b = new IntObj (), c = new IntObj (), d =
+        new IntObj (), SN = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a.value = scanner.nextInt ();
+    b.value = scanner.nextInt ();
+    c.value = scanner.nextInt ();
+    d.value = scanner.nextInt ();
+    SN.value = a.value;
+    if (b.value < SN.value) {
+        SN.value = b.value;
+    }
+    if (c.value < SN.value) {
+        SN.value = c.value;
+    }
+    if (d.value < SN.value) {
+        SN.value = d.value;
+    }
+    output += (String.format ("%d is the smallest\n", SN.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+public void exec () throws Exception {
+    IntObj a = new IntObj (), b = new IntObj (), c = new IntObj (), d =
+        new IntObj (), SN = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a.value = scanner.nextInt ();
+    b.value = scanner.nextInt ();
+    c.value = scanner.nextInt ();
+    d.value = scanner.nextInt ();
+    SN.value = a.value;
+    if (b.value < SN.value) {
+        SN.value = b.value;
+    }
+    if (c.value < SN.value) {
+        SN.value = c.value;
+    }
+    if (d.value < SN.value) {
+        SN.value = d.value;
+    }
+    output += (String.format ("%d is the smallest\n", SN.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+public void exec () throws Exception {
+    IntObj a = new IntObj (), b = new IntObj (), c = new IntObj (), d =
+        new IntObj (), SN = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a.value = scanner.nextInt ();
+    b.value = scanner.nextInt ();
+    c.value = scanner.nextInt ();
+    d.value = scanner.nextInt ();
+    SN.value = a.value;
+    if (b.value < SN.value) {
+        SN.value = b.value;
+    }
+    if (c.value < SN.value) {
+        SN.value = c.value;
+    }
+    if (d.value < SN.value) {
+        SN.value = d.value;
+    }
+    output += (String.format ("%d is the smallest\n", SN.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+public void exec () throws Exception {
+    IntObj a = new IntObj (), b = new IntObj (), c = new IntObj (), d =
+        new IntObj (), SN = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a.value = scanner.nextInt ();
+    b.value = scanner.nextInt ();
+    c.value = scanner.nextInt ();
+    d.value = scanner.nextInt ();
+    SN.value = a.value;
+    if (b.value < SN.value) {
+        SN.value = b.value;
+    }
+    if (c.value < SN.value) {
+        SN.value = c.value;
+    }
+    if (d.value < SN.value) {
+        SN.value = d.value;
+    }
+    output += (String.format ("%d is the smallest\n", SN.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+public void exec () throws Exception {
+    IntObj a = new IntObj (), b = new IntObj (), c = new IntObj (), d =
+        new IntObj (), SN = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a.value = scanner.nextInt ();
+    b.value = scanner.nextInt ();
+    c.value = scanner.nextInt ();
+    d.value = scanner.nextInt ();
+    SN.value = a.value;
+    if (b.value < SN.value) {
+        SN.value = b.value;
+    }
+    if (c.value < SN.value) {
+        SN.value = c.value;
+    }
+    if (d.value < SN.value) {
+        SN.value = d.value;
+    }
+    output += (String.format ("%d is the smallest\n", SN.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+public void exec () throws Exception {
+    IntObj a = new IntObj (), b = new IntObj (), c = new IntObj (), d =
+        new IntObj (), SN = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a.value = scanner.nextInt ();
+    b.value = scanner.nextInt ();
+    c.value = scanner.nextInt ();
+    d.value = scanner.nextInt ();
+    SN.value = a.value;
+    if (b.value < SN.value) {
+        SN.value = b.value;
+    }
+    if (c.value < SN.value) {
+        SN.value = c.value;
+    }
+    if (d.value < SN.value) {
+        SN.value = d.value;
+    }
+    output += (String.format ("%d is the smallest\n", SN.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+public void exec () throws Exception {
+    IntObj a = new IntObj (), b = new IntObj (), c = new IntObj (), d =
+        new IntObj (), SN = new IntObj ();
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a.value = scanner.nextInt ();
+    b.value = scanner.nextInt ();
+    c.value = scanner.nextInt ();
+    d.value = scanner.nextInt ();
+    SN.value = a.value;
+    if (b.value < SN.value) {
+        SN.value = b.value;
+    }
+    if (c.value < SN.value) {
+        SN.value = c.value;
+    }
+    if (d.value < SN.value) {
+        SN.value = d.value;
+    }
+    output += (String.format ("%d is the smallest\n", SN.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */

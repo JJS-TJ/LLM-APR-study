@@ -1,0 +1,180 @@
+No.0 Patch
+protected void declareNameInScope(FlowScope scope, Node node, JSType type) {
+  switch (node.getType()) {
+    case Token.NAME:
+      scope.inferSlotType(node.getString(), type);
+      break;
+
+    case Token.GETPROP:
+      String qualifiedName = node.getQualifiedName();
+      Preconditions.checkNotNull(qualifiedName);
+
+      JSType origType = node.getJSType();
+      origType = origType == null ? getNativeType(UNKNOWN_TYPE) : origType;
+      scope.inferQualifiedSlot(node, qualifiedName, origType, type);
+      break;
+
+    case Token.THIS:
+      // This is not modeled in the CFG, so we create a fake
+      // node and type for this.
+      scope.inferSlotType("this", type);
+      break;
+
+    default:
+      throw new IllegalArgumentException("Node cannot be refined. \n" +
+          node.toStringTree());
+  }
+}
+No.1 Patch
+protected void declareNameInScope(FlowScope scope, Node node, JSType type) {
+  switch (node.getType()) {
+    case Token.NAME:
+      scope.inferSlotType(node.getString(), type);
+      break;
+
+    case Token.GETPROP:
+      String qualifiedName = node.getQualifiedName();
+      Preconditions.checkNotNull(qualifiedName);
+
+      JSType origType = node.getJSType();
+      origType = origType == null ? getNativeType(UNKNOWN_TYPE) : origType;
+      scope.inferQualifiedSlot(node, qualifiedName, origType, type);
+      break;
+
+    case Token.THIS:
+      // "this" references aren't currently modeled in the CFG.
+      break;
+
+    default:
+      throw new IllegalArgumentException("Node cannot be refined. \n" +
+          node.toStringTree());
+  }
+}
+No.2 Patch
+protected void declareNameInScope(FlowScope scope, Node node, JSType type) {
+  switch (node.getType()) {
+    case Token.NAME:
+      scope.inferSlotType(node.getString(), type);
+      break;
+
+    case Token.GETPROP:
+      String qualifiedName = node.getQualifiedName();
+      Preconditions.checkNotNull(qualifiedName);
+
+      JSType origType = node.getJSType();
+      origType = origType == null ? getNativeType(UNKNOWN_TYPE) : origType;
+      scope.inferQualifiedSlot(node, qualifiedName, origType, type);
+      break;
+
+    case Token.THIS:
+      scope.inferSlotType("this", type);
+      break;
+
+    default:
+      throw new IllegalArgumentException("Node cannot be refined. \n" +
+          node.toStringTree());
+  }
+}
+No.5 Patch
+protected void declareNameInScope(FlowScope scope, Node node, JSType type) {
+  switch (node.getType()) {
+    case Token.NAME:
+      scope.inferSlotType(node.getString(), type);
+      break;
+
+    case Token.GETPROP:
+      String qualifiedName = node.getQualifiedName();
+      Preconditions.checkNotNull(qualifiedName);
+
+      JSType origType = node.getJSType();
+      origType = origType == null ? getNativeType(UNKNOWN_TYPE) : origType;
+      scope.inferQualifiedSlot(node, qualifiedName, origType, type);
+      break;
+
+      // "this" references aren't currently modeled in the CFG.
+
+    case Token.THIS:
+      scope.inferSlotType("this", type);
+      break;
+
+    default:
+      throw new IllegalArgumentException("Node cannot be refined. \n" +
+          node.toStringTree());
+  }
+}
+No.6 Patch
+protected void declareNameInScope(FlowScope scope, Node node, JSType type) {
+  switch (node.getType()) {
+    case Token.NAME:
+      scope.inferSlotType(node.getString(), type);
+      break;
+
+    case Token.GETPROP:
+      String qualifiedName = node.getQualifiedName();
+      Preconditions.checkNotNull(qualifiedName);
+
+      JSType origType = node.getJSType();
+      origType = origType == null ? getNativeType(UNKNOWN_TYPE) : origType;
+      scope.inferQualifiedSlot(node, qualifiedName, origType, type);
+      break;
+
+    case Token.THIS:
+      // TODO(b/27593632): Handle this references.
+      break;
+
+    default:
+      throw new IllegalArgumentException("Node cannot be refined. \n" +
+          node.toStringTree());
+  }
+}
+No.7 Patch
+protected void declareNameInScope(FlowScope scope, Node node, JSType type) {
+  switch (node.getType()) {
+    case Token.NAME:
+      scope.inferSlotType(node.getString(), type);
+      break;
+
+    case Token.GETPROP:
+      String qualifiedName = node.getQualifiedName();
+      Preconditions.checkNotNull(qualifiedName);
+
+      JSType origType = node.getJSType();
+      origType = origType == null ? getNativeType(UNKNOWN_TYPE) : origType;
+      scope.inferQualifiedSlot(node, qualifiedName, origType, type);
+      break;
+
+    case Token.THIS:
+      // TODO(user): Handle "this" references in the CFG.
+      break;
+
+    default:
+      throw new IllegalArgumentException("Node cannot be refined. \n" +
+          node.toStringTree());
+  }
+}
+No.9 Patch
+protected void declareNameInScope(FlowScope scope, Node node, JSType type) {
+  switch (node.getType()) {
+    case Token.NAME:
+      scope.inferSlotType(node.getString(), type);
+      break;
+
+    case Token.GETPROP:
+      String qualifiedName = node.getQualifiedName();
+      Preconditions.checkNotNull(qualifiedName);
+
+      JSType origType = node.getJSType();
+      origType = origType == null ? getNativeType(UNKNOWN_TYPE) : origType;
+      scope.inferQualifiedSlot(node, qualifiedName, origType, type);
+      break;
+
+    case Token.THIS:
+      scope.inferQualifiedSlot(node, "this", getNativeType(UNKNOWN_TYPE),
+          type);
+      break;
+
+    default:
+      throw new IllegalArgumentException("Node cannot be refined. \n" +
+          node.toStringTree());
+  }
+}

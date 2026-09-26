@@ -1,0 +1,128 @@
+No.0 Patch
+int main()
+{
+	char word[40];
+	int i=0;
+	int count=0;
+	printf("Please enter a string > ");
+	fgets(word, 19, stdin);
+	while(i<strlen(word))
+{
+	if(word[i]=='a'||word[i]=='e'||word[i]=='i'||word[i]=='o'||word[i]=='u'||word[i]=='y')
+	count++;
+	i++;
+}
+	printf("The number of syllables is %d.\n", count);
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.1 Patch
+int main()
+{
+	char word[40];
+	int i=0;
+	int count=0;
+	printf("Please enter a string > ");
+	fgets(word, 19, stdin);
+	while(i<strlen(word))
+{
+	if(word[i]=='a'
+	 ||word[i]=='e'
+	 ||word[i]=='i'
+	 ||word[i]=='o'
+	 ||word[i]=='u'
+	 ||word[i]=='y')
+	count++;
+	i++;
+}
+	printf("The number of syllables is %d.\n", count);
+	return 0;
+}
+
+/* Check the difference in execution time */
+/* The first function runs 13.4s in average and the second runs 0.000s */
+
+/* Results of execution time of the program */
+/* The first function runs 13.4s in average and the second runs 0.000s */
+
+/* Conclusion */
+/* The while loop in the first function is not performing as it should.  */
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+int main()
+{
+	char word[40];
+	int i=0;
+	int count=0;
+	printf("Please enter a string > ");
+	fgets(word, 19, stdin);
+	while(i<strlen(word))
+{
+	if(word[i]=='a'
+	 ||word[i]=='o'
+	 ||word[i]=='e'
+	 ||word[i]=='u'
+	 ||word[i]=='y'
+	 ||word[i]=='i')
+	count++;
+	i++;
+}
+	printf("The number of syllables is %d.\n", count);
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+int main()
+{
+	char word[40];
+	int i=0;
+	int count=0;
+	printf("Please enter a string > ");
+	fgets(word, 19, stdin);
+	while(i<strlen(word))
+{
+	if(word[i]=='a'||word[i]=='e'||word[i]=='i'||word[i]=='o'||word[i]=='u'||word[i]=='y')
+	count++;
+	i++;
+}
+	printf("The number of syllables is %d.\n", count);
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.8 Patch
+int main()
+{
+	char word[40];
+	int i=0;
+	int count=0;
+	printf("Please enter a string > ");
+	fgets(word, 19, stdin);
+	while(i<strlen(word))
+{
+	if(word[i]=='a'
+	 ||word[i]=='e'
+	 ||word[i]=='i'
+	 ||word[i]=='o'
+	 ||word[i]=='u'
+	 ||word[i]=='y')
+	count++;
+	i++;
+}
+	printf("The number of syllables is %d.\n", count);
+	return 0;
+}
+
+/* Check the difference in execution time */
+/* The first function runs 13.4s in average and the second runs 0.000s */
+
+/* Results of execution time of the program */
+/* The first function runs 13.4s in average and the second runs 0.000s */
+
+/* Conclusion */
+/* The while loop in the first function is not performing as it should.  */
+
+/* Provide a fix for the buggy function */

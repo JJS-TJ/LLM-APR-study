@@ -1,0 +1,8 @@
+No.0 Patch
+public static String encodeBase64String(byte[] binaryData) {
+    return StringUtils.newStringUtf8(Base64.encodeBase64(binaryData));
+}
+No.4 Patch
+public static String encodeBase64String(byte[] binaryData) {
+    return StringUtils.newStringUtf8(encodeBase64(binaryData));
+}

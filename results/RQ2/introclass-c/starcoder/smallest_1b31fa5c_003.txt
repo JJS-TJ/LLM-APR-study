@@ -1,0 +1,118 @@
+No.2 Patch
+int main()
+{
+	int A, B, C, D;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i %i %i %i", &A, &B, &C, &D);
+
+	if ( A <= B && A <= C && A <= D)
+		{ printf("%i is the smallest\n", A);
+		  return 0;}
+	else if ( B <= A && B <= C && B <= D)
+		{ printf("%i is the smallest\n", B);
+		  return 0;}
+	else if ( C <= A && C <= B && C <= D)
+		{ printf("%i is the smallest\n", C);
+		  return 0;}
+	else if ( D <= A && D <= B && D <= C )
+		{ printf("%i is the smallest\n", D);
+		  return 0;}
+}
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+int main()
+{
+	int A, B, C, D;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i %i %i %i", &A, &B, &C, &D);
+
+	if (A < B && A < C && A < D)
+		{ printf("%i is the smallest\n", A);
+		  return 0;}
+	else if (B < C && B < D)
+		{ printf("%i is the smallest\n", B);
+		  return 0;}
+	else if (C < D)
+		{ printf("%i is the smallest\n", C);
+		  return 0;}
+	else
+		{ printf("%i is the smallest\n", D);
+		  return 0;}
+}
+
+/*
+ * Notes:
+ *
+ * 	- C uses "&&" to denote AND
+ *  - C uses "||" to denote OR
+ *
+ *
+ */
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+int main()
+{
+	int A, B, C, D, X;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i %i %i %i", &A, &B, &C, &D);
+
+	X = A;
+	if ( B < X) { X = B;}
+	if ( C < X) { X = C;}
+	if ( D < X) { X = D;}
+
+	printf("%i is the smallest\n", X);
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.6 Patch
+int main()
+{
+	int A, B, C, D, smaller;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i %i %i %i", &A, &B, &C, &D);
+
+	smaller = min(A, B, C, D);
+	printf("%i is the smallest\n", smaller);
+}
+
+int min(int a, int b, int c, int d)
+{
+	int smaller;
+
+	smaller = a;
+	if (b < smaller) smaller = b;
+	if (c < smaller) smaller = c;
+	if (d < smaller) smaller = d;
+
+	return smaller;
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+int main()
+{
+	int A, B, C, D, MIN;
+
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%i %i %i %i", &A, &B, &C, &D);
+
+	MIN = A;
+
+	if ( MIN > B) MIN = B;
+	if ( MIN > C) MIN = C;
+	if ( MIN > D) MIN = D;
+
+	printf("%i is the smallest\n", MIN);
+
+	return 0;
+}
+
+/* Provide a fix for the buggy function */

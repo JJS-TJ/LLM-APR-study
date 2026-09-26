@@ -1,0 +1,77 @@
+No.0 Patch
+int main() {
+	int x, y, z, t, a;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d %d %d %d", &x, &y, &z, &t);
+	a = x;
+	if (y < a)
+	a = y;
+	if (z < a)
+	a = z;
+	if (t < a)
+	a = t;
+	printf("%d is the smallest \n", a);
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.1 Patch
+int main() {
+	int x, y, z, t, a;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d %d %d %d", &x, &y, &z, &t);
+	a = x;
+	if (a > y)
+	a = y;
+	if (a > z)
+	a = z;
+	if (a > t)
+	a = t;
+	printf("%d is the smallest \n", a);
+	return 0;
+}
+
+/* 
+
+The original program has a bug in the conditional statements.
+If the program is run and the first number entered is greater than the second,
+then the third number entered will never be compared to the fourth number.
+In other words, the fixed program will always find the smallest number.
+
+*/
+
+/* Provide a fix for the buggy function */
+No.4 Patch
+int main() {
+	int x, y, z, t, a;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d %d %d %d", &x, &y, &z, &t);
+	a = x;
+	if (a > y)
+	a = y;
+	if (a > z)
+	a = z;
+	if (a > t)
+	a = t;
+	printf("%d is the smallest \n", a);
+	return 0;
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+int main() {
+	int x, y, z, t, a;
+	printf("Please enter 4 numbers separated by spaces > ");
+	scanf("%d %d %d %d", &x, &y, &z, &t);
+	a = x;
+	if (y < a)
+	a = y;
+	if (z < a)
+	a = z;
+	if (t < a)
+	a = t;
+	printf("%d is the smallest \n", a);
+	return 0;
+}
+
+/* Provide a fix for the buggy function */

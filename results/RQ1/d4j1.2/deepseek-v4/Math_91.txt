@@ -1,0 +1,6 @@
+No.0 Patch
+public int compareTo(Fraction object) {
+    int left = this.numerator * object.denominator;
+    int right = object.numerator * this.denominator;
+    return (left < right) ? -1 : ((left > right) ? 1 : 0);
+}

@@ -1,0 +1,32 @@
+No.0 Patch
+public void exec () throws Exception {
+    IntObj num = new IntObj (), digit = new IntObj ();
+    output += (String.format ("\nEnter an integer > "));
+    num.value = scanner.nextInt ();
+    if (num.value == 0) {
+        output += (String.format ("\n%d", 0));
+    } else {
+        if (num.value < 0) {
+            while (num.value != 0) {
+                digit.value = num.value % 10;
+                if (num.value > (-10)) {
+                    output += (String.format ("\n%d", digit.value));
+                } else {
+                    output += (String.format ("\n%d", -digit.value));
+                }
+                num.value = num.value / 10;
+            }
+        } else {
+            while (num.value != 0) {
+                digit.value = num.value % 10;
+                output += (String.format ("\n%d", digit.value));
+                num.value = num.value / 10;
+            }
+        }
+    }
+    output += (String.format ("\nThat's all, have a nice day!\n"));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */

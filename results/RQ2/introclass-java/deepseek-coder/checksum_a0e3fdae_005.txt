@@ -1,0 +1,110 @@
+No.1 Patch
+public void exec () throws Exception {
+    IntObj checksum = new IntObj (), integer_value = new IntObj (), sum =
+        new IntObj (0);
+    String value = "";
+    output +=
+        (String.format
+         ("Enter an abitrarily long string, ending with carriage return > "));
+    value = scanner.nextLine ();
+    IntObj i = new IntObj ();
+    IntObj stringlength = new IntObj (value.length ());
+    for (i.value = 0; i.value < stringlength.value; i.value++) {
+        integer_value.value = value.charAt (i.value);
+        sum.value = sum.value + integer_value.value;
+    }
+    checksum.value = (sum.value % 64) + ' ';
+    output += (String.format ("Check sum is %c\n", checksum.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.3 Patch
+public void exec () throws Exception {
+    IntObj checksum = new IntObj (), integer_value = new IntObj (), sum =
+        new IntObj (0);
+    String value = "";
+    output +=
+        (String.format
+         ("Enter an abitrarily long string, ending with carriage return > "));
+    value = scanner.nextLine ();
+    IntObj i = new IntObj ();
+    IntObj stringlength = new IntObj (value.length ());
+    for (i.value = 0; i.value < stringlength.value; i.value++) {
+        integer_value.value = value.charAt (i.value);
+        sum.value = sum.value + integer_value.value;
+    }
+    checksum.value = (sum.value % 64) + ' ';
+    output += (String.format ("Check sum is %c\n", checksum.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.5 Patch
+public void exec () throws Exception {
+    IntObj checksum = new IntObj (), integer_value = new IntObj (), sum =
+        new IntObj (0);
+    String value = "";
+    output +=
+        (String.format
+         ("Enter an abitrarily long string, ending with carriage return > "));
+    value = scanner.nextLine ();
+    IntObj i = new IntObj ();
+    IntObj stringlength = new IntObj (value.length ());
+    for (i.value = 0; i.value < stringlength.value; i.value++) {
+        integer_value.value = value.charAt (i.value);
+        sum.value = sum.value + integer_value.value;
+    }
+    checksum.value = (sum.value % 64) + ' ';
+    output += (String.format ("Check sum is %c\n", checksum.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.7 Patch
+public void exec () throws Exception {
+    IntObj checksum = new IntObj (), integer_value = new IntObj (), sum =
+        new IntObj (0);
+    String value = "";
+    output +=
+        (String.format
+         ("Enter an abitrarily long string, ending with carriage return > "));
+    value = scanner.nextLine ();
+    IntObj i = new IntObj ();
+    IntObj stringlength = new IntObj (value.length ());
+    for (i.value = 0; i.value < stringlength.value; i.value++) {
+        integer_value.value = value.charAt (i.value);
+        sum.value = sum.value + integer_value.value;
+    }
+    checksum.value = (sum.value % 64) + ' ';
+    output += (String.format ("Check sum is %c\n", checksum.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+public void exec () throws Exception {
+    IntObj checksum = new IntObj (), integer_value = new IntObj (), sum =
+        new IntObj (0);
+    String value = "";
+    output +=
+        (String.format
+         ("Enter an abitrarily long string, ending with carriage return > "));
+    value = scanner.nextLine ();
+    IntObj i = new IntObj ();
+    IntObj stringlength = new IntObj (value.length ());
+    for (i.value = 0; i.value < stringlength.value; i.value++) {
+        integer_value.value = value.charAt (i.value);
+        sum.value = sum.value + integer_value.value;
+    }
+    checksum.value = (sum.value % 64) + ' ';
+    output += (String.format ("Check sum is %c\n", checksum.value));
+    if (true)
+        return;;
+}
+
+/* Provide a fix for the buggy function */

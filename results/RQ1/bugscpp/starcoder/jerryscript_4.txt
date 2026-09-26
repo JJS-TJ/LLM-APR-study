@@ -1,0 +1,196 @@
+No.3 Patch
+static ecma_value_t
+ecma_builtin_array_prototype_object_slice (ecma_value_t arg1, /**< start */
+                                           ecma_value_t arg2, /**< end */
+                                           ecma_object_t *obj_p, /**< object */
+                                           ecma_length_t len) /**< object's length */
+{
+  ecma_length_t start = 0, end = len;
+
+  /* 5. 6.*/
+  if (ECMA_IS_VALUE_ERROR (ecma_builtin_helper_array_index_normalize (arg1,
+                                                                      len,
+                                                                      &start)))
+  {
+    return ECMA_VALUE_ERROR;
+  }
+
+  /* 7. */
+  if (ecma_is_value_undefined (arg2))
+  {
+    end = len;
+  }
+  else
+  {
+    /* 7. part 2, 8.*/
+    if (ECMA_IS_VALUE_ERROR (ecma_builtin_helper_array_index_normalize (arg2,
+                                                                        len,
+                                                                        &end)))
+    {
+      return ECMA_VALUE_ERROR;
+    }
+  }
+
+  JERRY_ASSERT (start <= len && end <= len);
+
+  ecma_object_t *new_array_p = ecma_op_new_array_object (0);
+
+  /* 9. */
+  ecma_length_t n = 0;
+
+  /* 10. */
+  for (ecma_length_t k = start; k < end; k++, n++)
+  {
+    /* 10.c */
+    ecma_value_t get_value = ecma_op_object_find_by_index (obj_p, k);
+
+    if (ECMA_IS_VALUE_ERROR (get_value))
+    {
+      ecma_deref_object (new_array_p);
+      return get_value;
+    }
+
+    if (ecma_is_value_found (get_value))
+    {
+      /* 10.c.ii */
+      ecma_value_t put_comp;
+#if JERRY_ESNEXT
+      const uint32_t prop_flags = ECMA_PROPERTY_CONFIGURABLE_ENUMERABLE_WRITABLE | JERRY_PROP_SHOULD_THROW;
+#else /*!JERRY_ESNEXT */
+      const uint32_t prop_flags = ECMA_PROPERTY_CONFIGURABLE_ENUMERABLE_WRITABLE;
+#endif /* JERRY_ESNEXT */
+      put_comp = ecma_builtin_helper_def_prop_by_index (new_array_p,
+                                                        n,
+                                                        get_value,
+                                                        prop_flags);
+      ecma_free_value (get_value);
+
+#if JERRY_ESNEXT
+      if (ECMA_IS_VALUE_ERROR (put_comp))
+      {
+        ecma_deref_object (new_array_p);
+        return put_comp;
+      }
+#else /*!JERRY_ESNEXT */
+      JERRY_ASSERT (ecma_is_value_true (put_comp));
+#endif /* JERRY_ESNEXT */
+    }
+  }
+
+#if JERRY_ESNEXT
+  ecma_value_t set_length_value = ecma_builtin_array_prototype_helper_set_length (new_array_p, ((ecma_number_t) n));
+
+  if (ECMA_IS_VALUE_ERROR (set_length_value))
+  {
+    ecma_deref_object (new_array_p);
+    return set_length_value;
+  }
+#endif /* JERRY_ESNEXT */
+
+  return ecma_make_object_value (new_array_p);
+} /* ecma_builtin_array_prototype_object_slice */
+
+/* Provide a fix for the buggy function */
+No.9 Patch
+static ecma_value_t
+ecma_builtin_array_prototype_object_slice (ecma_value_t arg1, /**< start */
+                                           ecma_value_t arg2, /**< end */
+                                           ecma_object_t *obj_p, /**< object */
+                                           ecma_length_t len) /**< object's length */
+{
+  ecma_length_t start = 0, end = len;
+
+  /* 5. 6.*/
+  if (ECMA_IS_VALUE_ERROR (ecma_builtin_helper_array_index_normalize (arg1,
+                                                                      len,
+                                                                      &start)))
+  {
+    return ECMA_VALUE_ERROR;
+  }
+
+  /* 7. */
+  if (ecma_is_value_undefined (arg2))
+  {
+    end = len;
+  }
+  else
+  {
+    /* 7. part 2, 8.*/
+    if (ECMA_IS_VALUE_ERROR (ecma_builtin_helper_array_index_normalize (arg2,
+                                                                        len,
+                                                                        &end)))
+    {
+      return ECMA_VALUE_ERROR;
+    }
+  }
+
+  JERRY_ASSERT (start <= len && end <= len);
+
+  ecma_length_t copied_length = (end > start)? end - start : 0;
+#if JERRY_ESNEXT
+  ecma_object_t *new_array_p = ecma_op_array_species_create (obj_p, copied_length);
+
+  if (JERRY_UNLIKELY (new_array_p == NULL))
+  {
+    return ECMA_VALUE_ERROR;
+  }
+#else /*!JERRY_ESNEXT */
+  ecma_object_t *new_array_p = ecma_op_new_array_object (0);
+#endif /* JERRY_ESNEXT */
+
+  /* 9. */
+  ecma_length_t n = 0;
+
+  /* 10. */
+  for (ecma_length_t k = start; k < end; k++, n++)
+  {
+    /* 10.c */
+    ecma_value_t get_value = ecma_op_object_find_by_index (obj_p, k);
+
+    if (ECMA_IS_VALUE_ERROR (get_value))
+    {
+      ecma_deref_object (new_array_p);
+      return get_value;
+    }
+
+    if (ecma_is_value_found (get_value))
+    {
+      /* 10.c.ii */
+      ecma_value_t put_comp;
+#if JERRY_ESNEXT
+      const uint32_t prop_flags = ECMA_PROPERTY_CONFIGURABLE_ENUMERABLE_WRITABLE | JERRY_PROP_SHOULD_THROW;
+#else /*!JERRY_ESNEXT */
+      const uint32_t prop_flags = ECMA_PROPERTY_CONFIGURABLE_ENUMERABLE_WRITABLE;
+#endif /* JERRY_ESNEXT */
+      put_comp = ecma_builtin_helper_def_prop_by_index (new_array_p,
+                                                        n,
+                                                        get_value,
+                                                        prop_flags);
+      ecma_free_value (get_value);
+
+#if JERRY_ESNEXT
+      if (ECMA_IS_VALUE_ERROR (put_comp))
+      {
+        ecma_deref_object (new_array_p);
+        return put_comp;
+      }
+#else /*!JERRY_ESNEXT */
+      JERRY_ASSERT (ecma_is_value_true (put_comp));
+#endif /* JERRY_ESNEXT */
+    }
+  }
+
+#if JERRY_ESNEXT
+  ecma_value_t set_length_value = ecma_builtin_array_prototype_helper_set_length (new_array_p, ((ecma_number_t) n));
+
+  if (ECMA_IS_VALUE_ERROR (set_length_value))
+  {
+    ecma_deref_object (new_array_p);
+    return set_length_value;
+  }
+#endif /* JERRY_ESNEXT */
+
+  return ecma_make_object_value (new_array_p);
+} /* ecma_builtin_array_prototype_object_slice */
+
+/* Provide a fix for the buggy function */

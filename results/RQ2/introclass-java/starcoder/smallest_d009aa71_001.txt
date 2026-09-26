@@ -1,0 +1,21 @@
+No.5 Patch
+public void exec () throws Exception {
+    int a, b, c, d, smallest;
+    output +=
+        (String.format ("Please enter 4 numbers separated by spaces > "));
+    a = scanner.nextInt ();
+    b = scanner.nextInt ();
+    c = scanner.nextInt ();
+    d = scanner.nextInt ();
+    smallest = a;
+    if (smallest > b)
+        smallest = b;
+    if (smallest > c)
+        smallest = c;
+    if (smallest > d)
+        smallest = d;
+    output += (String.format ("%d is the smallest\n", smallest));
+    return;
+}
+
+/* Provide a fix for the buggy function */

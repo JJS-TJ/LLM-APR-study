@@ -1,0 +1,21 @@
+No.0 Patch
+public void exec () throws Exception {
+    char[] instring = new char[20];
+    IntObj numVowels = new IntObj (0);
+    IntObj i = new IntObj ();
+    output += (String.format ("Please enter a string > "));
+    instring = (scanner.nextLine () + "\n").toCharArray ();
+    for (i.value = 0; i.value < instring.length; i.value++) {
+        if (instring[i.value] == 'a' || instring[i.value] == 'e'
+                || instring[i.value] == 'i' || instring[i.value] == 'o'
+                || instring[i.value] == 'u' || instring[i.value] == 'y') {
+            numVowels.value += 1;
+        }
+    }
+    output +=
+        (String.format ("The number of syllables is %d.\n", numVowels.value));
+    if (true)
+        return;
+}
+
+/* Provide a fix for the buggy function */
